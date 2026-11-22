@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thesis Topics Explorer — Communication Engineering</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" id="mtc" content="#f4f6fb">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+:root{
+ color-scheme:light;
+ --bg:#f4f6fb;--bg2:#eaedf6;--card:#ffffff;--tx:#0e1526;--mu:#5c6478;--bd:#e4e8f1;--bd2:#d3d9e6;
+ --acc:#4f46e5;--acc2:#7c3aed;--glass:rgba(248,249,253,.86);--glow:rgba(99,102,241,.18);
+ --sh:0 1px 2px rgba(14,21,38,.05),0 10px 30px rgba(14,21,38,.06);
+ --sh2:0 18px 44px rgba(14,21,38,.14);
+ --cC:#4f46e5;--cM:#d97706;--cO:#059669;--cE:#e11d48;--cN:#0284c7;--cS:#8b5cf6;--cI:#0d9488;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ color-scheme:dark;
+ --bg:#0b0e16;--bg2:#141a29;--card:#151b2a;--tx:#e8ecf4;--mu:#98a2b8;--bd:#242c40;--bd2:#33405c;
+ --acc:#6366f1;--acc2:#8b5cf6;--glass:rgba(13,16,26,.86);--glow:rgba(129,140,248,.25);
+ --sh:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+ --sh2:0 18px 44px rgba(0,0,0,.5);
+ --cC:#818cf8;--cM:#fbbf24;--cO:#34d399;--cE:#fb7185;--cN:#38bdf8;--cS:#a78bfa;--cI:#2dd4bf;
+}}
+:root[data-theme="dark"]{
+ color-scheme:dark;
+ --bg:#0b0e16;--bg2:#141a29;--card:#151b2a;--tx:#e8ecf4;--mu:#98a2b8;--bd:#242c40;--bd2:#33405c;
+ --acc:#6366f1;--acc2:#8b5cf6;--glass:rgba(13,16,26,.86);--glow:rgba(129,140,248,.25);
+ --sh:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+ --sh2:0 18px 44px rgba(0,0,0,.5);
+ --cC:#818cf8;--cM:#fbbf24;--cO:#34d399;--cE:#fb7185;--cN:#38bdf8;--cS:#a78bfa;--cI:#2dd4bf;
+}
+:root[data-theme="light"]{
+ color-scheme:light;
+ --bg:#f4f6fb;--bg2:#eaedf6;--card:#ffffff;--tx:#0e1526;--mu:#5c6478;--bd:#e4e8f1;--bd2:#d3d9e6;
+ --acc:#4f46e5;--acc2:#7c3aed;--glass:rgba(248,249,253,.86);--glow:rgba(99,102,241,.18);
+ --sh:0 1px 2px rgba(14,21,38,.05),0 10px 30px rgba(14,21,38,.06);
+ --sh2:0 18px 44px rgba(14,21,38,.14);
+ --cC:#4f46e5;--cM:#d97706;--cO:#059669;--cE:#e11d48;--cN:#0284c7;--cS:#8b5cf6;--cI:#0d9488;
+}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;transition:background-color .35s ease,color .35s ease;-webkit-font-smoothing:antialiased}
+.w{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* ---------- top brand header ---------- */
+.sitehead{padding:18px 0 4px}
+.trow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;font-size:20px;box-shadow:0 6px 16px var(--glow);flex:none}
+.btxt{display:flex;flex-direction:column;line-height:1.25}
+.btxt b{font-size:16px;letter-spacing:-.01em}
+.btxt small{color:var(--mu);font-size:12px;font-weight:600}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:clamp(26px,5vw,46px) clamp(20px,4vw,42px);margin:14px 0 26px;background:linear-gradient(130deg,#4338ca 0%,#5b21b6 55%,#6d28d9 100%);color:#fff;box-shadow:0 20px 50px rgba(79,70,229,.3)}
+.hero>*{position:relative;z-index:2}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:1}
+.o1{width:340px;height:340px;background:radial-gradient(circle,#22d3ee 0%,transparent 65%);top:-130px;right:-70px;opacity:.5;animation:drift 14s ease-in-out infinite alternate}
+.o2{width:300px;height:300px;background:radial-gradient(circle,#f472b6 0%,transparent 65%);bottom:-150px;left:-60px;opacity:.38;animation:drift 17s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(34px,22px)}}
+.hero h1{margin:0 0 10px;font-size:clamp(26px,5.2vw,42px);line-height:1.12;letter-spacing:-.02em;font-weight:800;animation:fadeUp .6s .05s both}
+.hero p{margin:0;max-width:64ch;opacity:.93;font-size:clamp(14px,1.7vw,16.5px);animation:fadeUp .6s .14s both}
+.stats{display:flex;gap:clamp(16px,3.5vw,38px);margin-top:22px;flex-wrap:wrap;animation:fadeUp .6s .22s both}
+.stat{display:flex;flex-direction:column}
+.stat b{font-size:clamp(24px,3.4vw,33px);font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;text-transform:uppercase;letter-spacing:.09em;opacity:.82;font-weight:700;margin-top:3px}
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;animation:fadeUp .6s .3s both}
+.legend span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:5px 12px;border-radius:99px;font-size:12px;backdrop-filter:blur(4px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ---------- section headings & picks ---------- */
+h2{display:flex;align-items:center;gap:10px;font-size:clamp(18px,2.4vw,21px);margin:26px 0 14px;letter-spacing:-.01em}
+h2::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--acc),var(--acc2));flex:none}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(235px,100%),1fr));gap:12px}
+.pick{position:relative;text-align:left;background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--pk,var(--acc));border-radius:14px;padding:14px 26px 14px 16px;cursor:pointer;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s,border-color .25s,background-color .35s;animation:fadeUp .55s both;animation-delay:calc(var(--i)*70ms)}
+.pick:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--pk,var(--acc))}
+.pick b{display:block;font-size:13.5px;line-height:1.35;margin-bottom:5px}
+.pick small{color:var(--mu);font-size:12px;font-weight:600}
+.pick::after{content:"→";position:absolute;right:12px;top:12px;color:var(--pk,var(--acc));opacity:0;transition:opacity .2s;font-weight:700}
+.pick:hover::after{opacity:1}
+
+/* ---------- sticky glass toolbar ---------- */
+.bar{position:sticky;top:10px;z-index:30;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--bd);border-radius:18px;padding:12px;box-shadow:var(--sh);margin-bottom:8px;transition:background-color .35s,border-color .35s}
+.srow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.search{position:relative;flex:1 1 240px;min-width:200px}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--mu);pointer-events:none}
+#q{width:100%;padding:11px 14px 11px 38px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font-size:15px;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s,background-color .35s}
+#q:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--glow)}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:9px 14px;border-radius:99px;cursor:pointer;font-size:13.5px;font-weight:600;font-family:inherit;transition:all .2s ease;white-space:nowrap}
+.chip:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
+.chip.on{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;border-color:transparent;box-shadow:0 4px 14px var(--glow)}
+.chip.slim{padding:6px 12px;font-size:12.5px}
+.btn{border:0;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;padding:9px 16px;border-radius:99px;cursor:pointer;font-size:13.5px;font-weight:700;font-family:inherit;transition:all .2s;box-shadow:0 4px 14px var(--glow)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px var(--glow);filter:brightness(1.06)}
+select{padding:9px 12px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:13.5px;cursor:pointer;font-family:inherit;font-weight:600}
+.chips{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+
+/* ---------- grid & cards ---------- */
+.ghead{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px;gap:10px}
+#cnt{color:var(--mu);font-size:14px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(430px,100%),1fr));gap:14px}
+.c{background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--k);border-radius:16px;padding:16px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s,border-color .25s,background-color .35s;animation:cardIn .5s cubic-bezier(.22,.9,.32,1) both;animation-delay:calc(var(--i)*45ms)}
+.c:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--k)}
+.c.flash{animation:flash 1.3s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes flash{0%,100%{box-shadow:var(--sh)}35%{box-shadow:0 0 0 4px var(--glow),var(--sh2)}}
+.chead{display:flex;gap:10px;align-items:flex-start;cursor:pointer;outline:none;border-radius:10px}
+.chead:focus-visible{box-shadow:0 0 0 3px var(--glow)}
+.id{flex:none;font-size:12.5px;font-weight:800;color:#fff;background:var(--k);border-radius:8px;padding:3px 8px;letter-spacing:.02em}
+.t{flex:1;font-weight:700;font-size:15.5px;line-height:1.35;min-width:0}
+.star{flex:none;background:none;border:0;font-size:21px;line-height:1.1;cursor:pointer;color:var(--mu);padding:1px 4px;transition:color .2s,transform .2s}
+.star:hover{transform:scale(1.2);color:#f59e0b}
+.star.on{color:#f59e0b;animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(.5)}55%{transform:scale(1.35)}100%{transform:scale(1)}}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
+.tag,.pill{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:99px;background:var(--bg2);color:var(--mu);border:1px solid transparent;transition:background-color .35s,color .35s,border-color .35s}
+.tag.cat{color:var(--k);border-color:var(--k);background:transparent}
+.tag.fast{background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;border-color:transparent;font-weight:700}
+.pill{border-color:var(--bd)}
+.cbd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1)}
+.c.open .cbd{grid-template-rows:1fr}
+.cbi{overflow:hidden;min-height:0;font-size:14px}
+.cbi p{margin:10px 0 0;line-height:1.6}
+.cbi p:first-child{margin-top:14px;padding-top:14px;border-top:1px dashed var(--bd2)}
+.cbi b{color:var(--k)}
+.meters{display:grid;gap:9px;margin-top:14px;padding:12px;border:1px solid var(--bd);border-radius:12px;background:var(--bg2);transition:background-color .35s,border-color .35s}
+.mrow span{font-size:12px;color:var(--mu);font-weight:600}
+.mrow b{color:var(--tx)}
+.meter{height:6px;background:var(--bd);border-radius:99px;overflow:hidden;margin-top:5px}
+.meter u{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--k),var(--acc2));transition:width .9s cubic-bezier(.25,.8,.3,1) .15s}
+.c.open .meter u{width:var(--w)}
+
+/* ---------- empty state, footer, overlays ---------- */
+.none{grid-column:1/-1;text-align:center;padding:46px 16px;color:var(--mu)}
+.none .ne{font-size:40px;margin-bottom:8px}
+.none p{margin:6px 0}
+footer{color:var(--mu);font-size:13px;line-height:1.65;margin:30px 0 96px;border-top:1px solid var(--bd);padding-top:16px;transition:border-color .35s}
+.short{position:fixed;left:12px;right:78px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:40;transform:translateY(150%);transition:transform .45s cubic-bezier(.22,1,.36,1);background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--sh2);pointer-events:none}
+.short.show{transform:none;pointer-events:auto}
+.sin{max-width:1020px;margin:auto;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#sl{flex:1;min-width:130px;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sact{display:flex;gap:8px}
+.sact .btn,.sact .chip{padding:7px 12px;font-size:12.5px}
+.btt{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:41;width:46px;height:46px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;box-shadow:var(--sh2);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s,color .2s,background-color .35s;display:grid;place-items:center;font-size:18px;font-family:inherit}
+.btt.show{opacity:1;transform:none;pointer-events:auto}
+.btt:hover{border-color:var(--acc);color:var(--acc)}
+.icon-btn{flex:none;width:40px;height:40px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;display:grid;place-items:center;transition:border-color .25s,color .25s,transform .25s,background-color .35s}
+.icon-btn:hover{border-color:var(--acc);color:var(--acc);transform:rotate(15deg)}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn .sun{display:none}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]) .icon-btn .sun{display:block}
+ :root:not([data-theme="light"]) .icon-btn .moon{display:none}
+}
+:root[data-theme="dark"] .icon-btn .sun{display:block}
+:root[data-theme="dark"] .icon-btn .moon{display:none}
+
+@media (max-width:560px){
+ .grid{grid-template-columns:1fr}
+ .short{left:10px;right:70px}
+ #sl{white-space:normal;max-height:2.6em;overflow:hidden}
+ .ver{display:none}
+ .btxt small{font-size:11px}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<header class="sitehead">
+ <div class="w trow">
+  <div class="brand">
+   <span class="logo">🎓</span>
+   <span class="btxt"><b>Thesis Topics Explorer</b><small>Communication Engineering · Class of 2026</small></span>
+  </div>
+  <span class="ver" style="color:var(--mu);font-size:12.5px;font-weight:600">Curated catalogue · v2</span>
+ </div>
+</header>
+
+<main class="w">
+ <section class="hero">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <h1>Find the research topic<br>that excites you</h1>
+  <p>A reference-backed catalogue of thesis ideas across seven research domains — Communications, Microwaves &amp; RF, Optical &amp; Photonics, Electronics &amp; FPGA, Networks, Signal Processing &amp; ML, and IoT &amp; Security. Browse, filter, star your favourites and bring your shortlist to the supervisor meeting.</p>
+  <div class="stats">
+   <div class="stat"><b id="stN">–</b><span>curated topics</span></div>
+   <div class="stat"><b id="stC">–</b><span>research domains</span></div>
+   <div class="stat"><b id="stF">–</b><span>fast-track ideas</span></div>
+  </div>
+  <div class="legend">
+   <span>⚡ Fast-track = quick-win candidates</span>
+   <span>S = Speed / feasibility</span>
+   <span>N = Novelty</span>
+   <span>P = Publishability (1–10)</span>
+  </div>
+ </section>
+
+ <h2>Supervisor’s top picks</h2>
+ <div class="picks" id="picks"></div>
+
+ <div class="bar" style="margin-top:22px">
+  <div class="srow">
+   <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Search topics, tools, keywords… (e.g. OTFS, FPGA, VLC)" aria-label="Search topics">
+   </div>
+   <div class="btns">
+    <button class="chip" id="fastb">⚡ Fast-track only</button>
+    <select id="sort" aria-label="Sort topics">
+     <option value="0">Sort: default</option>
+     <option value="1">Highest speed (S)</option>
+     <option value="2">Most novel (N)</option>
+     <option value="3">Most publishable (P)</option>
+    </select>
+    <button class="btn" id="rnd">🎲 Surprise me</button>
+    <button class="icon-btn" id="theme" aria-label="Toggle dark mode" title="Toggle light / dark">
+     <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+     <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+   </div>
+  </div>
+  <div class="chips" id="blocks"></div>
+ </div>
+
+ <div class="ghead">
+  <span id="cnt" aria-live="polite"></span>
+  <button class="chip slim" data-r>Reset filters</button>
+ </div>
+ <div class="grid" id="grid"></div>
+
+ <footer>Scores are the supervisor’s quick estimates of speed/feasibility (S), novelty (N) and publishability (P), on a 1–10 scale. Verify the research gap and references against the original catalogue before citing them in a thesis; preprints carry lower evidence weight than peer-reviewed papers. The full bibliography is in the source report. Your starred shortlist is saved locally in this browser.</footer>
+</main>
+
+<div class="short" id="short">
+ <div class="sin">
+  <b id="sl"></b>
+  <div class="sact">
+   <button class="btn" id="cp">Copy shortlist</button>
+   <button class="chip" id="clr">Clear</button>
+  </div>
+ </div>
+</div>
+<button class="btt" id="btt" aria-label="Back to top">↑</button>
+
+<script>
+var BL={C:["Communications","📡"],M:["Microwaves & RF","📶"],O:["Optical & Photonics","💡"],E:["Electronics & FPGA","🔧"],N:["Networks & 5G/6G","🌐"],S:["Signal Processing & ML","🧠"],I:["IoT, Embedded & Security","🔒"]};
+var CLR={C:"var(--cC)",M:"var(--cM)",O:"var(--cO)",E:"var(--cE)",N:"var(--cN)",S:"var(--cS)",I:"var(--cI)"};
+var D=`C1|Low-overhead OTFS channel estimation (fractional Doppler)|Pilot overhead and fractional-Doppler leakage are the key open problem in OTFS surveys.|Can a sparse pilot plus low-complexity estimator cut overhead while keeping NMSE/BER near the embedded-pulse baseline at high Doppler?|MATLAB/Python OTFS link; CS/OMP vs embedded pulse; optional Pluto SDR|NMSE, BER, pilot %, FLOPs|Leakage breaks sparsity|8|8|8|1
+C2|AFDM vs OTFS vs OFDM: chirp and PAPR optimization|AFDM's advantages and PAPR/diversity trade-offs are still being mapped.|Where does AFDM really win, and can chirp-parameter choice jointly improve PAPR and diversity?|DAFT-based AFDM + OTFS + OFDM testbench; parameter sweep|BER, PAPR CCDF, diversity, SE|Novelty must be in the optimization, not benchmarking|7|8|8|0
+C3|ISAC waveform trade-off: BER vs sensing ambiguity|Balancing data rate and sensing resolution is a core ISAC open issue.|Which multicarrier (OFDM/DFT-s-OFDM/OTFS) gives the best Pareto front between BER and range/Doppler resolution?|MATLAB ISAC sim; ambiguity function + BER; Pareto fronts|BER, PSLR/ISLR, resolution, CRB|Joint target + comm channel modeling|7|8|9|1
+C4|RIS passive beamforming with imperfect CSI + SDR validation|Experimental validation and realistic CSI are repeatedly flagged as lacking.|How much ideal RIS gain survives estimated/quantized CSI, and can a robust codebook recover it?|MATLAB RIS sim; optional 1-bit panel + SDR testbed|Received SNR/sum-rate vs CSI error, outage|Hardware calibration|6|8|8|0
+C5|Robustness of semantic communication (DeepSC) under channel mismatch|Robustness, semantic metrics and generalization are open challenges.|How does a Transformer semantic receiver degrade under channel/SNR shift, and can light fine-tuning restore fidelity?|PyTorch DeepSC (open code); vary channel|BLEU/semantic similarity, BER, throughput|Noisy semantic metrics; keep to text|8|7|8|1
+C6|Scalable detection/precoding for cell-free massive MIMO|Fronthaul, complexity, pilot contamination and sync limit cell-free gains.|Can a user-centric low-complexity local detector approach centralized MMSE with far less fronthaul/compute?|MATLAB/Python cell-free sim; centralized vs distributed|SE, NMSE, fronthaul load, FLOPs|Baseline scalability|6|8|8|0
+C7|Generalization of neural OFDM receivers under distribution shift|Learned receivers work in-distribution; generalization and data efficiency are open.|Which lightweight architecture/training best preserves BER when test channels differ from training?|PyTorch/Sionna; cross-channel train/test; optional FPGA profiling|BER across shift, model size, FLOPs|Novelty must come from the robustness mechanism|8|7|7|1
+C8|Distance-adaptive modulation for sub-THz links|THz links face path loss, blockage and hardware limits.|Can distance/CSI-driven modulation and bandwidth adaptation maximize throughput under blockage and phase noise?|MATLAB/Python THz link budget + adaptive MCS|Throughput, outage, SE vs distance|Simulation-only (acceptable)|7|7|7|0
+C9|Robust artificial-noise PLS with imperfect eavesdropper CSI|PLS schemes often assume ideal CSI; robustness for URLLC/RIS is open.|How does secrecy rate degrade with eavesdropper-CSI error, and can robust AN power allocation keep positive secrecy?|MATLAB MISO/MIMO secrecy-rate analysis; Monte-Carlo|Secrecy rate/outage vs CSI error, AN split|Statistical channel modeling|8|8|8|0
+C10|Fluid/movable-antenna position optimization|Hardware and channel-model realism are open for fluid antennas.|Under a realistic correlated channel, how much gain does optimal port selection give, and at what switching cost?|MATLAB/Python FAS channel model; port optimization|Outage, SE, ports vs gain|Channel-model validity; simulation-only|7|8|7|0
+C11|Hybrid beamforming for mmWave massive MIMO (analog-digital split)|Full-digital precoding needs one RF chain per antenna, so cost and power push designs toward hybrid architectures.|How many RF chains and phase-shifter states are needed to approach full-digital spectral efficiency, and which codebook or greedy algorithm gets closest?|MATLAB Saleh-Valenzuela channel; SVD and greedy hybrid precoding sweeps|Spectral efficiency vs RF chains, energy efficiency, complexity|Cluster channel realism|7|7|8|0
+C12|NOMA vs OMA for URLLC under finite blocklength|NOMA gains are proven for long codewords, but finite-blocklength URLLC behavior with SIC errors is unsettled.|Does NOMA with SIC still beat OMA when packets are 100-500 bits and latency is a hard constraint?|MATLAB finite-blocklength analysis (normal approximation); user-pairing sweep|Effective throughput, block error rate, latency percentiles|Two-user model simplicity|8|7|8|0
+C13|Ambient IoT backscatter: link budget and rate limits|Backscatter tags are near-zero-power, but link budgets on ambient cellular/FM carriers are tight.|What range and data rate can an ambient-IoT tag achieve on available carriers, and which modulation and coding helps most?|MATLAB link-budget model; optional SDR + printed tag prototype|BER vs distance, harvested power, achievable rate|Carrier availability assumptions|7|8|7|1
+C14|Beam tracking for high-mobility mmWave V2I links|Beam alignment collapses at vehicular speeds; predictive tracking is open.|Can position- and velocity-predicted beam tracking cut beam failure vs exhaustive sweeping?|Ray-traced or GEMV channel + Kalman predictor in MATLAB|Beam-failure rate, throughput, alignment delay|Mobility-model realism|7|7|7|0
+C15|UAV base-station placement and resource allocation for emergency coverage|Joint 3D placement, bandwidth and power allocation for aerial base stations is unsettled.|Where should the UAV hover and how should it allocate power and spectrum to maximize covered users at minimum energy?|Python/MATLAB convex or DRL placement optimizer|Coverage percent, per-user SE, UAV energy|Air-to-ground channel model choice|7|7|7|0
+M1|Low-complexity DPD for mmWave PAs (polynomial vs neural)|Model complexity and sampling rate are practical DPD barriers.|What is the best EVM/ACLR-vs-complexity trade-off between pruned memory-polynomial and compact NN DPD?|PA behavioral model + DPD; optional GPU/FPGA|EVM, ACLR, NMSE, FLOPs|Model mismatch to real PA|9|7|8|1
+M2|Doherty vs load-modulated balanced amplifier at back-off|Wideband high-efficiency PAs at back-off remain challenging.|For a 5G NR band and PAPR, which architecture gives better average efficiency/linearity, and why?|ADS/Cadence load-pull; optional PCB fab|Efficiency/PAE vs back-off, gain, ACLR|Needs EM tools, maybe fab|6|7|7|0
+M3|SIW filter miniaturization for 5G/mmWave|Miniaturization and multiband control remain design challenges.|Can an air-filled/defected SIW topology shrink footprint while keeping loss and selectivity?|HFSS/CST sweep; optional PCB + VNA|S-parameters, loss, size, Q|Fabrication tolerance|7|6|7|1
+M4|Low-input-power rectenna for RF energy harvesting|Rectenna efficiency collapses at low incident power.|Can a matching/rectifier topology raise PCE at −20…0 dBm across ISM bands?|ADS harmonic balance; optional PCB measurement|PCE vs power/frequency, sensitivity|Diode model accuracy|7|6|7|0
+M5|Integrated microwave-photonic filter (tunable, high rejection)|Integration, loss and reconfigurability challenge MWP filters.|Can a modeled integrated MWP filter hit target rejection/tunability with realistic components?|VPIphotonics/OptiSystem or MATLAB link model|S21, rejection, tuning range, SFDR, NF|Photonic tool access|6|8|8|0
+M6|Microwave-photonic ISAC (full-duplex / fiber-wireless)|Self-interference and integration are open in MWP-ISAC.|How does a photonic ISAC front-end trade EVM against sensing resolution, and can self-interference be suppressed photonically?|VPI/OptiSystem + MATLAB co-sim|EVM, PSLR, isolation, SFDR|Complex co-simulation|5|8|9|0
+M7|Additive-manufactured RF/microwave components|Loss, tolerance and metallization are open for printed RF.|What loss/bandwidth is achievable for a printed filter/horn, and what tolerance budget is acceptable?|HFSS/CST → 3D print + metallize → VNA|S-parameters, loss, tolerance sensitivity|Metallization quality|7|6|7|1
+M8|Photonic-assisted THz generation and link impairments|Phase noise, bandwidth and photodiode saturation limit links.|How do laser linewidth and modulator/photodiode limits bound THz link EVM/throughput?|VPI/OptiSystem heterodyne model + MATLAB DSP|EVM, phase-noise penalty, throughput|Tool access; simulation-only|6|7|7|0
+M9|RIS/metasurface unit-cell design + SDR over-the-air test|SDR-validated 1-bit panels are very recent; validation is sparse.|Can a low-cost 1-bit unit cell and panel deliver predicted beamforming gain over the air?|HFSS unit cell → panel → SDR RSSI/SNR|Reflection phase/loss, SNR gain|Fabrication + calibration|5|7|7|0
+M10|ML-based inverse design of microwave filters|Accuracy, generalization and uncertainty are open.|Can a generative/inverse model map target S-parameters to geometry faster and more reliably than optimization?|Python GAN/inverse NN + HFSS/CST dataset|Design time, S-parameter error, success rate|Dataset generation cost|8|7|8|1
+M11|Wide-scan phased array for 28 GHz with reduced scan loss|Gain falls and element counts explode at wide scan angles in mmWave arrays.|Can a sub-array or lens-corrected layout hold gain and sidelobes across ±60° scan?|HFSS/CST array modeling; optional prototype and chamber time|Gain vs scan angle, sidelobe level, S11, element count|Fabrication tolerance|6|6|7|0
+M12|Antenna-in-package integration for mmWave modules|Package integration cuts interconnect loss but suffers coupling and efficiency loss.|How much efficiency survives antenna-in-package integration, and which feed/ground strategy recovers it?|HFSS/CST with realistic package stackup|Efficiency, gain, port isolation, footprint|Stackup and via modeling|6|7|7|0
+M13|Broadband polarization-insensitive metamaterial absorber|Most absorbers are narrowband or single-polarization.|Can a multi-resonant unit cell deliver over 90% absorption across a target band for both polarizations?|CST parametric sweep + equivalent-circuit interpretation|Absorption vs frequency and angle, thickness, bandwidth|Unit-cell coupling accuracy|7|6|7|1
+M14|Envelope-tracking supply modulation for wideband PAs|Envelope-tracking efficiency collapses once signal bandwidth exceeds modulator bandwidth.|What supply bandwidth and resolution keep PAE at 100 MHz-class signals, and can a digital ET loop close the gap?|ADS envelope-tracking behavioral model; modulator sweep|PAE vs bandwidth, EVM, memory effects|Modulator modeling fidelity|6|7|7|0
+M15|Flexible wearable antenna for WBAN with body-phantom validation|On-body detuning and SAR limit wearable antenna designs.|Can a textile antenna keep resonance, gain and SAR compliance on-body across poses and bending?|CST voxel-body model; optional fabric prototype + VNA|S11 on/off body, gain, SAR, bending sensitivity|Phantom realism|7|6|7|1
+O1|Complexity-aware neural equalizers for coherent optical links|NN equalizers beat linear DSP on nonlinearity but at high complexity.|What is the best Q-factor-vs-FLOPs Pareto among compact NNs and digital back-propagation?|Coherent link sim (split-step); prune/quantize NN|Q/BER, FLOPs, latency|Fiber-model fidelity|8|7|8|1
+O2|Joint LED-nonlinearity + PAPR mitigation for OFDM-VLC|PAPR reduction and LED pre/post-distortion exist but are not unified.|Can a low-complexity receiver-side post-distorter plus PAPR scheme beat either alone?|MATLAB DCO/ACO-OFDM + LED model; optional cheap LED+photodiode bench|BER, EVM, PAPR CCDF, complexity|LED model accuracy|9|7|8|1
+O3|FSO turbulence mitigation (adaptive optics / diversity / ML)|Turbulence is the dominant FSO impairment; mitigation is wide open.|Which low-complexity mitigation gives the best outage/BER gain at a given turbulence strength?|MATLAB Gamma-Gamma sim; optional bench with hot air|BER, outage, scintillation index|Turbulence-model realism|7|7|8|0
+O4|Hybrid FSO/RF link switching (ping-pong mitigation)|Switching is mostly simulated; experiments are lacking.|Can dual-threshold/predictive switching cut outages and handovers vs single-threshold RSSI?|MATLAB hybrid sim; optional laser+RF testbed|Outage, handover rate, latency|Hardware stability|7|7|7|0
+O5|Adaptive modulation for underwater optical links|Range/rate collapse with turbidity.|Can turbidity-driven MCS switching hold target BER across water types better than fixed modulation?|MATLAB Beer–Lambert + scattering; optional tank|BER vs distance/turbidity, throughput|Channel-model accuracy|9|7|7|1
+O6|ML equalization for short-reach IM/DD (datacenter/PON)|ML helps bandwidth/chirp limits but complexity and latency matter.|Can a compact equalizer meet FEC threshold at higher baud with lower power than Volterra/FFE?|IM/DD link; NN vs Volterra|BER vs received power, FLOPs, latency|Device-model fidelity|8|7|7|1
+O7|Hollow-core fiber system implications|HCF now beats silica loss; system-level exploitation is open.|How much reach/launch-power/latency advantage does HCF give a coherent long-haul link vs SMF?|Link budget + GN-model capacity sim|Reach, OSNR margin, latency, capacity|HCF parameter availability|7|8|8|0
+O8|CV-QKD: reconciliation and discrete-modulation security|Reconciliation efficiency and finite-size security are open.|Can reconciliation/code design raise secret-key rate at long distance under finite-size effects?|CV-QKD sim (GG02/discrete); LDPC reconciliation|Secret-key rate vs distance, efficiency|Security-proof depth|6|8|8|0
+O9|Photonic neural network for comm signal processing|Photonic NNs are limited by noise, distortion and integration.|Can a modeled photonic equalizer match an electronic NN within realistic noise/precision?|Python MZI-mesh model + comm task|Accuracy/BER, energy/bit, precision sensitivity|Photonic nonidealities|6|8|8|0
+O10|Co-packaged optics: link, energy and thermal modeling|Coupling, energy and thermal integration are challenges.|At what reach/bandwidth does CPO beat pluggables in energy/bit, and how sensitive is it to coupling loss?|Python/Matlab link + energy model; optional OptiSystem|Energy/bit, BER, coupling sensitivity|Component data|7|7|7|0
+O11|LiFi attocell networking: handover and interference management|LiFi attocells are tiny, so handover and load balancing dominate user experience.|Which handover and load-balancing policy holds user throughput while limiting ping-pong in a LiFi + WiFi room?|MATLAB room-scale attocell model with hybrid VLC/RF|Per-user throughput, handover rate, outage|Light-layout sensitivity|8|7|8|0
+O12|Mode-division multiplexing over few-mode fiber with tractable MIMO|Mode coupling forces huge MIMO equalizers in MDM links.|How much crosstalk can fiber design remove so the MIMO equalizer stays tractable at target BER?|Coupled-mode simulation + MIMO equalization sweep|BER, crosstalk, MIMO size, FLOPs|Fiber parameter realism|7|7|8|0
+O13|OAM multiplexing in free-space links under turbulence|Orbital-angular-momentum multiplexing is fragile to turbulence and misalignment.|How much OAM capacity survives realistic turbulence and aperture misalignment, and can MIMO DSP recover it?|MATLAB OAM beam propagation with turbulence phase screens|Inter-mode crosstalk, BER vs misalignment, capacity|Aperture and phase-screen assumptions|6|8|8|0
+O14|Thermal stabilization of silicon photonic microring filters|Microring resonances drift with temperature and tuning power is a real cost.|Can a feed-forward plus trim control loop hold resonance with minimal heater power?|Behavioral ring model + control-loop simulation in Python|Resonance drift, heater power, extinction ratio|Thermal crosstalk modeling|6|7|7|0
+O15|Fast low-cost FBG interrogation for structural health monitoring|FBG sensors are mature, but fast low-cost demodulation is not.|Can an edge interrogation scheme reach kHz refresh with picometer-class accuracy at low cost?|MATLAB FBG spectrum + peak/edge algorithms; optional bench demo|Wavelength resolution, refresh rate, cost proxy|Sensor count vs speed trade|8|6|7|1
+E1|Low-latency polar/LDPC decoder on FPGA|Polar decoders are hardware-hard; fast SCL architectures are active.|Can a simplified-node SCL schedule cut latency/area while keeping FER near list-decoding for 5G NR lengths?|MATLAB/Python → HLS/Verilog on FPGA|FER, Mbps, latency, LUT/BRAM|FPGA resource fit|8|7|8|1
+E2|DSP equalization for 224G SerDes (FFE/DFE vs ML)|Equalization power/complexity is the frontier at 40 dB loss.|Can a reduced-tap or ML-assisted equalizer hit BER target at lower power than FFE/DFE?|PAM-4 channel sim; optional FPGA subset|BER vs insertion loss, taps, power|Channel realism|7|7|8|0
+E3|FPGA-verified neural OFDM receiver|Neural receivers are mostly software; real-time FPGA is open.|Can a quantized/pruned NN receiver match a conventional one on FPGA within latency/resource budget?|PyTorch → fixed-point → HLS/Verilog; SDR loopback|BER, throughput, latency, LUT/DSP|Fixed-point degradation|7|7|8|1
+E4|Sub-THz CMOS transceiver: impairments and architecture|Phase noise, PA efficiency and MIMO integration are key challenges.|Which architecture/compensation gives the best D-band EVM/throughput under CMOS limits?|Behavioral transceiver model; ADS if available|EVM, throughput, phase-noise penalty, power|Behavioral sim only|6|7|7|0
+E5|PUF hardware security: ML modeling attacks and defenses|PUFs are vulnerable to ML modeling; an active arms race.|How resilient is an arbiter/XOR PUF to modern ML, and does lightweight obfuscation raise attack cost?|Python CRP dataset + ML attack; optional FPGA PUF|Prediction accuracy, uniqueness, attack cost|Dataset realism|9|7|7|1
+E6|Low-power rectifier/PMIC for RF energy harvesting|Low-power efficiency and cold start are open.|Can a rectifier/charge-pump topology improve end-to-end efficiency at −20 dBm and cold-start voltage?|ADS/SPICE; optional PCB|PCE, cold-start voltage, regulation|Device models|7|6|7|0
+E7|GPU vs FPGA realization of DPD|Platform choice trades latency, power and throughput.|For a fixed DPD model, which platform meets latency/power at target bandwidth?|Model → CUDA GPU and HLS FPGA|Latency, throughput, power, resources|Hardware access|7|6|7|1
+E8|Hardware-aware compression of communication NNs|Learned PHY blocks are too heavy for edge hardware.|How far can a comm NN be pruned/quantized before BER/EVM degrades, and what energy/area is saved?|PyTorch compression → FPGA/ASIC cost model|BER/EVM vs bit-width/sparsity, energy/bit|Accuracy cliff|8|7|7|1
+E9|RISC-V soft core vs ASIC accelerator for channel decoding|Fixed ASIC decoders are fast but rigid; soft cores are flexible but slow.|Where is the throughput/energy crossover, and can custom instructions close the gap?|HLS/RISC-V simulation with synthesis cost estimates|Throughput, area, energy per decoded bit|Synthesis-model assumptions|6|7|7|0
+E10|Low-jitter time-to-digital converter for all-digital PLLs|TDC quantization noise sets ADPLL jitter; topology choice is unsettled.|Which TDC topology (vernier, flash, GRO) meets sub-picosecond resolution at target power?|Verilog/SPICE simulation; optional FPGA prototype|Resolution, RMS jitter, power, linearity|Metastability handling|6|6|7|0
+E11|Memory-bandwidth-aware CNN accelerator for edge FPGAs|Edge FPGA inference is memory-bound, not compute-bound.|Can a fused, layer-stationary dataflow hit real-time FPS under on-chip memory limits?|HLS CNN accelerator with quantized model|FPS, energy per inference, BRAM/DSP utilization|Quantization accuracy drop|8|7|7|1
+E12|High-frequency resonant converter for wireless power transfer|WPT efficiency drops sharply with distance and coil misalignment.|What frequency and topology maximize end-to-end efficiency across alignment offsets?|SPICE link model; optional coil prototype|Efficiency vs distance and misalignment, EMI|Coil and coupling model accuracy|7|6|6|0
+E13|Sub-Nyquist compressive ADC for wideband spectrum sensing|Wideband sensing needs multi-GS/s ADCs that are power-hungry.|How much compression can a modulated wideband converter deliver while keeping reconstruction SNR?|Python MWC model with OMP/SP recovery|Reconstruction SNR, compression ratio, latency|Filter-boundary modeling|7|8|8|0
+N1|O-RAN xApp for real-time RAN control (RL)|Intelligence, real-time control and conflicts are open.|Can an RL xApp beat a heuristic baseline on throughput/latency within near-RT RIC timing?|OpenRAN Gym / ns-3 / srsRAN; RL agent|Throughput, latency, PRB use, inference time|Stack complexity|7|7|8|1
+N2|O-RAN security and xApp conflict detection|Openness adds security and xApp-conflict risks.|Can a lightweight detector flag conflicting/malicious xApp policies before KPIs degrade?|O-RAN sim + conflict dataset; ML detector|Detection rate, false alarms, KPI impact|Realistic conflict data|7|7|7|0
+N3|Network digital twin: fidelity vs cost|NDTs lack unified architecture and validation methods.|What fidelity does a twin need to predict KPIs for what-if control at acceptable sync cost?|ns-3/OMNeT++ + twin sync loop|Prediction error, sync overhead, decision quality|Twin calibration|7|7|7|0
+N4|Wireless TSN: deterministic latency over Wi-Fi/5G|Extending TSN determinism to wireless is open.|Can a scheduling/shaping scheme bound end-to-end latency/jitter for periodic traffic over wireless?|ns-3/OMNeT++ TSN + wireless; optional testbed|E2E latency, jitter, loss, schedulability|Wireless variability|7|7|8|1
+N5|5G–TSN integration: time sync and scheduling|Industrial 5G+TSN integration has open issues.|Can a cross-domain scheduler and sync mechanism hold the TSN latency budget across a 5G bridge?|5G+TSN co-sim (ns-3/sim5G)|E2E latency, sync error, jitter|Co-sim complexity|6|7|7|0
+N6|LEO constellation routing under dynamic topology|Fast topology change, handovers and load imbalance.|Can a lightweight DRL/graph routing scheme cut latency/handovers vs shortest-path?|Python/ns-3 Starlink-like topology; routing agent|E2E latency, handovers, throughput, convergence|Topology realism|7|7|8|1
+N7|ML congestion control: generalization and fairness|Learned CC improves throughput but generalization/fairness are open.|Does an RL CC policy generalize across unseen RTT/bandwidth without harming fairness vs CUBIC/BBR?|ns-3 / Pantheon / mahimahi; RL CC|Throughput, delay, fairness, loss|Sim-to-real gap|8|7|7|1
+N8|Energy-efficient federated learning over wireless|Energy, communication overhead and heterogeneity limit FL.|Can client selection/compression cut energy-to-accuracy under wireless constraints?|PyTorch FL + wireless channel sim|Energy-to-accuracy, rounds, comm load|Convergence stability|7|7|7|0
+N9|DRL for RAN slicing resource allocation|Generalization and SLA guarantees are open.|Can an online DRL allocator meet slice SLAs under non-stationary demand better than heuristics?|Python/ns-3 slicing sim; DRL|SLA satisfaction, utilization, throughput|Reward design|7|7|7|1
+N10|Beyond-50G / coherent PON: reach and split budget|Beyond-100G/coherent PON faces reach, split and cost challenges.|Can a coherent/direct-detect scheme extend reach/split at target BER within the PON power budget?|OptiSystem/MATLAB PON link; optional testbed|BER vs reach/split, power budget, cost proxy|Component models|7|7|7|0
+N11|Wi-Fi 7 multi-link operation: when does MLO pay off|Multi-link operation is the headline 802.11be feature, but real gains depend on traffic and synchronization.|Under which traffic patterns does MLO beat single-link aggregation, and which steering rule maximizes throughput and latency?|ns-3 Wi-Fi 7 module or analytical queuing model|Throughput, latency, per-link utilization|Maturity of ns-3 Wi-Fi 7 model|8|7|8|1
+N12|5G NTN random access and timing advance for LEO beams|LEO Doppler shifts and 1000+ km delays stress the 5G random-access procedure.|Which pre-compensation scheme keeps access success at target under Doppler and delay spreads?|MATLAB/ns-3 NTN link + RA procedure simulation|RA success rate, timing-advance error, access delay|Ephemeris error assumptions|7|7|8|0
+N13|LLM-assisted network configuration with validate-and-repair guardrails|LLMs can draft device configs but hallucinate; production guardrails are missing.|Can a syntax plus semantic validate-and-repair loop make LLM-generated configs safe for lab networks?|Lab testbed + LLM pipeline with validators|Task success rate, config error count, human edits needed|Model/API dependency|8|8|7|1
+N14|Mobility-aware computation offloading for vehicular edge computing|Offloading to roadside MEC fails as vehicles move and migration is costly.|When should a task migrate, restart, or stay local as the vehicle moves along a road?|SUMO + ns-3 or Python event-driven simulation|Task latency, migration cost, completion rate|Mobility-trace realism|7|7|8|0
+N15|Post-quantum TLS 1.3 handshakes on constrained gateways|PQC handshakes are heavier; the cost on class-2 gateways is not well measured.|What latency and energy do Kyber/Dilithium TLS 1.3 handshakes add on constrained gateway hardware?|OpenSSL + liboqs benchmarks on a gateway board|Handshake latency, bytes on wire, CPU and energy|Device representativeness|8|6|7|1
+S1|Few-shot adaptation for automatic modulation recognition|AMC models degrade on unseen SNR and channels; few-shot adaptation is open.|Can a meta-learned or prototypical AMC adapt to a new channel with 5-10 labeled examples?|PyTorch on RadioML dataset plus synthetic channel shifts|Accuracy vs SNR, samples needed, model size|RadioML dataset bias|8|7|8|1
+S2|Unsupervised anomaly detection for RF jamming and intrusion|Labelled attack data is scarce, so unsupervised detection is underexplored.|Can an autoencoder on IQ and spectral features flag jamming and rogue transmitters without labels?|SDR captures or simulated attacks + PyTorch autoencoder|AUC, detection latency, false-alarm rate|Attack-model coverage|8|7|7|1
+S3|Compact learned channel prediction for proactive beam management|MMSE prediction fades fast; how far NNs can look ahead is unsettled.|How far ahead in milliseconds can a compact NN predict CSI well enough for proactive beam switching?|MATLAB channel traces + PyTorch LSTM/TCN|NMSE vs horizon, beam-failure rate, FLOPs|Trace representativeness|7|7|7|0
+S4|Real-time micro-Doppler radar activity recognition on edge hardware|Radar human-activity recognition is accurate offline but embedded deployment lags.|Can a pruned CNN classify micro-Doppler signatures under 100 mW with acceptable accuracy?|FMCW radar dataset + TFLite Micro or FPGA deployment|Accuracy, latency, power, memory footprint|Dataset diversity|8|6|7|1
+S5|Event-driven adaptive sampling for vibration monitoring|Uniform Nyquist sampling wastes energy when signals are sparse in time.|Can level-crossing/event-driven sampling cut node energy at bounded reconstruction error?|Python codec simulation on public vibration datasets|Reconstruction error, sampling rate, energy saved|Reconstruction algorithm choice|8|6|7|0
+S6|Direction-of-arrival estimation with learned priors under few snapshots|MUSIC/ESPRIT degrade with few snapshots and coherent sources.|Can a learned estimator beat classical DoA at 10-50 snapshots without losing resolution?|Python simulation + optional SDR captures|RMSE vs SNR and snapshots, resolution, runtime|Grid mismatch for NN estimators|7|7|7|0
+S7|Over-the-air time synchronization for distributed antenna arrays|Distributed MIMO needs sub-100 ns sync; cable and GPS sync is costly.|Can OTA two-way exchange with Kalman filtering hold sub-100 ns phase coherence?|Simulation + optional SDR testbed|RMS sync error, drift, convergence time|Oscillator-quality modeling|7|8|8|0
+S8|Continual learning for receivers on non-stationary channels|Channels drift and periodic retraining is costly; forgetting hurts performance.|Can replay/regularization-based continual learning keep BER stable across channel drift?|PyTorch receiver + drifting channel sequences|BER over time, forgetting metric, retrain cost|Drift-model realism|8|8|7|0
+S9|Generative waveform design under spectral masks|Learned waveforms can beat standards but often violate PAPR and out-of-band masks.|Can constraint-aware generative optimization produce waveforms that meet masks while improving BER?|PyTorch GAN/VAE with constraint penalty optimization|PAPR, out-of-band emission, BER vs baselines|Regulatory-mask realism|6|8|9|0
+S10|RF fingerprinting for device identification under hardware drift|RF fingerprints enable security but drift with temperature and aging.|How stable are RF fingerprints over weeks, and can domain adaptation keep identification accuracy?|SDR captures over time + Python ML pipeline|Identification accuracy vs time, equal error rate|Capture-drift control|8|7|7|0
+I1|LoRaWAN capacity in dense campus-scale deployments|Pure-Aloha collisions cap LoRa capacity; spreading-factor allocation is unsettled.|Which SF and power allocation policy maximizes packet delivery at 1000+ nodes?|Python/ns-3 LoRa simulator with policy sweep|Packet delivery ratio, capacity, energy per node|Propagation-model realism|8|6|7|1
+I2|NB-IoT energy-per-report profiling and reporting optimization|Battery-life claims rarely match field behavior of NB-IoT devices.|What energy does one sensor report really cost, and which reporting strategy doubles battery life?|ns-3 NB-IoT or field captures with power profiler|Energy per report, battery years, coverage|Device variability|7|6|7|0
+I3|BLE Mesh vs Wi-SUN for smart-meter scale mesh networks|Field-grade comparisons of mesh IoT stacks are scarce.|Which stack holds latency and delivery at 500+ nodes under duty-cycle limits?|Contiki-NG/OMNeT++ mesh simulation|Latency, delivery ratio, join time, energy|Simulator fidelity|7|6|7|0
+I4|TinyML keyword spotting under a milliwatt budget|Always-on keyword spotting is too heavy for most MCUs.|Can architecture search plus INT8 quantization deliver 90%+ accuracy under 1 mW?|TensorFlow Lite Micro on an MCU or emulator|Accuracy, RAM, energy per inference|Mic/array mismatch|9|6|7|1
+I5|Fail-safe OTA firmware updates for constrained nodes|A failed update bricks remote nodes; recovery guarantees are rare.|Can signed A/B-partition updates guarantee recovery with under 30 s downtime on an MCU?|MCU prototype (STM32-class) + crypto library|Update time, recovery rate, flash overhead|Threat-model scope|8|6|7|0
+I6|Lightweight jamming detection and channel-hopping response for IoT meshes|Mesh IoT lacks intrusion detection; coordinated response is open.|Can an RSSI/CSR-based detector trigger hopping fast enough to hold delivery under attack?|ns-3 attack scenarios + detector agent|Detection latency, delivery under attack, false alarms|Jammer modeling|7|7|7|0
+I7|Intermittent computation for energy-harvesting sensor nodes|Harvested nodes lose state on brownout; checkpointing costs energy.|Which checkpoint strategy maximizes useful work per day under real solar/RF traces?|MSP430-class simulation + harvested power traces|Task completion rate, checkpoint overhead, uptime|Harvest-trace realism|7|7|7|0
+I8|UWB indoor positioning under NLOS with bias compensation|UWB is centimeter-accurate in line of sight but NLOS bias ruins it indoors.|Can NLOS identification plus bias correction hold 30 cm RMSE across a cluttered floor?|DW3000-class experiments or ray-traced simulation|RMSE/CEP vs NLOS ratio, refresh rate|Anchor-placement sensitivity|8|6|7|0
+I9|Side-channel-resistant AES on Cortex-M: masking vs hiding trade-offs|Software AES leaks through power; countermeasures cost cycles and code size.|How much leakage do masking and hiding countermeasures remove per extra cycle?|Cycle-accurate simulation + power traces|Leakage (t-test), cycles, code size|Trace-acquisition access|7|7|7|0
+I10|Adaptive QoS for MQTT/CoAP over lossy wireless links|IoT application-layer protocols degrade silently as packet loss rises.|Which QoS and keepalive adaptation keeps latency and reliability targets across loss levels?|Linux netem emulation + brokers, or ns-3|Latency percentiles, success rate, overhead|Broker implementation variance|8|5|7|1
+`.split("\n").filter(function(l){return l.trim()}).map(function(l,i){var p=l.split("|");return{id:p[0],t:p[1],g:p[2],q:p[3],m:p[4],x:p[5],r:p[6],S:+p[7],N:+p[8],P:+p[9],f:p[10]==="1",k:p[0][0],i:i}});
+var PK=[["C1","Strongest balanced pick"],["C3","Theory-strong and publishable"],["O2","⚡ Fastest to publish"],["M1","⚡ Fast and practical"],["C9","Strong theory contribution"],["S1","⚡ Dataset ready — ML angle"]];
+var $=function(i){return document.getElementById(i)};
+var st={b:"all",f:false,q:"",s:0,fav:[],open:{}};
+try{var sv=localStorage.getItem("fav");if(sv)st.fav=JSON.parse(sv)||[]}catch(e){}
+function save(){try{localStorage.setItem("fav",JSON.stringify(st.fav))}catch(e){}}
+
+/* ---------- hero stats ---------- */
+$("stN").textContent=D.length;
+$("stC").textContent=Object.keys(BL).length;
+$("stF").textContent=D.filter(function(d){return d.f}).length;
+
+/* ---------- build chips & picks ---------- */
+$("blocks").innerHTML=["All "+D.length].map(function(t){return '<button class="chip on" data-b="all">'+t+"</button>"}).concat(Object.keys(BL).map(function(k){return '<button class="chip" data-b="'+k+'">'+BL[k][1]+" "+BL[k][0]+"</button>"})).join("");
+$("picks").innerHTML=PK.map(function(p,i){var d=D.filter(function(x){return x.id===p[0]})[0];
+ return '<button class="pick" data-p="'+d.id+'" style="--pk:'+CLR[d.k]+';--i:'+i+'"><b>'+d.id+" · "+d.t+"</b><small>"+p[1]+"</small></button>"}).join("");
+
+/* ---------- card template ---------- */
+function mt(l,v){return '<div class="mrow"><span>'+l+" — <b>"+v+"/10</b></span></div><div class=\"meter\"><u style=\"--w:"+(v*10)+'%"></u></div>'}
+function card(d,i){
+ var s=st.fav.indexOf(d.id)>-1,o=!!st.open[d.id],ci=Math.min(i,11);
+ return '<article class="c'+(o?" open":"")+'" style="--k:'+CLR[d.k]+';--i:'+ci+'" data-id="'+d.id+'">'
+ +'<div class="chead" role="button" tabindex="0" aria-expanded="'+o+'" data-t="'+d.id+'"><span class="id">'+d.id+'</span><span class="t">'+d.t+'</span><button class="star'+(s?" on":"")+'" data-s="'+d.id+'" aria-label="'+(s?"Remove from":"Add to")+' shortlist">'+(s?"★":"☆")+"</button></div>"
+ +'<div class="meta"><span class="tag cat">'+BL[d.k][1]+" "+BL[d.k][0]+"</span>"+(d.f?'<span class="tag fast">⚡ Fast-track</span>':"")+'<span class="pill">S '+d.S+'</span><span class="pill">N '+d.N+'</span><span class="pill">P '+d.P+"</span></div>"
+ +'<div class="cbd"><div class="cbi">'
+ +'<p><b>The gap.</b> '+d.g+"</p>"
+ +"<p><b>Your question.</b> "+d.q+"</p>"
+ +"<p><b>Method &amp; tools.</b> "+d.m+"</p>"
+ +"<p><b>Metrics.</b> "+d.x+"</p>"
+ +"<p><b>Watch out for.</b> "+d.r+"</p>"
+ +'<div class="meters">'+mt("Speed / feasibility",d.S)+mt("Novelty",d.N)+mt("Publishability",d.P)+"</div>"
+ +"</div></div></article>";
+}
+
+/* ---------- render ---------- */
+function render(){
+ var q=st.q.trim().toLowerCase();
+ var L=D.filter(function(d){return(st.b==="all"||d.k===st.b)&&(!st.f||d.f)&&(!q||(d.id+" "+d.t+" "+d.g+" "+d.q+" "+d.m+" "+d.x+" "+BL[d.k][0]).toLowerCase().indexOf(q)>-1)});
+ if(st.s>0){var key=["S","N","P"][st.s-1];L=L.slice().sort(function(a,b){return b[key]-a[key]})}
+ $("cnt").textContent=L.length+" of "+D.length+" topics";
+ $("grid").innerHTML=L.length?L.map(card).join(""):'<div class="none"><div class="ne">🔍</div><p><b>No topics match your filters.</b></p><p>Try a different keyword, or</p><button class="chip" data-r>Reset filters</button></div>';
+ var sh=$("short");sh.className="short"+(st.fav.length?" show":"");
+ $("sl").textContent="⭐ Shortlist: "+(st.fav.length?st.fav.join(", "):"empty");
+}
+
+/* ---------- actions ---------- */
+function setB(){[].forEach.call(document.querySelectorAll("[data-b]"),function(c){c.classList.toggle("on",c.getAttribute("data-b")===st.b)})}
+function resetFilters(){st.b="all";st.f=false;st.q="";st.s=0;$("q").value="";$("fastb").classList.remove("on");$("sort").value="0";setB();render()}
+function toggleOpen(id){var el=document.querySelector('[data-id="'+id+'"]');if(!el)return;var o=!el.classList.contains("open");el.classList.toggle("open",o);var h=el.querySelector(".chead");if(h)h.setAttribute("aria-expanded",o);st.open[id]=o}
+function toggleFav(id){var i=st.fav.indexOf(id),on=i<0;if(on)st.fav.push(id);else st.fav.splice(i,1);save();
+ var b=document.querySelector('[data-s="'+id+'"]');if(b){b.classList.toggle("on",on);b.textContent=on?"★":"☆";b.setAttribute("aria-label",(on?"Remove from":"Add to")+" shortlist")}
+ var sh=$("short");sh.className="short"+(st.fav.length?" show":"");$("sl").textContent="⭐ Shortlist: "+st.fav.join(", ")}
+function go(id){resetFilters();st.open[id]=true;render();
+ setTimeout(function(){var e=document.querySelector('[data-id="'+id+'"]');if(e){e.scrollIntoView({behavior:"smooth",block:"center"});e.classList.add("flash");setTimeout(function(){e.classList.remove("flash")},1400)}},520)}
+
+/* ---------- events ---------- */
+document.addEventListener("click",function(e){
+ var n;
+ if((n=e.target.closest("[data-s]"))){toggleFav(n.getAttribute("data-s"));return}
+ if((n=e.target.closest("[data-t]"))){toggleOpen(n.getAttribute("data-t"));return}
+ if((n=e.target.closest("[data-b]"))){st.b=n.getAttribute("data-b");setB();render();return}
+ if((n=e.target.closest("[data-p]"))){go(n.getAttribute("data-p"));return}
+ if((n=e.target.closest("[data-r]"))){resetFilters();return}
+});
+document.addEventListener("keydown",function(e){
+ if((e.key==="Enter"||e.key===" ")&&e.target.classList&&e.target.classList.contains("chead")){e.preventDefault();toggleOpen(e.target.getAttribute("data-t"))}
+});
+var deb;
+$("q").oninput=function(){var v=this.value;clearTimeout(deb);deb=setTimeout(function(){st.q=v;render()},180)};
+$("sort").onchange=function(){st.s=+this.value;render()};
+$("fastb").onclick=function(){st.f=!st.f;this.classList.toggle("on",st.f);render()};
+$("rnd").onclick=function(){go(D[Math.floor(Math.random()*D.length)].id)};
+$("clr").onclick=function(){st.fav=[];save();render()};
+$("cp").onclick=function(){var tx="My thesis shortlist:\n"+st.fav.map(function(id){var d=D.filter(function(x){return x.id===id})[0];return "- "+id+": "+d.t}).join("\n"),b=this;
+ try{navigator.clipboard.writeText(tx).then(function(){b.textContent="Copied ✓"},function(){b.textContent="Select & copy above"})}catch(err){b.textContent="Select & copy above"}
+ setTimeout(function(){b.textContent="Copy shortlist"},1800)};
+
+/* ---------- theme toggle ---------- */
+var root=document.documentElement;
+function setTheme(t){root.setAttribute("data-theme",t);try{localStorage.setItem("theme",t)}catch(err){}
+ var m=$("mtc");if(m)m.setAttribute("content",t==="dark"?"#0b0e16":"#f4f6fb")}
+try{var th=localStorage.getItem("theme")}catch(err){}
+if(th==="dark"||th==="light")setTheme(th);
+$("theme").onclick=function(){
+ var cur=root.getAttribute("data-theme")||(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+ setTheme(cur==="dark"?"light":"dark")};
+
+/* ---------- back to top ---------- */
+var btt=$("btt");
+window.addEventListener("scroll",function(){btt.classList.toggle("show",window.scrollY>600)},{passive:true});
+btt.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
+
+render();
+</script>
+</body>
+</html>
