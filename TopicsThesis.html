@@ -5,152 +5,545 @@
 <title>Thesis Topics Explorer — Communication Engineering</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" id="mtc" content="#f4f6fb">
+<meta name="theme-color" id="mtc" content="#f6f4ee">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
 :root{
  color-scheme:light;
- --bg:#f4f6fb;--bg2:#eaedf6;--card:#ffffff;--tx:#0e1526;--mu:#5c6478;--bd:#e4e8f1;--bd2:#d3d9e6;
- --acc:#4f46e5;--acc2:#7c3aed;--glass:rgba(248,249,253,.86);--glow:rgba(99,102,241,.18);
- --sh:0 1px 2px rgba(14,21,38,.05),0 10px 30px rgba(14,21,38,.06);
- --sh2:0 18px 44px rgba(14,21,38,.14);
- --cC:#4f46e5;--cM:#d97706;--cO:#059669;--cE:#e11d48;--cN:#0284c7;--cS:#8b5cf6;--cI:#0d9488;
+ --bg:#f6f4ee;
+ --bg2:#ede9df;
+ --card:#fcfbf8;
+ --tx:#1c1917;
+ --tx2:#37332e;
+ --mu:#635d54;
+ --bd:#e2ddd2;
+ --bd2:#cec7b8;
+ --acc:#1e4d5c;
+ --acc-hover:#163b47;
+ --acc-soft:#e6eff2;
+ --warm:#9a4a24;
+ --warm-soft:#f6ebe4;
+ --glass:rgba(246,244,238,.90);
+ --ring:rgba(30,77,92,.18);
+ --sh:0 1px 2px rgba(28,25,23,.04),0 4px 14px rgba(28,25,23,.04);
+ --sh2:0 8px 24px rgba(28,25,23,.09);
+ --cC:#2b5b84;--cM:#9a5b25;--cO:#2d6a56;--cE:#8f3a4a;--cN:#2e6473;--cS:#624b78;--cI:#566b3a;
+ --font-serif:"Newsreader",Georgia,"Iowan Old Style","Palatino Linotype",serif;
+ --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+ --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
  color-scheme:dark;
- --bg:#0b0e16;--bg2:#141a29;--card:#151b2a;--tx:#e8ecf4;--mu:#98a2b8;--bd:#242c40;--bd2:#33405c;
- --acc:#6366f1;--acc2:#8b5cf6;--glass:rgba(13,16,26,.86);--glow:rgba(129,140,248,.25);
- --sh:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
- --sh2:0 18px 44px rgba(0,0,0,.5);
- --cC:#818cf8;--cM:#fbbf24;--cO:#34d399;--cE:#fb7185;--cN:#38bdf8;--cS:#a78bfa;--cI:#2dd4bf;
+ --bg:#141311;
+ --bg2:#1e1c18;
+ --card:#1b1916;
+ --tx:#ece7de;
+ --tx2:#d3cdc2;
+ --mu:#9c9589;
+ --bd:#2d2923;
+ --bd2:#3e3931;
+ --acc:#6ea8bb;
+ --acc-hover:#87bccd;
+ --acc-soft:rgba(110,168,187,.14);
+ --warm:#d48c58;
+ --warm-soft:rgba(212,140,88,.14);
+ --glass:rgba(20,19,17,.90);
+ --ring:rgba(110,168,187,.24);
+ --sh:0 1px 2px rgba(0,0,0,.35),0 6px 18px rgba(0,0,0,.25);
+ --sh2:0 10px 28px rgba(0,0,0,.42);
+ --cC:#72a7d4;--cM:#d49a5a;--cO:#67b097;--cE:#d17a8a;--cN:#6fb1c2;--cS:#a98fc4;--cI:#95b06e;
 }}
 :root[data-theme="dark"]{
  color-scheme:dark;
- --bg:#0b0e16;--bg2:#141a29;--card:#151b2a;--tx:#e8ecf4;--mu:#98a2b8;--bd:#242c40;--bd2:#33405c;
- --acc:#6366f1;--acc2:#8b5cf6;--glass:rgba(13,16,26,.86);--glow:rgba(129,140,248,.25);
- --sh:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
- --sh2:0 18px 44px rgba(0,0,0,.5);
- --cC:#818cf8;--cM:#fbbf24;--cO:#34d399;--cE:#fb7185;--cN:#38bdf8;--cS:#a78bfa;--cI:#2dd4bf;
+ --bg:#141311;
+ --bg2:#1e1c18;
+ --card:#1b1916;
+ --tx:#ece7de;
+ --tx2:#d3cdc2;
+ --mu:#9c9589;
+ --bd:#2d2923;
+ --bd2:#3e3931;
+ --acc:#6ea8bb;
+ --acc-hover:#87bccd;
+ --acc-soft:rgba(110,168,187,.14);
+ --warm:#d48c58;
+ --warm-soft:rgba(212,140,88,.14);
+ --glass:rgba(20,19,17,.90);
+ --ring:rgba(110,168,187,.24);
+ --sh:0 1px 2px rgba(0,0,0,.35),0 6px 18px rgba(0,0,0,.25);
+ --sh2:0 10px 28px rgba(0,0,0,.42);
+ --cC:#72a7d4;--cM:#d49a5a;--cO:#67b097;--cE:#d17a8a;--cN:#6fb1c2;--cS:#a98fc4;--cI:#95b06e;
 }
 :root[data-theme="light"]{
  color-scheme:light;
- --bg:#f4f6fb;--bg2:#eaedf6;--card:#ffffff;--tx:#0e1526;--mu:#5c6478;--bd:#e4e8f1;--bd2:#d3d9e6;
- --acc:#4f46e5;--acc2:#7c3aed;--glass:rgba(248,249,253,.86);--glow:rgba(99,102,241,.18);
- --sh:0 1px 2px rgba(14,21,38,.05),0 10px 30px rgba(14,21,38,.06);
- --sh2:0 18px 44px rgba(14,21,38,.14);
- --cC:#4f46e5;--cM:#d97706;--cO:#059669;--cE:#e11d48;--cN:#0284c7;--cS:#8b5cf6;--cI:#0d9488;
+ --bg:#f6f4ee;
+ --bg2:#ede9df;
+ --card:#fcfbf8;
+ --tx:#1c1917;
+ --tx2:#37332e;
+ --mu:#635d54;
+ --bd:#e2ddd2;
+ --bd2:#cec7b8;
+ --acc:#1e4d5c;
+ --acc-hover:#163b47;
+ --acc-soft:#e6eff2;
+ --warm:#9a4a24;
+ --warm-soft:#f6ebe4;
+ --glass:rgba(246,244,238,.90);
+ --ring:rgba(30,77,92,.18);
+ --sh:0 1px 2px rgba(28,25,23,.04),0 4px 14px rgba(28,25,23,.04);
+ --sh2:0 8px 24px rgba(28,25,23,.09);
+ --cC:#2b5b84;--cM:#9a5b25;--cO:#2d6a56;--cE:#8f3a4a;--cN:#2e6473;--cS:#624b78;--cI:#566b3a;
 }
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;transition:background-color .35s ease,color .35s ease;-webkit-font-smoothing:antialiased}
-.w{max-width:1080px;margin:0 auto;padding:0 18px}
 
-/* ---------- top brand header ---------- */
-.sitehead{padding:18px 0 4px}
+body{
+ margin:0;
+ background:var(--bg);
+ color:var(--tx);
+ font:15.5px/1.6 var(--font-sans);
+ transition:background-color .25s ease,color .25s ease;
+ -webkit-font-smoothing:antialiased;
+}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------- top masthead ---------- */
+.sitehead{padding:20px 0 8px;border-bottom:1px solid var(--bd)}
 .trow{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:12px}
-.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;font-size:20px;box-shadow:0 6px 16px var(--glow);flex:none}
+.logo{
+ width:38px;height:38px;border-radius:8px;
+ background:var(--acc);color:#fcfbf8;
+ display:grid;place-items:center;
+ font:700 14px/1 var(--font-serif);letter-spacing:.03em;
+ flex:none;
+}
+:root[data-theme="dark"] .logo{color:#141311}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo{color:#141311}}
 .btxt{display:flex;flex-direction:column;line-height:1.25}
-.btxt b{font-size:16px;letter-spacing:-.01em}
-.btxt small{color:var(--mu);font-size:12px;font-weight:600}
+.btxt b{font:600 16px/1.2 var(--font-serif);letter-spacing:-.01em}
+.btxt small{color:var(--mu);font-size:12px;font-weight:500;margin-top:2px}
+.ver{color:var(--mu);font-size:12px;font-family:var(--font-mono)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;border-radius:24px;padding:clamp(26px,5vw,46px) clamp(20px,4vw,42px);margin:14px 0 26px;background:linear-gradient(130deg,#4338ca 0%,#5b21b6 55%,#6d28d9 100%);color:#fff;box-shadow:0 20px 50px rgba(79,70,229,.3)}
-.hero>*{position:relative;z-index:2}
-.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:1}
-.o1{width:340px;height:340px;background:radial-gradient(circle,#22d3ee 0%,transparent 65%);top:-130px;right:-70px;opacity:.5;animation:drift 14s ease-in-out infinite alternate}
-.o2{width:300px;height:300px;background:radial-gradient(circle,#f472b6 0%,transparent 65%);bottom:-150px;left:-60px;opacity:.38;animation:drift 17s ease-in-out infinite alternate-reverse}
-@keyframes drift{from{transform:translate(0,0)}to{transform:translate(34px,22px)}}
-.hero h1{margin:0 0 10px;font-size:clamp(26px,5.2vw,42px);line-height:1.12;letter-spacing:-.02em;font-weight:800;animation:fadeUp .6s .05s both}
-.hero p{margin:0;max-width:64ch;opacity:.93;font-size:clamp(14px,1.7vw,16.5px);animation:fadeUp .6s .14s both}
-.stats{display:flex;gap:clamp(16px,3.5vw,38px);margin-top:22px;flex-wrap:wrap;animation:fadeUp .6s .22s both}
+/* ---------- editorial hero ---------- */
+.hero{
+ background:var(--card);
+ border:1px solid var(--bd);
+ border-top:3px solid var(--acc);
+ border-radius:14px;
+ padding:clamp(24px,4.5vw,40px) clamp(20px,4vw,38px);
+ margin:22px 0 28px;
+ box-shadow:var(--sh);
+}
+.eyebrow{
+ font:600 11.5px/1 var(--font-mono);
+ text-transform:uppercase;
+ letter-spacing:.08em;
+ color:var(--acc);
+ margin:0 0 10px;
+}
+.hero h1{
+ margin:0 0 12px;
+ font:600 clamp(28px,4.6vw,42px)/1.12 var(--font-serif);
+ letter-spacing:-.02em;
+ color:var(--tx);
+ max-width:22ch;
+}
+.hero p{
+ margin:0;
+ max-width:68ch;
+ color:var(--tx2);
+ font-size:clamp(14.5px,1.6vw,16px);
+ line-height:1.65;
+}
+.stats{
+ display:flex;
+ gap:clamp(20px,4vw,44px);
+ margin-top:24px;
+ padding-top:20px;
+ border-top:1px solid var(--bd);
+ flex-wrap:wrap;
+}
 .stat{display:flex;flex-direction:column}
-.stat b{font-size:clamp(24px,3.4vw,33px);font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
-.stat span{font-size:11px;text-transform:uppercase;letter-spacing:.09em;opacity:.82;font-weight:700;margin-top:3px}
-.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;animation:fadeUp .6s .3s both}
-.legend span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:5px 12px;border-radius:99px;font-size:12px;backdrop-filter:blur(4px)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.stat b{
+ font:600 clamp(24px,3vw,30px)/1.1 var(--font-serif);
+ color:var(--tx);
+ font-variant-numeric:tabular-nums;
+}
+.stat span{
+ font-size:11.5px;
+ color:var(--mu);
+ font-weight:500;
+ margin-top:4px;
+}
+.legend{
+ display:flex;gap:8px;flex-wrap:wrap;
+ margin-top:18px;
+}
+.legend span{
+ background:var(--bg2);
+ border:1px solid var(--bd);
+ color:var(--mu);
+ padding:4px 10px;
+ border-radius:6px;
+ font-size:12px;
+ font-weight:500;
+}
 
 /* ---------- section headings & picks ---------- */
-h2{display:flex;align-items:center;gap:10px;font-size:clamp(18px,2.4vw,21px);margin:26px 0 14px;letter-spacing:-.01em}
-h2::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--acc),var(--acc2));flex:none}
-.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(235px,100%),1fr));gap:12px}
-.pick{position:relative;text-align:left;background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--pk,var(--acc));border-radius:14px;padding:14px 26px 14px 16px;cursor:pointer;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s,border-color .25s,background-color .35s;animation:fadeUp .55s both;animation-delay:calc(var(--i)*70ms)}
-.pick:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--pk,var(--acc))}
-.pick b{display:block;font-size:13.5px;line-height:1.35;margin-bottom:5px}
-.pick small{color:var(--mu);font-size:12px;font-weight:600}
-.pick::after{content:"→";position:absolute;right:12px;top:12px;color:var(--pk,var(--acc));opacity:0;transition:opacity .2s;font-weight:700}
-.pick:hover::after{opacity:1}
+h2{
+ font:600 clamp(19px,2.3vw,23px)/1.25 var(--font-serif);
+ margin:28px 0 14px;
+ letter-spacing:-.01em;
+ color:var(--tx);
+ display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+ border-bottom:1px solid var(--bd);
+ padding-bottom:8px;
+}
+h2 small{font:500 12.5px/1 var(--font-sans);color:var(--mu)}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px}
+.pick{
+ position:relative;text-align:left;
+ background:var(--card);
+ border:1px solid var(--bd);
+ border-left:3px solid var(--pk,var(--acc));
+ border-radius:10px;
+ padding:13px 28px 13px 14px;
+ cursor:pointer;font:inherit;color:inherit;
+ transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.pick:hover{transform:translateY(-2px);box-shadow:var(--sh2);border-color:var(--bd2);border-left-color:var(--pk,var(--acc))}
+.pick b{display:block;font-size:13.5px;font-weight:600;line-height:1.38;margin-bottom:4px;color:var(--tx)}
+.pick small{color:var(--mu);font-size:12px;font-weight:500}
+.pick::after{content:"↗";position:absolute;right:12px;top:12px;color:var(--mu);font-size:13px;transition:color .18s}
+.pick:hover::after{color:var(--pk,var(--acc))}
 
-/* ---------- sticky glass toolbar ---------- */
-.bar{position:sticky;top:10px;z-index:30;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--bd);border-radius:18px;padding:12px;box-shadow:var(--sh);margin-bottom:8px;transition:background-color .35s,border-color .35s}
-.srow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.search{position:relative;flex:1 1 240px;min-width:200px}
-.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--mu);pointer-events:none}
-#q{width:100%;padding:11px 14px 11px 38px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font-size:15px;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s,background-color .35s}
-#q:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--glow)}
-.btns{display:flex;gap:8px;flex-wrap:wrap}
-.chip{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:9px 14px;border-radius:99px;cursor:pointer;font-size:13.5px;font-weight:600;font-family:inherit;transition:all .2s ease;white-space:nowrap}
-.chip:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
-.chip.on{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;border-color:transparent;box-shadow:0 4px 14px var(--glow)}
-.chip.slim{padding:6px 12px;font-size:12.5px}
-.btn{border:0;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;padding:9px 16px;border-radius:99px;cursor:pointer;font-size:13.5px;font-weight:700;font-family:inherit;transition:all .2s;box-shadow:0 4px 14px var(--glow)}
-.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px var(--glow);filter:brightness(1.06)}
-select{padding:9px 12px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:13.5px;cursor:pointer;font-family:inherit;font-weight:600}
-.chips{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:none}
+/* ---------- optional ranking & landscape guide drawer ---------- */
+.guide-drawer{
+ margin-top:18px;
+ background:var(--card);
+ border:1px solid var(--bd);
+ border-radius:12px;
+ box-shadow:var(--sh);
+ overflow:hidden;
+}
+.guide-drawer summary{
+ list-style:none;
+ cursor:pointer;
+ padding:13px 16px;
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ font:600 14px/1.3 var(--font-sans);
+ color:var(--tx);
+ user-select:none;
+}
+.guide-drawer summary::-webkit-details-marker{display:none}
+.guide-drawer summary span.sub{font-weight:400;color:var(--mu);font-size:12.5px}
+.guide-drawer summary::after{content:"Expand ↓";font:500 12px/1 var(--font-mono);color:var(--acc);flex:none}
+.guide-drawer[open] summary{border-bottom:1px solid var(--bd);background:var(--bg2)}
+.guide-drawer[open] summary::after{content:"Collapse ↑"}
+.guide-body{padding:16px 18px;display:grid;gap:20px}
+.guide-subh{margin:0 0 8px;font:600 15px/1.3 var(--font-serif);color:var(--tx)}
+.guide-note{margin:0 0 10px;font-size:12.5px;color:var(--mu)}
+.rtable-wrap{overflow-x:auto}
+.rtable{width:100%;border-collapse:collapse;font-size:13px}
+.rtable th,.rtable td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--bd)}
+.rtable th{font:600 11px/1.2 var(--font-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--mu);background:var(--bg)}
+.rtable td button{background:none;border:0;padding:0;font:600 13px/1.3 var(--font-sans);color:var(--acc);cursor:pointer;text-align:left}
+.rtable td button:hover{text-decoration:underline}
+.rtable .num{font-family:var(--font-mono);font-weight:600}
+.recs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:10px}
+.rec-item{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:11px 13px;font-size:13px;line-height:1.5;color:var(--tx2)}
+.rec-item b{display:block;color:var(--tx);font-size:12.5px;margin-bottom:3px}
+.land-list{display:grid;gap:8px}
+.land-item{background:var(--bg);border:1px solid var(--bd);border-left:3px solid var(--lk,var(--acc));border-radius:8px;padding:10px 13px;font-size:13px;line-height:1.55;color:var(--tx2)}
+.land-item b{color:var(--lk,var(--tx));font-size:12.5px}
+
+/* ---------- sticky toolbar ---------- */
+.bar{
+ position:sticky;top:10px;z-index:30;
+ background:var(--glass);
+ backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+ border:1px solid var(--bd);
+ border-radius:12px;
+ padding:12px;
+ box-shadow:var(--sh);
+ margin:22px 0 8px;
+}
+.srow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.search{position:relative;flex:1 1 260px;min-width:200px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--mu);pointer-events:none}
+#q{
+ width:100%;padding:9px 12px 9px 36px;
+ border:1px solid var(--bd2);border-radius:8px;
+ background:var(--card);color:var(--tx);
+ font-size:14px;outline:none;font-family:inherit;
+ transition:border-color .18s,box-shadow .18s;
+}
+#q:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--ring)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{
+ border:1px solid var(--bd2);
+ background:var(--card);color:var(--tx2);
+ padding:8px 13px;border-radius:8px;
+ cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;
+ transition:all .16s ease;white-space:nowrap;
+}
+.chip:hover{border-color:var(--acc);color:var(--acc)}
+.chip.on{background:var(--acc);color:#fcfbf8;border-color:var(--acc)}
+:root[data-theme="dark"] .chip.on{color:#141311}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip.on{color:#141311}}
+.chip.slim{padding:5px 11px;font-size:12.5px}
+.btn{
+ border:1px solid var(--acc);
+ background:var(--acc);color:#fcfbf8;
+ padding:8px 14px;border-radius:8px;
+ cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;
+ transition:background-color .16s,border-color .16s;
+ white-space:nowrap;
+}
+:root[data-theme="dark"] .btn{color:#141311}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#141311}}
+.btn:hover{background:var(--acc-hover);border-color:var(--acc-hover)}
+select{
+ padding:8px 11px;border-radius:8px;
+ border:1px solid var(--bd2);background:var(--card);color:var(--tx);
+ font-size:13px;cursor:pointer;font-family:inherit;font-weight:500;
+}
+.chips{display:flex;gap:6px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
+.chips .chip{padding:6px 11px;font-size:12.5px;border-radius:6px}
 
 /* ---------- grid & cards ---------- */
-.ghead{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px;gap:10px}
-#cnt{color:var(--mu);font-size:14px;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(430px,100%),1fr));gap:14px}
-.c{background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--k);border-radius:16px;padding:16px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s,border-color .25s,background-color .35s;animation:cardIn .5s cubic-bezier(.22,.9,.32,1) both;animation-delay:calc(var(--i)*45ms)}
-.c:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--k)}
-.c.flash{animation:flash 1.3s ease}
-@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@keyframes flash{0%,100%{box-shadow:var(--sh)}35%{box-shadow:0 0 0 4px var(--glow),var(--sh2)}}
-.chead{display:flex;gap:10px;align-items:flex-start;cursor:pointer;outline:none;border-radius:10px}
-.chead:focus-visible{box-shadow:0 0 0 3px var(--glow)}
-.id{flex:none;font-size:12.5px;font-weight:800;color:#fff;background:var(--k);border-radius:8px;padding:3px 8px;letter-spacing:.02em}
-.t{flex:1;font-weight:700;font-size:15.5px;line-height:1.35;min-width:0}
-.star{flex:none;background:none;border:0;font-size:21px;line-height:1.1;cursor:pointer;color:var(--mu);padding:1px 4px;transition:color .2s,transform .2s}
-.star:hover{transform:scale(1.2);color:#f59e0b}
-.star.on{color:#f59e0b;animation:pop .45s ease}
-@keyframes pop{0%{transform:scale(.5)}55%{transform:scale(1.35)}100%{transform:scale(1)}}
-.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
-.tag,.pill{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:99px;background:var(--bg2);color:var(--mu);border:1px solid transparent;transition:background-color .35s,color .35s,border-color .35s}
-.tag.cat{color:var(--k);border-color:var(--k);background:transparent}
-.tag.fast{background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;border-color:transparent;font-weight:700}
-.pill{border-color:var(--bd)}
-.cbd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1)}
+.ghead{display:flex;justify-content:space-between;align-items:center;margin:20px 0 12px;gap:10px}
+#cnt{color:var(--mu);font-size:13.5px;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(440px,100%),1fr));gap:14px}
+.c{
+ background:var(--card);
+ border:1px solid var(--bd);
+ border-left:3px solid var(--k);
+ border-radius:12px;
+ padding:16px 17px;
+ box-shadow:var(--sh);
+ transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease;
+}
+.c:hover{box-shadow:var(--sh2);border-color:var(--bd2);border-left-color:var(--k)}
+.c.flash{animation:flash 1.2s ease}
+@keyframes flash{0%,100%{box-shadow:var(--sh)}35%{box-shadow:0 0 0 3px var(--ring),var(--sh2)}}
+.chead{display:flex;gap:10px;align-items:flex-start;cursor:pointer;outline:none;border-radius:6px}
+.chead:focus-visible{box-shadow:0 0 0 3px var(--ring)}
+.id{
+ flex:none;
+ font:600 12px/1.2 var(--font-mono);
+ color:var(--k);
+ background:var(--bg2);
+ border:1px solid var(--bd);
+ border-radius:5px;
+ padding:3px 7px;
+ margin-top:1px;
+}
+.t{flex:1;font-weight:600;font-size:15.5px;line-height:1.38;color:var(--tx);min-width:0}
+.star{
+ flex:none;background:none;border:0;
+ font-size:19px;line-height:1.1;cursor:pointer;
+ color:var(--mu);padding:1px 4px;
+ transition:color .16s,transform .16s;
+}
+.star:hover{transform:scale(1.15);color:var(--warm)}
+.star.on{color:var(--warm)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;align-items:center}
+.tag,.pill{
+ font-size:11.5px;font-weight:500;
+ padding:3px 9px;border-radius:5px;
+ background:var(--bg2);color:var(--mu);
+ border:1px solid var(--bd);
+}
+.tag.cat{color:var(--k);border-color:var(--bd);background:transparent;font-weight:600}
+.tag.fast{background:var(--warm-soft);color:var(--warm);border-color:transparent;font-weight:600}
+.tag.rk{background:var(--acc-soft);color:var(--acc);border-color:transparent;font-family:var(--font-mono);font-size:11px;font-weight:600}
+.pill{font-family:var(--font-mono);font-size:11px}
+.ref-preview{
+ margin-top:10px;
+ padding-top:9px;
+ border-top:1px solid var(--bd);
+ font-size:12.5px;
+ color:var(--mu);
+ display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+.ref-preview-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ref-preview-txt strong{color:var(--tx2);font-weight:600}
+.expand-hint{flex:none;font-size:11.5px;color:var(--acc);font-weight:500;cursor:pointer}
+
+.cbd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s cubic-bezier(.4,0,.2,1)}
 .c.open .cbd{grid-template-rows:1fr}
-.cbi{overflow:hidden;min-height:0;font-size:14px}
+.c.open .ref-preview{display:none}
+.cbi{overflow:hidden;min-height:0;font-size:14px;color:var(--tx2)}
 .cbi p{margin:10px 0 0;line-height:1.6}
-.cbi p:first-child{margin-top:14px;padding-top:14px;border-top:1px dashed var(--bd2)}
-.cbi b{color:var(--k)}
-.meters{display:grid;gap:9px;margin-top:14px;padding:12px;border:1px solid var(--bd);border-radius:12px;background:var(--bg2);transition:background-color .35s,border-color .35s}
-.mrow span{font-size:12px;color:var(--mu);font-weight:600}
-.mrow b{color:var(--tx)}
-.meter{height:6px;background:var(--bd);border-radius:99px;overflow:hidden;margin-top:5px}
-.meter u{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--k),var(--acc2));transition:width .9s cubic-bezier(.25,.8,.3,1) .15s}
+.cbi p:first-child{margin-top:13px;padding-top:13px;border-top:1px solid var(--bd)}
+.cbi b{color:var(--tx);font-weight:600}
+
+/* ---------- reference paper box ---------- */
+.refbox{
+ margin-top:14px;
+ padding:13px 14px;
+ background:var(--bg);
+ border:1px solid var(--bd);
+ border-left:3px solid var(--k);
+ border-radius:8px;
+}
+.refhead{
+ display:flex;align-items:center;justify-content:space-between;gap:8px;
+ margin-bottom:6px;
+}
+.reflbl{
+ font:600 10.5px/1 var(--font-mono);
+ text-transform:uppercase;letter-spacing:.07em;
+ color:var(--k);
+}
+.refyr{
+ font:500 11px/1 var(--font-mono);
+ color:var(--mu);
+ background:var(--bg2);
+ padding:3px 7px;border-radius:4px;
+}
+.reftitle{
+ display:block;
+ font:600 14px/1.4 var(--font-serif);
+ color:var(--tx);
+ text-decoration:none;
+ margin-bottom:4px;
+}
+.reftitle:hover{color:var(--acc);text-decoration:underline;text-underline-offset:2px}
+.refmeta{font-size:12.5px;color:var(--mu);line-height:1.45;margin-bottom:6px}
+.refmeta em{font-style:italic;color:var(--tx2)}
+.refnote{font-size:12.5px;color:var(--tx2);line-height:1.5;margin:0 0 9px}
+.refdoi{
+ display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+ font:400 11.5px/1.4 var(--font-mono);
+ color:var(--mu);
+ margin-bottom:10px;
+ word-break:break-all;
+}
+.refdoi a{color:var(--acc);text-decoration:none}
+.refdoi a:hover{text-decoration:underline}
+.refacts{display:flex;gap:6px;flex-wrap:wrap}
+.rbtn{
+ display:inline-flex;align-items:center;gap:4px;
+ font:500 11.5px/1 var(--font-sans);
+ padding:6px 9px;border-radius:6px;
+ border:1px solid var(--bd2);
+ background:var(--card);color:var(--tx2);
+ text-decoration:none;cursor:pointer;
+ transition:border-color .15s,color .15s,background-color .15s;
+}
+.rbtn:hover{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.rbtn.primary{background:var(--acc);color:#fcfbf8;border-color:var(--acc)}
+:root[data-theme="dark"] .rbtn.primary{color:#141311}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rbtn.primary{color:#141311}}
+.rbtn.primary:hover{background:var(--acc-hover);border-color:var(--acc-hover);color:#fcfbf8}
+:root[data-theme="dark"] .rbtn.primary:hover{color:#141311}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rbtn.primary:hover{color:#141311}}
+
+/* ---------- optional deep-dive drawer inside cards ---------- */
+.deepdive{
+ margin-top:12px;
+ border:1px solid var(--bd);
+ border-radius:8px;
+ background:var(--bg2);
+ overflow:hidden;
+}
+.deepdive summary{
+ list-style:none;
+ cursor:pointer;
+ padding:9px 12px;
+ font:600 12.5px/1.3 var(--font-sans);
+ color:var(--acc);
+ display:flex;align-items:center;justify-content:space-between;gap:8px;
+ user-select:none;
+}
+.deepdive summary::-webkit-details-marker{display:none}
+.deepdive summary::after{content:"Expand +";font:500 11px/1 var(--font-mono);color:var(--mu)}
+.deepdive[open] summary{border-bottom:1px solid var(--bd)}
+.deepdive[open] summary::after{content:"Hide −"}
+.dd-body{padding:11px 12px;background:var(--card);font-size:13px;line-height:1.55;color:var(--tx2)}
+.dd-body p{margin:0 0 8px}
+.dd-body p:first-child{margin-top:0;padding-top:0;border-top:0}
+.dd-land{
+ font-size:12px;color:var(--mu);
+ background:var(--bg);border:1px solid var(--bd);border-radius:6px;
+ padding:8px 10px;margin:8px 0 10px;
+}
+.dd-land b{color:var(--tx2)}
+.dd-refs{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:7px}
+.dd-refs li{
+ font-size:12.5px;line-height:1.45;
+ padding:7px 9px;border-radius:6px;
+ background:var(--bg);border:1px solid var(--bd);
+}
+.dd-refs a{color:var(--acc);text-decoration:none;font-weight:500}
+.dd-refs a:hover{text-decoration:underline}
+.btag{
+ display:inline-block;
+ font:600 10px/1 var(--font-mono);
+ padding:2px 6px;border-radius:4px;
+ margin-right:5px;vertical-align:middle;
+ background:var(--bg2);color:var(--mu);border:1px solid var(--bd);
+}
+.btag.P{background:var(--warm-soft);color:var(--warm);border-color:transparent}
+.btag.S{background:var(--acc-soft);color:var(--acc);border-color:transparent}
+.dd-caveat{display:block;font-size:11px;color:var(--mu);margin-top:3px;font-style:italic}
+
+/* ---------- score meters ---------- */
+.meters{
+ display:grid;gap:8px;margin-top:13px;padding:11px 12px;
+ border:1px solid var(--bd);border-radius:8px;background:var(--bg2);
+}
+.mrow{display:flex;justify-content:space-between;font-size:12px;color:var(--mu);font-weight:500}
+.mrow b{color:var(--tx);font-family:var(--font-mono);font-weight:600}
+.meter{height:5px;background:var(--bd);border-radius:99px;overflow:hidden;margin-top:4px}
+.meter u{display:block;height:100%;width:0;border-radius:99px;background:var(--k);transition:width .65s cubic-bezier(.25,.8,.3,1) .1s}
 .c.open .meter u{width:var(--w)}
 
 /* ---------- empty state, footer, overlays ---------- */
-.none{grid-column:1/-1;text-align:center;padding:46px 16px;color:var(--mu)}
-.none .ne{font-size:40px;margin-bottom:8px}
+.none{grid-column:1/-1;text-align:center;padding:44px 16px;color:var(--mu)}
 .none p{margin:6px 0}
-footer{color:var(--mu);font-size:13px;line-height:1.65;margin:30px 0 96px;border-top:1px solid var(--bd);padding-top:16px;transition:border-color .35s}
-.short{position:fixed;left:12px;right:78px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:40;transform:translateY(150%);transition:transform .45s cubic-bezier(.22,1,.36,1);background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--sh2);pointer-events:none}
+footer{
+ color:var(--mu);font-size:12.5px;line-height:1.65;
+ margin:36px 0 96px;border-top:1px solid var(--bd);padding-top:16px;
+}
+.short{
+ position:fixed;left:14px;right:74px;
+ bottom:calc(14px + env(safe-area-inset-bottom,0px));
+ z-index:40;transform:translateY(150%);
+ transition:transform .32s cubic-bezier(.22,1,.36,1);
+ background:var(--card);border:1px solid var(--bd2);
+ border-radius:12px;box-shadow:var(--sh2);pointer-events:none;
+}
 .short.show{transform:none;pointer-events:auto}
-.sin{max-width:1020px;margin:auto;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-#sl{flex:1;min-width:130px;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sact{display:flex;gap:8px}
-.sact .btn,.sact .chip{padding:7px 12px;font-size:12.5px}
-.btt{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:41;width:46px;height:46px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;box-shadow:var(--sh2);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s,color .2s,background-color .35s;display:grid;place-items:center;font-size:18px;font-family:inherit}
+.sin{max-width:1040px;margin:auto;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#sl{flex:1;min-width:140px;font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sact{display:flex;gap:6px;flex-wrap:wrap}
+.sact .btn,.sact .chip{padding:6px 11px;font-size:12px}
+.btt{
+ position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));
+ z-index:41;width:42px;height:42px;border-radius:10px;
+ border:1px solid var(--bd2);background:var(--card);color:var(--tx);
+ cursor:pointer;box-shadow:var(--sh2);opacity:0;transform:translateY(10px);
+ pointer-events:none;transition:opacity .25s,transform .25s,border-color .18s,color .18s;
+ display:grid;place-items:center;font-size:16px;font-family:inherit;
+}
 .btt.show{opacity:1;transform:none;pointer-events:auto}
 .btt:hover{border-color:var(--acc);color:var(--acc)}
-.icon-btn{flex:none;width:40px;height:40px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;display:grid;place-items:center;transition:border-color .25s,color .25s,transform .25s,background-color .35s}
-.icon-btn:hover{border-color:var(--acc);color:var(--acc);transform:rotate(15deg)}
-.icon-btn svg{width:18px;height:18px}
+.icon-btn{
+ flex:none;width:36px;height:36px;border-radius:8px;
+ border:1px solid var(--bd2);background:var(--card);color:var(--tx);
+ cursor:pointer;display:grid;place-items:center;
+ transition:border-color .18s,color .18s;
+}
+.icon-btn:hover{border-color:var(--acc);color:var(--acc)}
+.icon-btn svg{width:16px;height:16px}
 .icon-btn .sun{display:none}
 @media (prefers-color-scheme:dark){
  :root:not([data-theme="light"]) .icon-btn .sun{display:block}
@@ -159,9 +552,19 @@ footer{color:var(--mu);font-size:13px;line-height:1.65;margin:30px 0 96px;border
 :root[data-theme="dark"] .icon-btn .sun{display:block}
 :root[data-theme="dark"] .icon-btn .moon{display:none}
 
-@media (max-width:560px){
+.toast{
+ position:fixed;left:50%;bottom:74px;transform:translateX(-50%) translateY(16px);
+ background:var(--tx);color:var(--bg);
+ padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:500;
+ opacity:0;pointer-events:none;z-index:60;
+ transition:opacity .2s,transform .2s;
+ box-shadow:var(--sh2);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:600px){
  .grid{grid-template-columns:1fr}
- .short{left:10px;right:70px}
+ .short{left:10px;right:64px}
  #sl{white-space:normal;max-height:2.6em;overflow:hidden}
  .ver{display:none}
  .btxt small{font-size:11px}
@@ -176,49 +579,57 @@ footer{color:var(--mu);font-size:13px;line-height:1.65;margin:30px 0 96px;border
 <header class="sitehead">
  <div class="w trow">
   <div class="brand">
-   <span class="logo">🎓</span>
+   <span class="logo">CE</span>
    <span class="btxt"><b>Thesis Topics Explorer</b><small>Communication Engineering · Class of 2026</small></span>
   </div>
-  <span class="ver" style="color:var(--mu);font-size:12.5px;font-weight:600">Curated catalogue · v2</span>
+  <span class="ver">Catalogue · v4 · DOI &amp; Literature Indexed</span>
  </div>
 </header>
 
 <main class="w">
  <section class="hero">
-  <div class="orb o1"></div><div class="orb o2"></div>
-  <h1>Find the research topic<br>that excites you</h1>
-  <p>A reference-backed catalogue of thesis ideas across seven research domains — Communications, Microwaves &amp; RF, Optical &amp; Photonics, Electronics &amp; FPGA, Networks, Signal Processing &amp; ML, and IoT &amp; Security. Browse, filter, star your favourites and bring your shortlist to the supervisor meeting.</p>
+  <p class="eyebrow">Undergraduate &amp; Graduate Research Directory</p>
+  <h1>Find a thesis topic worth building on</h1>
+  <p>A reference-backed catalogue of research ideas across seven domains — Communications, Microwaves &amp; RF, Optical &amp; Photonics, Electronics &amp; FPGA, Networks, Signal Processing &amp; ML, and IoT &amp; Security. Every topic pairs with a verified peer-reviewed starting paper (DOI, publisher link, formatted citation, and BibTeX), and core five-pillar topics include optional deep-dive explanations and extended survey bibliographies.</p>
   <div class="stats">
    <div class="stat"><b id="stN">–</b><span>curated topics</span></div>
    <div class="stat"><b id="stC">–</b><span>research domains</span></div>
    <div class="stat"><b id="stF">–</b><span>fast-track ideas</span></div>
+   <div class="stat"><b id="stR">–</b><span>verified papers &amp; surveys</span></div>
   </div>
   <div class="legend">
-   <span>⚡ Fast-track = quick-win candidates</span>
+   <span>Fast-track = quick-win candidates</span>
    <span>S = Speed / feasibility</span>
    <span>N = Novelty</span>
    <span>P = Publishability (1–10)</span>
   </div>
  </section>
 
- <h2>Supervisor’s top picks</h2>
+ <h2>Supervisor’s top picks <small>Click any pick to jump to its card</small></h2>
  <div class="picks" id="picks"></div>
 
- <div class="bar" style="margin-top:22px">
+ <details class="guide-drawer" id="guideDrawer">
+  <summary>
+   <span>Cross-Block Weighted Ranking, Recommendations &amp; Domain Landscapes <span class="sub">· Optional rubric &amp; 5-pillar overview</span></span>
+  </summary>
+  <div class="guide-body" id="guideBody"></div>
+ </details>
+
+ <div class="bar">
   <div class="srow">
    <div class="search">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input type="search" id="q" placeholder="Search topics, tools, keywords… (e.g. OTFS, FPGA, VLC)" aria-label="Search topics">
+    <input type="search" id="q" placeholder="Search topics, tools, authors, DOIs… (e.g. OTFS, FPGA, 10.1109)" aria-label="Search topics">
    </div>
    <div class="btns">
-    <button class="chip" id="fastb">⚡ Fast-track only</button>
+    <button class="chip" id="fastb">Fast-track only</button>
     <select id="sort" aria-label="Sort topics">
      <option value="0">Sort: default</option>
      <option value="1">Highest speed (S)</option>
      <option value="2">Most novel (N)</option>
      <option value="3">Most publishable (P)</option>
     </select>
-    <button class="btn" id="rnd">🎲 Surprise me</button>
+    <button class="btn" id="rnd">Surprise me</button>
     <button class="icon-btn" id="theme" aria-label="Toggle dark mode" title="Toggle light / dark">
      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -234,23 +645,26 @@ footer{color:var(--mu);font-size:13px;line-height:1.65;margin:30px 0 96px;border
  </div>
  <div class="grid" id="grid"></div>
 
- <footer>Scores are the supervisor’s quick estimates of speed/feasibility (S), novelty (N) and publishability (P), on a 1–10 scale. Verify the research gap and references against the original catalogue before citing them in a thesis; preprints carry lower evidence weight than peer-reviewed papers. The full bibliography is in the source report. Your starred shortlist is saved locally in this browser.</footer>
+ <footer>Scores are quick estimates of speed/feasibility (S), novelty (N), and publishability (P) on a 1–10 scale. Each topic pairs with a verified peer-reviewed baseline paper (DOI, publisher link, formatted citation, and BibTeX), and the 48 five-pillar topics include optional extended literature notes and survey links. Preprints are explicitly labeled and carry lower evidence weight than peer-reviewed papers; confirm exact journal venues and DOIs on the publisher page before final thesis citation. Your starred shortlist is saved locally in this browser.</footer>
 </main>
 
 <div class="short" id="short">
  <div class="sin">
   <b id="sl"></b>
   <div class="sact">
-   <button class="btn" id="cp">Copy shortlist</button>
+   <button class="btn" id="cp">Copy shortlist + DOIs</button>
+   <button class="chip" id="biball">Download .bib</button>
    <button class="chip" id="clr">Clear</button>
   </div>
  </div>
 </div>
 <button class="btt" id="btt" aria-label="Back to top">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-var BL={C:["Communications","📡"],M:["Microwaves & RF","📶"],O:["Optical & Photonics","💡"],E:["Electronics & FPGA","🔧"],N:["Networks & 5G/6G","🌐"],S:["Signal Processing & ML","🧠"],I:["IoT, Embedded & Security","🔒"]};
+var BL={C:"Communications",M:"Microwaves & RF",O:"Optical & Photonics",E:"Electronics & FPGA",N:"Networks & 5G/6G",S:"Signal Processing & ML",I:"IoT, Embedded & Security"};
 var CLR={C:"var(--cC)",M:"var(--cM)",O:"var(--cO)",E:"var(--cE)",N:"var(--cN)",S:"var(--cS)",I:"var(--cI)"};
+var TAG_LBL={S:"Survey",J:"Journal",C:"Conference",P:"Preprint",Std:"Standard",I:"Industry"};
 var D=`C1|Low-overhead OTFS channel estimation (fractional Doppler)|Pilot overhead and fractional-Doppler leakage are the key open problem in OTFS surveys.|Can a sparse pilot plus low-complexity estimator cut overhead while keeping NMSE/BER near the embedded-pulse baseline at high Doppler?|MATLAB/Python OTFS link; CS/OMP vs embedded pulse; optional Pluto SDR|NMSE, BER, pilot %, FLOPs|Leakage breaks sparsity|8|8|8|1
 C2|AFDM vs OTFS vs OFDM: chirp and PAPR optimization|AFDM's advantages and PAPR/diversity trade-offs are still being mapped.|Where does AFDM really win, and can chirp-parameter choice jointly improve PAPR and diversity?|DAFT-based AFDM + OTFS + OFDM testbench; parameter sweep|BER, PAPR CCDF, diversity, SE|Novelty must be in the optimization, not benchmarking|7|8|8|0
 C3|ISAC waveform trade-off: BER vs sensing ambiguity|Balancing data rate and sensing resolution is a core ISAC open issue.|Which multicarrier (OFDM/DFT-s-OFDM/OTFS) gives the best Pareto front between BER and range/Doppler resolution?|MATLAB ISAC sim; ambiguity function + BER; Pareto fronts|BER, PSLR/ISLR, resolution, CRB|Joint target + comm channel modeling|7|8|9|1
@@ -343,37 +757,155 @@ I6|Lightweight jamming detection and channel-hopping response for IoT meshes|Mes
 I7|Intermittent computation for energy-harvesting sensor nodes|Harvested nodes lose state on brownout; checkpointing costs energy.|Which checkpoint strategy maximizes useful work per day under real solar/RF traces?|MSP430-class simulation + harvested power traces|Task completion rate, checkpoint overhead, uptime|Harvest-trace realism|7|7|7|0
 I8|UWB indoor positioning under NLOS with bias compensation|UWB is centimeter-accurate in line of sight but NLOS bias ruins it indoors.|Can NLOS identification plus bias correction hold 30 cm RMSE across a cluttered floor?|DW3000-class experiments or ray-traced simulation|RMSE/CEP vs NLOS ratio, refresh rate|Anchor-placement sensitivity|8|6|7|0
 I9|Side-channel-resistant AES on Cortex-M: masking vs hiding trade-offs|Software AES leaks through power; countermeasures cost cycles and code size.|How much leakage do masking and hiding countermeasures remove per extra cycle?|Cycle-accurate simulation + power traces|Leakage (t-test), cycles, code size|Trace-acquisition access|7|7|7|0
-I10|Adaptive QoS for MQTT/CoAP over lossy wireless links|IoT application-layer protocols degrade silently as packet loss rises.|Which QoS and keepalive adaptation keeps latency and reliability targets across loss levels?|Linux netem emulation + brokers, or ns-3|Latency percentiles, success rate, overhead|Broker implementation variance|8|5|7|1
-`.split("\n").filter(function(l){return l.trim()}).map(function(l,i){var p=l.split("|");return{id:p[0],t:p[1],g:p[2],q:p[3],m:p[4],x:p[5],r:p[6],S:+p[7],N:+p[8],P:+p[9],f:p[10]==="1",k:p[0][0],i:i}});
-var PK=[["C1","Strongest balanced pick"],["C3","Theory-strong and publishable"],["O2","⚡ Fastest to publish"],["M1","⚡ Fast and practical"],["C9","Strong theory contribution"],["S1","⚡ Dataset ready — ML angle"]];
+I10|Adaptive QoS for MQTT/CoAP over lossy wireless links|IoT application-layer protocols degrade silently as packet loss rises.|Which QoS and keepalive adaptation keeps latency and reliability targets across loss levels?|Linux netem emulation + brokers, or ns-3|Latency percentiles, success rate, overhead|Broker implementation variance|8|5|7|1`.split("\n").filter(function(l){return l.trim()}).map(function(l,i){var p=l.split("|");return{id:p[0],t:p[1],g:p[2],q:p[3],m:p[4],x:p[5],r:p[6],S:+p[7],N:+p[8],P:+p[9],f:p[10]==="1",k:p[0][0],i:i}});
+var REFS={"C1":{"id":"C1","title":"Embedded Pilot-Aided Channel Estimation for OTFS in Delay–Doppler Channels","authors":"P. Raviteja, Khoa T. Phan, and Yi Hong","venue":"IEEE Transactions on Vehicular Technology","year":2019,"doi":"10.1109/TVT.2019.2906357","url":"https://doi.org/10.1109/TVT.2019.2906357","note":"Establishes the standard embedded-pilot and guard-symbol OTFS channel estimation baseline for both integer and fractional Doppler shifts."},"C2":{"id":"C2","title":"Affine Frequency Division Multiplexing for Next Generation Wireless Communications","authors":"Ali Bemani, Nassar Ksairi, and Marios Kountouris","venue":"IEEE Transactions on Wireless Communications","year":2023,"doi":"10.1109/TWC.2023.3260906","url":"https://doi.org/10.1109/TWC.2023.3260906","note":"Introduces the foundational DAFT-based AFDM waveform, chirp-parameter design for full diversity in doubly dispersive channels, and direct comparisons against OTFS and OFDM."},"C3":{"id":"C3","title":"On the Effectiveness of OTFS for Joint Radar Parameter Estimation and Communication","authors":"Lorenzo Gaudio, Mari Kobayashi, Giuseppe Caire, and Giulio Colavolpe","venue":"IEEE Transactions on Wireless Communications","year":2020,"doi":"10.1109/TWC.2020.2998583","url":"https://doi.org/10.1109/TWC.2020.2998583","note":"Provides a rigorous ISAC signal model and joint communication-rate vs. range/Doppler radar estimation benchmark comparing OTFS and OFDM."},"C4":{"id":"C4","title":"A Framework of Robust Transmission Design for IRS-Aided MISO Communications With Imperfect Cascaded Channels","authors":"Gui Zhou, Cunhua Pan, Hong Ren, Kezhi Wang, and Arumugam Nallanathan","venue":"IEEE Transactions on Signal Processing","year":2020,"doi":"10.1109/TSP.2020.3019666","url":"https://doi.org/10.1109/TSP.2020.3019666","note":"Formulates the canonical robust active-and-passive RIS beamforming framework under both bounded and statistical imperfect cascaded CSI error models."},"C5":{"id":"C5","title":"Deep Learning Enabled Semantic Communication Systems","authors":"Huiqiang Xie, Zhijin Qin, Geoffrey Ye Li, and Biing-Hwang Juang","venue":"IEEE Transactions on Signal Processing","year":2021,"doi":"10.1109/TSP.2021.3071210","url":"https://doi.org/10.1109/TSP.2021.3071210","note":"Defines the original Transformer-based DeepSC text transceiver, semantic similarity metric, and transfer-learning adaptation baseline across varying channels."},"C6":{"id":"C6","title":"Scalable Cell-Free Massive MIMO Systems","authors":"Emil Björnson and Luca Sanguinetti","venue":"IEEE Transactions on Communications","year":2020,"doi":"10.1109/TCOMM.2020.2987311","url":"https://doi.org/10.1109/TCOMM.2020.2987311","note":"Sets the standard user-centric dynamic cooperation clustering framework and directly compares scalable local vs. centralized MMSE detection and precoding."},"C7":{"id":"C7","title":"DeepRx: Fully Convolutional Deep Learning Receiver","authors":"Mikko Honkala, Dani Korpi, and Janne M. J. Huttunen","venue":"IEEE Transactions on Wireless Communications","year":2021,"doi":"10.1109/TWC.2021.3054520","url":"https://doi.org/10.1109/TWC.2021.3054520","note":"Presents the widely adopted 5G-NR-compliant fully convolutional neural OFDM receiver architecture used as the primary baseline for learned receiver generalization studies."},"C8":{"id":"C8","title":"Distance-Aware Bandwidth-Adaptive Resource Allocation for Wireless Systems in the Terahertz Band","authors":"Chong Han and Ian F. Akyildiz","venue":"IEEE Transactions on Terahertz Science and Technology","year":2016,"doi":"10.1109/TTHZ.2016.2569460","url":"https://doi.org/10.1109/TTHZ.2016.2569460","note":"Establishes the foundational THz link-budget and distance-aware adaptive sub-window, power, and modulation allocation model."},"C9":{"id":"C9","title":"Robust Beamforming for Security in MIMO Wiretap Channels With Imperfect CSI","authors":"Amitav Mukherjee and A. Lee Swindlehurst","venue":"IEEE Transactions on Signal Processing","year":2011,"doi":"10.1109/TSP.2010.2078810","url":"https://doi.org/10.1109/TSP.2010.2078810","note":"Provides the classic analytical and algorithmic baseline for artificial-noise-aided physical layer security under imperfect CSI and unknown eavesdropper channels."},"C10":{"id":"C10","title":"Fluid Antenna Systems","authors":"Kai-Kit Wong, Arman Shojaeifard, Kin-Fai Tong, and Yangyang Zhang","venue":"IEEE Transactions on Wireless Communications","year":2021,"doi":"10.1109/TWC.2020.3037595","url":"https://doi.org/10.1109/TWC.2020.3037595","note":"Introduces the foundational spatially correlated fluid antenna system (FAS) channel model and port-selection outage/capacity analysis."},"C11":{"id":"C11","title":"Spatially Sparse Precoding in Millimeter Wave MIMO Systems","authors":"Omar El Ayach, Sridhar Rajagopal, Shadi Abu-Surra, Zhouyue Pi, and Robert W. Heath Jr.","venue":"IEEE Transactions on Wireless Communications","year":2014,"doi":"10.1109/TWC.2014.011714.130846","url":"https://doi.org/10.1109/TWC.2014.011714.130846","note":"Establishes the canonical Saleh–Valenzuela mmWave channel model and greedy orthogonal matching pursuit (OMP) hybrid precoding baseline approaching unconstrained SVD."},"C12":{"id":"C12","title":"Short-Packet Downlink Transmission With Non-Orthogonal Multiple Access","authors":"Xiaofang Sun, Shihao Yan, Nan Yang, Zhiguo Ding, Chao Shen, and Zhangdui Zhong","venue":"IEEE Transactions on Wireless Communications","year":2018,"doi":"10.1109/TWC.2018.2827368","url":"https://doi.org/10.1109/TWC.2018.2827368","note":"Directly benchmarks two-user downlink NOMA against OMA under finite-blocklength normal-approximation rates, decoding error probabilities, and imperfect SIC."},"C13":{"id":"C13","title":"Ambient Backscatter: Wireless Communication Out of Thin Air","authors":"Vincent Liu, Aaron Parks, Vamsi Talla, Shyamnath Gollakota, David Wetherall, and Joshua R. Smith","venue":"ACM SIGCOMM Computer Communication Review (Proceedings of ACM SIGCOMM 2013)","year":2013,"doi":"10.1145/2486001.2486015","url":"https://doi.org/10.1145/2486001.2486015","note":"Pioneers battery-free ambient RF backscatter communication and provides practical hardware, link-budget, and achievable-rate baselines on ambient broadcast carriers."},"C14":{"id":"C14","title":"Adaptive Beam Tracking With the Unscented Kalman Filter for Millimeter Wave Communication","authors":"Stephen G. Larew and David J. Love","venue":"IEEE Signal Processing Letters","year":2019,"doi":"10.1109/LSP.2019.2944255","url":"https://doi.org/10.1109/LSP.2019.2944255","note":"Formulates a clean state-space predictive beam-tracking and adaptive sounding framework using the Unscented Kalman Filter for mobile mmWave links."},"C15":{"id":"C15","title":"3-D Placement of an Unmanned Aerial Vehicle Base Station (UAV-BS) for Energy-Efficient Maximal Coverage","authors":"Mohamed Alzenad, Amr El-Keyi, Faraj Lagum, and Halim Yanikomeroglu","venue":"IEEE Wireless Communications Letters","year":2017,"doi":"10.1109/LWC.2017.2700840","url":"https://doi.org/10.1109/LWC.2017.2700840","note":"Provides the classic decoupled 3D UAV-BS placement formulation using the air-to-ground probabilistic LoS model to maximize covered users at minimum transmit power."},"M1":{"id":"M1","title":"Complexity-Reduced Model Adaptation for Digital Predistortion of RF Power Amplifiers With Pretraining-Based Feature Extraction","authors":"Yue Li, Xiaoyu Wang, and Anding Zhu","venue":"IEEE Transactions on Microwave Theory and Techniques, vol. 69, no. 3, pp. 1780–1790","year":2021,"doi":"10.1109/TMTT.2020.3039788","url":"https://doi.org/10.1109/TMTT.2020.3039788","note":"Establishes a strong IEEE TMTT baseline on reducing DPD adaptation and computational complexity via offline feature extraction under varying signal bandwidths and power levels."},"M2":{"id":"M2","title":"Pseudo-Doherty Load-Modulated Balanced Amplifier With Wide Bandwidth and Extended Power Back-Off Range","authors":"Yuchen Cao and Kenle Chen","venue":"IEEE Transactions on Microwave Theory and Techniques, vol. 68, no. 7, pp. 3172–3183","year":2020,"doi":"10.1109/TMTT.2020.2983925","url":"https://doi.org/10.1109/TMTT.2020.2983925","note":"Directly bridges Doherty and LMBA architectures, showing how decoupling carrier and peaking amplifiers overcomes Doherty bandwidth limits while maintaining high efficiency up to 10-dB output back-off."},"M3":{"id":"M3","title":"Miniaturization Trends in Substrate Integrated Waveguide (SIW) Filters: A Review","authors":"A. Iqbal, J. J. Tiang, S. K. Wong, M. Alibakhshikenari, F. Falcone, and E. Limiti","venue":"IEEE Access, vol. 8, pp. 223287–223305","year":2020,"doi":"10.1109/ACCESS.2020.3044088","url":"https://doi.org/10.1109/ACCESS.2020.3044088","note":"Provides a systematic taxonomy of SIW filter miniaturization techniques—including half-mode, folded, and air-filled/defected cavities—making it an ideal starting reference for trade-off studies."},"M4":{"id":"M4","title":"A High-Efficiency Broadband Rectenna for Ambient Wireless Energy Harvesting","authors":"C. Song, Y. Huang, J. Zhou, J. Zhang, S. Yuan, and P. Carter","venue":"IEEE Transactions on Antennas and Propagation, vol. 63, no. 8, pp. 3486–3495","year":2015,"doi":"10.1109/TAP.2015.2431719","url":"https://doi.org/10.1109/TAP.2015.2431719","note":"Demonstrates a widely cited two-branch impedance matching network and harmonic-rejecting antenna achieving -35 dBm sensitivity and 55% PCE at -10 dBm across 1.8–2.5 GHz."},"M5":{"id":"M5","title":"Integrated microwave photonic filters","authors":"Yang Liu, Amol Choudhary, David Marpaung, and Benjamin J. Eggleton","venue":"Advances in Optics and Photonics, vol. 12, no. 2, pp. 485–555","year":2020,"doi":"10.1364/AOP.378686","url":"https://doi.org/10.1364/AOP.378686","note":"Serves as the definitive Optica review of integrated microwave photonic filter architectures, covering spectral resolution, tunability, deep stopband rejection, link loss, noise figure, and SFDR."},"M6":{"id":"M6","title":"Photonics-assisted self-interference cancellation for in-band full-duplex integrated sensing and communication transceiver","authors":"Xiao Yu, Jia Ye, Lianshan Yan, Tao Zhou, Ningyuan Zhong, Yue Zhu, Xihua Zou, and Wei Pan","venue":"Optics Express, vol. 32, no. 23, pp. 41708–41725","year":2024,"doi":"10.1364/OE.541229","url":"https://doi.org/10.1364/OE.541229","note":"Experimentally demonstrates a photonic-assisted in-band full-duplex ISAC transceiver with wideband optical self-interference cancellation, quantifying both communication EVM and radar ranging/imaging performance."},"M7":{"id":"M7","title":"3D Printing of Microwave and Millimeter-Wave Filters: Additive Manufacturing Technologies Applied in the Development of High-Performance Filters with Novel Topologies","authors":"Cristiano Tomassoni, Oscar Antonio Peverini, Giuseppe Venanzoni, Giuseppe Addamo, et al.","venue":"IEEE Microwave Magazine, vol. 21, no. 6, pp. 24–45","year":2020,"doi":"10.1109/MMM.2020.2979153","url":"https://doi.org/10.1109/MMM.2020.2979153","note":"Reviews polymer and metal additive manufacturing processes, metallization methods, surface roughness, and dimensional tolerance budgets for 3D-printed microwave and mmWave passive components."},"M8":{"id":"M8","title":"Highly Tunable Heterodyne Sub-THz Wireless Link Entirely Based on Optoelectronics","authors":"A. Morales, G. Nazarikov, S. Rommel, C. Okonkwo, and I. T. Monroy","venue":"IEEE Transactions on Terahertz Science and Technology, vol. 11, no. 3, pp. 261–268","year":2021,"doi":"10.1109/TTHZ.2021.3064188","url":"https://doi.org/10.1109/TTHZ.2021.3064188","note":"Provides a clean experimental and analytical baseline for heterodyne photonic THz generation (80–320 GHz), directly evaluating optical phase noise, photodiode upconversion, and BER."},"M9":{"id":"M9","title":"A Reconfigurable Intelligent Surface at mmWave Based on a Binary Phase Tunable Metasurface","authors":"J.-B. Gros, V. Popov, M. A. Odit, V. Lenets, and G. Lerosey","venue":"IEEE Open Journal of the Communications Society, vol. 2, pp. 1055–1064","year":2021,"doi":"10.1109/OJCOMS.2021.3076271","url":"https://doi.org/10.1109/OJCOMS.2021.3076271","note":"Details the full end-to-end design, PIN-diode 1-bit binary-phase unit cell, hardware prototyping, and over-the-air beamforming characterization of a practical RIS panel."},"M10":{"id":"M10","title":"Cross-Resolution Inverse Design of Planar Filters via a Data-Efficient Frequency-Query Surrogate and Edge Anti-Aliasing Pixelated Layout","authors":"J. Bi, X. Yu, X. Zhou, J. Xia, S. Chen, and W. S. Chan","venue":"IEEE Transactions on Microwave Theory and Techniques, vol. 74, no. 10, pp. 8741–8755","year":2026,"doi":"10.1109/TMTT.2026.3731157","url":"https://doi.org/10.1109/TMTT.2026.3731157","note":"Presents a modern IEEE TMTT framework for data-efficient neural inverse design of planar microwave filters, directly addressing dataset generation cost, S-parameter accuracy, and layout generalization."},"M11":{"id":"M11","title":"Wide-Angle Scanning Lens Fed by Small-Scale Antenna Array for 5G in Millimeter-Wave Band","authors":"Zhishu Qu, Shi-Wei Qu, Zhe Zhang, Shiwen Yang, and Chi Hou Chan","venue":"IEEE Transactions on Antennas and Propagation","year":2020,"doi":"10.1109/TAP.2020.2967086","url":"https://doi.org/10.1109/TAP.2020.2967086","note":"Demonstrates a 28 GHz phased-array-fed gradient-index lens achieving high directivity and wide-angle scanning up to ±58° with reduced element count and experimental validation."},"M12":{"id":"M12","title":"Packaging and Antenna Integration for Silicon-Based Millimeter-Wave Phased Arrays: 5G and Beyond","authors":"Xiaoxiong Gu, Duixian Liu, and Bodhisatwa Sadhu","venue":"IEEE Journal of Microwaves, vol. 1, no. 1, pp. 123–134","year":2021,"doi":"10.1109/JMW.2020.3032891","url":"https://doi.org/10.1109/JMW.2020.3032891","note":"Authoritative IBM-authored review of mmWave antenna-in-package (AiP) stackups, substrate trade-offs, interconnect transitions, mutual coupling, and IC-package co-design."},"M13":{"id":"M13","title":"Polarization-Independent and Ultrawideband Metamaterial Absorber Using a Hexagonal Artificial Impedance Surface and a Resistor-Capacitor Layer","authors":"M. Yoo and S. Lim","venue":"IEEE Transactions on Antennas and Propagation, vol. 62, no. 5, pp. 2652–2658","year":2014,"doi":"10.1109/TAP.2014.2308511","url":"https://doi.org/10.1109/TAP.2014.2308511","note":"Classic, highly cited IEEE TAP baseline for broadband polarization-insensitive metamaterial absorber unit-cell design, equivalent-circuit modeling, and angular-stability verification."},"M14":{"id":"M14","title":"Wideband Envelope Tracking Power Amplifiers With Reduced Bandwidth Power Supply Waveforms and Adaptive Digital Predistortion Techniques","authors":"J. Jeong, D. F. Kimball, M. Kwak, C. Hsia, P. Draxler, and P. M. Asbeck","venue":"IEEE Transactions on Microwave Theory and Techniques, vol. 57, no. 12, pp. 3307–3314","year":2009,"doi":"10.1109/TMTT.2009.2033298","url":"https://doi.org/10.1109/TMTT.2009.2033298","note":"Foundational IEEE TMTT paper addressing the core wideband envelope-tracking bottleneck—supply modulator bandwidth vs. PAE—and showing how adaptive DPD recovers linearity under bandwidth-reduced supply waveforms."},"M15":{"id":"M15","title":"Dual-Band Wearable Textile Antenna on an EBG Substrate","authors":"Shaozhen Zhu and Richard Langley","venue":"IEEE Transactions on Antennas and Propagation, vol. 57, no. 4, pp. 926–935","year":2009,"doi":"10.1109/TAP.2009.2014527","url":"https://doi.org/10.1109/TAP.2009.2014527","note":"Seminal IEEE TAP benchmark for textile wearable antennas, presenting fabric dielectric characterization, EBG body-isolation for low SAR, E/H-plane bending tests, and on-body/phantom validation."},"O1":{"id":"O1","title":"Performance Versus Complexity Study of Neural Network Equalizers in Coherent Optical Systems","authors":"P. J. Freire, Y. Osadchuk, B. Spinnler, A. Napoli, W. Schairer, N. Costa, J. E. Prilepsky, S. K. Turitsyn","venue":"Journal of Lightwave Technology","year":2021,"doi":"10.1109/JLT.2021.3096286","url":"https://doi.org/10.1109/JLT.2021.3096286","note":"Derives explicit real-multiplications-per-symbol complexity expressions and benchmarks Q-factor versus computational complexity across neural equalizer architectures in coherent links."},"O2":{"id":"O2","title":"Mitigating LED Nonlinearity to Enhance Visible Light Communications","authors":"X. Deng, Y. Wu, A. Khalid, J.-P. Linnartz","venue":"IEEE Transactions on Communications, vol. 66, no. 11, pp. 5593-5607","year":2018,"doi":"10.1109/TCOMM.2018.2858239","url":"https://doi.org/10.1109/TCOMM.2018.2858239","note":"Establishes a physics-based discrete-time dynamic LED nonlinearity model and pre-distortion framework validated on both single-carrier and OFDM VLC links."},"O3":{"id":"O3","title":"Survey on Free Space Optical Communication: A Communication Theory Perspective","authors":"M. A. Khalighi, M. Uysal","venue":"IEEE Communications Surveys & Tutorials, vol. 16, no. 4, pp. 2231-2258","year":2014,"doi":"10.1109/COMST.2014.2329501","url":"https://doi.org/10.1109/COMST.2014.2329501","note":"Canonical FSO reference covering Gamma-Gamma turbulence channel modeling alongside aperture averaging, spatial diversity, adaptive optics, and coding mitigation techniques."},"O4":{"id":"O4","title":"Practical Switching-Based Hybrid FSO/RF Transmission and Its Performance Analysis","authors":"M. Usman, H.-C. Yang, M.-S. Alouini","venue":"IEEE Photonics Journal, vol. 6, no. 5, pp. 1-13","year":2014,"doi":"10.1109/JPHOT.2014.2352629","url":"https://doi.org/10.1109/JPHOT.2014.2352629","note":"Introduces and analytically evaluates both single-threshold and dual-threshold switching policies for hybrid FSO/RF links in terms of outage probability, BER, and capacity."},"O5":{"id":"O5","title":"A Survey of Underwater Optical Wireless Communications","authors":"Z. Zeng, S. Fu, H. Zhang, Y. Dong, J. Cheng","venue":"IEEE Communications Surveys & Tutorials, vol. 19, no. 1, pp. 204-238","year":2017,"doi":"10.1109/COMST.2016.2618841","url":"https://doi.org/10.1109/COMST.2016.2618841","note":"Foundational UWOC survey detailing underwater absorption/scattering models across water types and modulation trade-offs needed to design turbidity-driven adaptive MCS schemes."},"O6":{"id":"O6","title":"FPGA Implementation of Power-Lite Volterra-Inspired Neural Network Equalizer in 100G PON","authors":"W. Jiang, L. Huang, Y. Xu, W. Hu, L. Yi","venue":"Journal of Lightwave Technology, vol. 42, no. 9, pp. 3134-3141","year":2024,"doi":"10.1109/JLT.2024.3354510","url":"https://doi.org/10.1109/JLT.2024.3354510","note":"Demonstrates a pruned and quantized Volterra-inspired neural network equalizer on FPGA for 100-Gbps IM/DD PON, bridging neural equalization with hardware complexity limits."},"O7":{"id":"O7","title":"Transmission of 61 C-Band Channels Over Record Distance of Hollow-Core-Fiber With L-Band Interferers","authors":"A. Nespola, S. Straullu, T. Bradley, K. Harrington, H. Sakr, G. Jasion, E. Numkam Fokoua, Y. Jung, Y. Chen, J. R. Hayes, F. Forghieri, D. Richardson, F. Poletti, G. Bosco, P. Poggiolini","venue":"Journal of Lightwave Technology, vol. 39, no. 3, pp. 813-820","year":2021,"doi":"10.1109/JLT.2020.3047670","url":"https://doi.org/10.1109/JLT.2020.3047670","note":"Demonstrates multi-channel coherent PM-QPSK and PM-16QAM transmission over nested antiresonant nodeless hollow-core fiber (NANF) with negligible nonlinear interference."},"O8":{"id":"O8","title":"Finite-Size Security for Discrete-Modulated Continuous-Variable Quantum Key Distribution Protocols","authors":"F. Kanitschar, I. George, J. Lin, T. Upadhyaya, N. Lütkenhaus","venue":"PRX Quantum, vol. 4, 040306","year":2023,"doi":"10.1103/PRXQuantum.4.040306","url":"https://doi.org/10.1103/PRXQuantum.4.040306","note":"Provides a rigorous composable finite-size security proof and numerical key-rate lower-bounding framework for discrete-modulated CV-QKD under realistic detector imperfections."},"O9":{"id":"O9","title":"A silicon photonic–electronic neural network for fibre nonlinearity compensation","authors":"C. Huang, S. Fujisawa, T. Ferreira de Lima, A. N. Tait, E. C. Blow, Y. Tian, S. Bilodeau, A. Jha, F. Yaman, H.-T. Peng, H. G. Batshon, B. J. Shastri, Y. Inada, T. Wang, P. R. Prucnal","venue":"Nature Electronics, vol. 4, no. 11","year":2021,"doi":"10.1038/s41928-021-00661-2","url":"https://doi.org/10.1038/s41928-021-00661-2","note":"Landmark experimental demonstration showing an integrated silicon photonic neural network matching GPU-based electronic NN Q-factor gains for fiber nonlinearity equalization."},"O10":{"id":"O10","title":"Co-Packaged Photonics for High Performance Computing: Status, Challenges and Opportunities","authors":"R. Mahajan, X. Li, J. Fryman, et al.","venue":"Journal of Lightwave Technology, vol. 40, no. 2, pp. 379-392","year":2022,"doi":"10.1109/JLT.2021.3104725","url":"https://doi.org/10.1109/JLT.2021.3104725","note":"Authoritative industry-led JLT overview detailing co-packaged optics link architectures, energy-per-bit scaling, coupling loss, and thermal/packaging trade-offs versus pluggables."},"O11":{"id":"O11","title":"Load Balancing for Hybrid LiFi and WiFi Networks: To Tackle User Mobility and Light-Path Blockage","authors":"X. Wu, H. Haas","venue":"IEEE Transactions on Communications, vol. 68, no. 3, pp. 1675-1683","year":2020,"doi":"10.1109/TCOMM.2019.2962434","url":"https://doi.org/10.1109/TCOMM.2019.2962434","note":"Formulates joint handover and load-balancing optimization for indoor hybrid LiFi/WiFi attocell networks under user mobility and light-path blockages with a low-complexity fuzzy-logic algorithm."},"O12":{"id":"O12","title":"Mode-Division Multiplexing Over 96 km of Few-Mode Fiber Using Coherent 6 × 6 MIMO Processing","authors":"R. Ryf, S. Randel, A. H. Gnauck, C. Bolle, A. Sierra, S. Mumtaz, M. Esmaeelpour, E. C. Burrows, R.-J. Essiambre, P. J. Winzer, et al.","venue":"Journal of Lightwave Technology, vol. 30, p. 521","year":2012,"doi":"10.1109/JLT.2011.2174336","url":"https://doi.org/10.1109/JLT.2011.2174336","note":"Foundational JLT paper establishing coherent MIMO equalization for coupled-mode transmission over few-mode fiber, serving as the standard benchmark for MDM MIMO complexity studies."},"O13":{"id":"O13","title":"Crosstalk mitigation in a free-space orbital angular momentum multiplexed communication link using 4×4 MIMO equalization","authors":"H. Huang, Y. Cao, G. Xie, Y. Ren, Y. Yan, C. Bao, N. Ahmed, M. A. Neifeld, S. J. Dolinar, A. E. Willner","venue":"Optics Letters, vol. 39, no. 15, pp. 4360-4363","year":2014,"doi":"10.1364/OL.39.004360","url":"https://doi.org/10.1364/OL.39.004360","note":"Demonstrates 4×4 CMA-based MIMO digital equalization to recover turbulence-induced inter-mode crosstalk across four multiplexed OAM beams in a free-space optical link."},"O14":{"id":"O14","title":"Wavelength tuning and stabilization of microring-based filters using silicon in-resonator photoconductive heaters","authors":"H. Jayatilleka, K. Murray, M. Á. Guillén-Torres, M. Caverley, R. Hu, N. A. F. Jaeger, L. Chrostowski, S. Shekhar","venue":"Optics Express, vol. 23, no. 19, pp. 25084-25097","year":2015,"doi":"10.1364/OE.23.025084","url":"https://doi.org/10.1364/OE.23.025084","note":"Demonstrates automated closed-loop thermal tuning and stabilization of first- and higher-order silicon photonic microring filters using integrated photoconductive heaters without tap-outs."},"O15":{"id":"O15","title":"Low-Cost Interrogation Technique for Dynamic Measurements with FBG-Based Devices","authors":"C. A. R. Díaz, C. Leitão, C. A. Marques, M. F. Domingues, N. Alberto, M. J. Pontes, A. Frizera, M. R. N. Ribeiro, P. S. B. André, P. F. C. Antunes","venue":"Sensors, vol. 17, no. 10, 2414","year":2017,"doi":"10.3390/s17102414","url":"https://doi.org/10.3390/s17102414","note":"Demonstrates a low-cost passive edge-filter FBG interrogator achieving picometer-class wavelength resolution at up to 5 kHz dynamic refresh rates for vibration and structural sensing."},"E1":{"id":"E1","title":"Fast and Flexible Successive-Cancellation List Decoders for Polar Codes","authors":"Seyyed Ali Hashemi, Carlo Condo, and Warren J. Gross","venue":"IEEE Transactions on Signal Processing, vol. 65, pp. 5756-5769","year":2017,"doi":"10.1109/TSP.2017.2740204","url":"https://doi.org/10.1109/TSP.2017.2740204","note":"Introduces the Fast-SSCL and Fast-SSCL-SPC polar decoding algorithms with constituent-node simplifications and hardware-oriented latency reductions that serve as the standard baseline for FPGA/ASIC polar decoders."},"E2":{"id":"E2","title":"A 1.41-pJ/b 224-Gb/s PAM4 6-bit ADC-Based SerDes Receiver With Hybrid AFE Capable of Supporting Long Reach Channels","authors":"Ahmad Khairi, Yoel Krupnik, et al.","venue":"IEEE Journal of Solid-State Circuits","year":2023,"doi":"10.1109/JSSC.2022.3211475","url":"https://doi.org/10.1109/JSSC.2022.3211475","note":"Demonstrates a 5-nm FinFET 224-Gb/s PAM-4 ADC-based SerDes receiver with a 30-tap digital FFE and optional DFE over up to 38-dB Nyquist loss, providing a strong silicon benchmark for FFE/DFE vs. ML equalization."},"E3":{"id":"E3","title":"Deep Neural Network Augmented Wireless Channel Estimation for Preamble-Based OFDM PHY on Zynq System on Chip","authors":"Syed Asrar Ul Haq, Abdul Karim Gizzini, Shakti Shrey, Sumit J. Darak, Sneh Saurabh, and Marwa Chafii","venue":"IEEE Transactions on Very Large Scale Integration (VLSI) Systems","year":2023,"doi":"10.1109/TVLSI.2023.3274555","url":"https://doi.org/10.1109/TVLSI.2023.3274555","note":"Details hardware-software co-design, fixed-point word-length optimization, and Zynq SoC/FPGA implementation of a neural-network-augmented OFDM PHY receiver block."},"E4":{"id":"E4","title":"A 640-Gb/s 4 × 4-MIMO D-Band CMOS Transceiver Chipset","authors":"Chenxin Liu, Zheng Li, Yudai Yamazaki, Hans Herdian, Chun Wang, Anyi Tian, Jun Sakamaki, Han Nie, Xi Fu, Sena Kato, et al.","venue":"IEEE Journal of Solid-State Circuits, vol. 60, no. 4, pp. 1132-1149","year":2025,"doi":"10.1109/JSSC.2024.3515640","url":"https://doi.org/10.1109/JSSC.2024.3515640","note":"Presents a state-of-the-art D-band CMOS transceiver chipset with detailed link-budget, LO phase-noise, group-delay, and EVM analyses for sub-THz architecture modeling."},"E5":{"id":"E5","title":"PUF Modeling Attacks on Simulated and Silicon Data","authors":"Ulrich Rührmair, Jan Sölter, Frank Sehnke, Xiaolin Xu, Ahmed Mahmoud, Vera Stoyanova, Gideon Dror, Jürgen Schmidhuber, Wayne Burleson, and Srinivas Devadas","venue":"IEEE Transactions on Information Forensics and Security","year":2013,"doi":"10.1109/TIFS.2013.2279798","url":"https://doi.org/10.1109/TIFS.2013.2279798","note":"The foundational benchmark study demonstrating logistic regression and evolution-strategy ML modeling attacks against Arbiter and XOR Arbiter PUFs on both simulated and FPGA/ASIC silicon CRP datasets."},"E6":{"id":"E6","title":"A 90-nm CMOS Threshold-Compensated RF Energy Harvester","authors":"Giuseppe Papotto, Francesco Carrara, and Giuseppe Palmisano","venue":"IEEE Journal of Solid-State Circuits, vol. 46, no. 9, pp. 1985-1997","year":2011,"doi":"10.1109/JSSC.2011.2157010","url":"https://doi.org/10.1109/JSSC.2011.2157010","note":"Establishes the classic passive threshold self-compensation CMOS rectifier and CAD-oriented matching methodology achieving sub--20 dBm sensitivity for ultra-low-power RF energy harvesting."},"E7":{"id":"E7","title":"GPU versus FPGA implementation of a digital predistortion linearizer for wideband radiofrequency power amplifiers","authors":"Wantao Li, Gabriel Montoro, and Pere L. Gilabert","venue":"AEU - International Journal of Electronics and Communications, vol. 174, 155040","year":2024,"doi":"10.1016/j.aeue.2023.155040","url":"https://doi.org/10.1016/j.aeue.2023.155040","note":"Directly compares CUDA GPU and fixed-point FPGA implementations of a generalized memory polynomial (GMP) DPD linearizer for wideband 5G NR signals across throughput, precision, and hardware resources."},"E8":{"id":"E8","title":"Pruned and Quantized Hybrid Models for Edge-Based Automatic Modulation Recognition","authors":"Yerin Byeon, Dohyun Kim, Yue Cao, and Wansu Lim","venue":"IEEE Internet of Things Journal, vol. 13, no. 14, pp. 32442-32446","year":2026,"doi":"10.1109/JIOT.2026.3686512","url":"https://doi.org/10.1109/JIOT.2026.3686512","note":"Evaluates joint weight pruning and post-training quantization on a wireless physical-layer hybrid neural model deployed on edge hardware, showing up to 91% memory reduction."},"E9":{"id":"E9","title":"Extended RISC-V Hardware Architecture for Future Digital Communication Systems","authors":"Mael Tourres, Bertrand Le Gal, Jeremie Crenne, Philippe Coussy, and Cyrille Chavet","venue":"2021 IEEE 4th 5G World Forum (5GWF), pp. 224-229","year":2021,"doi":"10.1109/5GWF52925.2021.00046","url":"https://doi.org/10.1109/5GWF52925.2021.00046","note":"Benchmarks LDPC, Polar, and Turbo FEC decoding kernels across multiple RISC-V soft cores (PicoRV32, IBEX, SCR1, RISCY) and quantifies throughput gains versus LUT overhead from custom ISA extensions."},"E10":{"id":"E10","title":"A Multi-Path Gated Ring Oscillator TDC With First-Order Noise Shaping","authors":"M. Z. Straayer and Michael H. Perrott","venue":"IEEE Journal of Solid-State Circuits, vol. 44, no. 4, pp. 1089-1098","year":2009,"doi":"10.1109/JSSC.2009.2014709","url":"https://doi.org/10.1109/JSSC.2009.2014709","note":"The seminal gated ring oscillator (GRO) TDC paper demonstrating first-order quantization noise shaping and sub-picosecond effective resolution for low-jitter ADPLLs."},"E11":{"id":"E11","title":"Fused-Layer CNN Accelerators","authors":"Manoj Alwani, Han Chen, Michael Ferdman, and Peter Milder","venue":"2016 49th Annual IEEE/ACM International Symposium on Microarchitecture (MICRO), pp. 1-12","year":2016,"doi":"10.1109/MICRO.2016.7783725","url":"https://doi.org/10.1109/MICRO.2016.7783725","note":"Introduces pyramid-tiled fused-layer execution on FPGAs to cache intermediate feature maps on-chip and drastically cut off-chip DRAM bandwidth for CNN inference."},"E12":{"id":"E12","title":"Tunable Class E² DC–DC Converter With High Efficiency and Stable Output Power for 6.78-MHz Wireless Power Transfer","authors":"Shuangke Liu, Ming Liu, Songyang Han, Xinen Zhu, and Chengbin Ma","venue":"IEEE Transactions on Power Electronics, vol. 33, no. 8","year":2018,"doi":"10.1109/TPEL.2017.2762924","url":"https://doi.org/10.1109/TPEL.2017.2762924","note":"Analyzes and experimentally validates fixed and tunable impedance matching networks in a 6.78-MHz Class E² resonant WPT converter to preserve efficiency and output power across coil misalignment and load variations."},"E13":{"id":"E13","title":"Wideband Spectrum Sensing at Sub-Nyquist Rates","authors":"Moshe Mishali and Yonina C. Eldar","venue":"IEEE Signal Processing Magazine","year":2011,"doi":"10.1109/MSP.2011.941094","url":"https://doi.org/10.1109/MSP.2011.941094","note":"Presents the Modulated Wideband Converter (MWC) architecture, sparse recovery pipeline, and hardware prototype results for real-time sub-Nyquist wideband spectrum sensing."},"N1":{"id":"N1","title":"ColO-RAN: Developing Machine Learning-Based xApps for Open RAN Closed-Loop Control on Programmable Experimental Platforms","authors":"Michele Polese, Leonardo Bonati, Salvatore D'Oro, Stefano Basagni, Tommaso Melodia","venue":"IEEE Transactions on Mobile Computing","year":2023,"doi":"10.1109/TMC.2022.3188013","url":"https://doi.org/10.1109/TMC.2022.3188013","note":"Provides an end-to-end open-source O-RAN near-RT RIC framework and experimental workflow for training, deploying, and benchmarking DRL-based xApps."},"N2":{"id":"N2","title":"Conflict Mitigation Framework and Conflict Detection in O-RAN Near-RT RIC","authors":"C. Adamczyk, A. Kliks","venue":"IEEE Communications Magazine","year":2023,"doi":"10.1109/MCOM.018.2200752","url":"https://doi.org/10.1109/MCOM.018.2200752","note":"Defines a structured taxonomy of direct, indirect, and implicit xApp conflicts along with a conflict detection and mitigation architecture inside the near-RT RIC."},"N3":{"id":"N3","title":"Network Digital Twin: Context, Enabling Technologies, and Opportunities","authors":"Paul Almasan, Miquel Ferriol-Galmés, Jordi Paillisse, José Suárez-Varela, Diego Perino, Diego Lopez, Antonio Agustin Pastor Perales, Paul Harvey, Laurent Ciavaglia, Leon Wong, et al.","venue":"IEEE Communications Magazine","year":2022,"doi":"10.1109/MCOM.001.2200012","url":"https://doi.org/10.1109/MCOM.001.2200012","note":"Establishes the reference architecture for data-driven network digital twins, real-time KPI prediction, and what-if optimization trade-offs."},"N4":{"id":"N4","title":"Extending Accurate Time Distribution and Timeliness Capabilities Over the Air to Enable Future Wireless Industrial Automation Systems","authors":"Dave Cavalcanti, Javier Perez-Ramirez, M. M. Rashid, J. Fang, M. Galeev, K. B. Stanton","venue":"Proceedings of the IEEE","year":2019,"doi":"10.1109/JPROC.2019.2903414","url":"https://doi.org/10.1109/JPROC.2019.2903414","note":"Serves as the foundational reference on extending TSN time distribution and bounded-latency guarantees over Wi-Fi and 5G wireless links."},"N5":{"id":"N5","title":"Time Synchronization for 5G and TSN Integrated Networking","authors":"Zixiao Wang, Zonghui Li, Cheng Long, Yiming Zheng, Bo Ai, Xiaoyu Song","venue":"IEEE Journal on Selected Areas in Communications","year":2025,"doi":"10.1109/JSAC.2025.3574595","url":"https://doi.org/10.1109/JSAC.2025.3574595","note":"Addresses 3GPP-aligned 5G–TSN bridge interoperability and validates sub-microsecond time synchronization under multi-gNB contention, retransmissions, and mobility."},"N6":{"id":"N6","title":"Network topology design at 27,000 km/hour","authors":"Debopam Bhattacherjee, Ankit Singla","venue":"Proceedings of the 15th International Conference on Emerging Networking Experiments and Technologies (ACM CoNEXT '19)","year":2019,"doi":"10.1145/3359989.3365407","url":"https://doi.org/10.1145/3359989.3365407","note":"Introduces Starlink- and Kuiper-scale LEO inter-satellite link topology modeling and motif-based connectivity baselines for evaluating dynamic routing and hop/latency trade-offs."},"N7":{"id":"N7","title":"Classic Meets Modern: a Pragmatic Learning-Based Congestion Control for the Internet","authors":"Soheil Abbasloo, Chen-Yu Yen, H. Jonathan Chao","venue":"Proceedings of the Annual Conference of the ACM Special Interest Group on Data Communication (ACM SIGCOMM '20)","year":2020,"doi":"10.1145/3387514.3405892","url":"https://doi.org/10.1145/3387514.3405892","note":"Presents Orca, a widely used hybrid classic-plus-DRL congestion control baseline that directly targets generalization across unseen network conditions and coexistence fairness."},"N8":{"id":"N8","title":"Energy Efficient Federated Learning Over Wireless Communication Networks","authors":"Zhaohui Yang, Mingzhe Chen, Walid Saad, Choong Seon Hong, Mohammad Shikh-Bahaei","venue":"IEEE Transactions on Wireless Communications","year":2020,"doi":"10.1109/TWC.2020.3037554","url":"https://doi.org/10.1109/TWC.2020.3037554","note":"Formulates the canonical joint computation-and-communication energy minimization model for wireless federated learning under latency and accuracy constraints."},"N9":{"id":"N9","title":"GAN-Powered Deep Distributional Reinforcement Learning for Resource Management in Network Slicing","authors":"Yuxiu Hua, Rongpeng Li, Zhifeng Zhao, Xianfu Chen, Honggang Zhang","venue":"IEEE Journal on Selected Areas in Communications","year":2020,"doi":"10.1109/JSAC.2019.2959185","url":"https://doi.org/10.1109/JSAC.2019.2959185","note":"Provides a well-cited DRL formulation for 5G RAN slicing that jointly optimizes SLA satisfaction ratio and spectrum efficiency under fluctuating slice demands."},"N10":{"id":"N10","title":"Comparative study of cost-effective coherent and direct detection schemes for 100 Gb/s/λ PON","authors":"Yixiao Zhu, Lilin Yi, Bo Yang, Xingang Huang, Jun Shan Wey, Zhuang Ma, Weisheng Hu","venue":"Journal of Optical Communications and Networking (IEEE/Optica JOCN)","year":2020,"doi":"10.1364/JOCN.390911","url":"https://doi.org/10.1364/JOCN.390911","note":"Systematically benchmarks direct-detection and simplified coherent 100G/λ PON transceivers across power budget, dispersion reach, and hardware complexity."},"N11":{"id":"N11","title":"Multi-Link Operation in IEEE 802.11be WLANs","authors":"Á. López-Raventós, B. Bellalta","venue":"IEEE Wireless Communications","year":2022,"doi":"10.1109/MWC.006.2100404","url":"https://doi.org/10.1109/MWC.006.2100404","note":"Explains IEEE 802.11be MLO modes (STR/NSTR) and evaluates traffic-to-link allocation policies to show when multi-link operation outperforms single-link setups."},"N12":{"id":"N12","title":"Random Access Procedure Over Non-Terrestrial Networks: From Theory to Practice","authors":"Oltjon Kodheli, Abdelrahman Astro, Jorge Querol, Mohammad Gholamian, Sumit Kumar, Nicola Maturo, Symeon Chatzinotas","venue":"IEEE Access","year":2021,"doi":"10.1109/ACCESS.2021.3101291","url":"https://doi.org/10.1109/ACCESS.2021.3101291","note":"Analyzes 3GPP 5G NTN random access and timing advance failures caused by long satellite propagation delays and differential delays, offering a clear baseline for pre-compensation studies."},"N13":{"id":"N13","title":"What do LLMs need to Synthesize Correct Router Configurations?","authors":"Rajdeep Mondal, Alan Tang, Ryan Beckett, Todd Millstein, George Varghese","venue":"Proceedings of the 22nd ACM Workshop on Hot Topics in Networks (ACM HotNets '23)","year":2023,"doi":"10.1145/3626111.3628194","url":"https://doi.org/10.1145/3626111.3628194","note":"Introduces the iterative LLM synthesis-with-verification (validate-and-repair) loop using formal network verifiers to catch and fix hallucinated router configurations."},"N14":{"id":"N14","title":"Efficient Mobility-Aware Task Offloading for Vehicular Edge Computing Networks","authors":"Chao Yang, Yi Liu, Xin Chen, Weifeng Zhong, Shengli Xie","venue":"IEEE Access","year":2019,"doi":"10.1109/ACCESS.2019.2900530","url":"https://doi.org/10.1109/ACCESS.2019.2900530","note":"Models vehicle mobility and cooperative task handoff across adjacent roadside MEC servers, establishing a clean analytical baseline for offloading and migration cost trade-offs."},"N15":{"id":"N15","title":"Energy Consumption Evaluation of Post-Quantum TLS 1.3 for Resource-Constrained Embedded Devices","authors":"George Tasopoulos, Charis Dimopoulos, Apostolos P. Fournaris, Raymond K. Zhao, A. Sakzad, R. Steinfeld","venue":"Proceedings of the 20th ACM International Conference on Computing Frontiers (ACM CF '23)","year":2023,"doi":"10.1145/3587135.3592821","url":"https://doi.org/10.1145/3587135.3592821","note":"Benchmarks NIST post-quantum KEM and signature algorithms inside TLS 1.3 handshakes on constrained embedded hardware, quantifying both latency and energy overhead."},"S1":{"id":"S1","title":"AMCRN: Few-Shot Learning for Automatic Modulation Classification","authors":"Quan Zhou, Ronghui Zhang, Junsheng Mu, Hongming Zhang, Xiaojun Jing","venue":"IEEE Communications Letters, vol. 26, no. 3, pp. 542-546","year":2022,"doi":"10.1109/LCOMM.2021.3135688","url":"https://doi.org/10.1109/LCOMM.2021.3135688","note":"Establishes a compact relation-network baseline for C-way K-shot modulation classification on standard 2x128 I/Q RadioML-style inputs."},"S2":{"id":"S2","title":"Unsupervised Wireless Spectrum Anomaly Detection With Interpretable Features","authors":"Sreeraj Rajendran, Wannes Meert, Vincent Lenders, Sofie Pollin","venue":"IEEE Transactions on Cognitive Communications and Networking","year":2019,"doi":"10.1109/TCCN.2019.2911524","url":"https://doi.org/10.1109/TCCN.2019.2911524","note":"Introduces the widely cited SAIFE adversarial autoencoder framework for unsupervised RF spectrum anomaly and intrusion detection with interpretable bandwidth and position features."},"S3":{"id":"S3","title":"Deep Learning-based Predictive Beam Management for 5G mmWave Systems","authors":"Aliye Özge Kaya, Harish Viswanathan","venue":"2021 IEEE Wireless Communications and Networking Conference (WCNC)","year":2021,"doi":"10.1109/WCNC49053.2021.9417452","url":"https://doi.org/10.1109/WCNC49053.2021.9417452","note":"Provides a practical 5G mmWave baseline for using deep learning to proactively predict future beams and cut beam-sweeping overhead under user mobility."},"S4":{"id":"S4","title":"tinyRadar: mmWave Radar based Human Activity Classification for Edge Computing","authors":"Satyapreet Singh Yadav, Radha Agarwal, Kola Bharath, Sandeep Rao, Chetan Singh Thakur","venue":"2022 IEEE International Symposium on Circuits and Systems (ISCAS)","year":2022,"doi":"10.1109/ISCAS48785.2022.9937293","url":"https://doi.org/10.1109/ISCAS48785.2022.9937293","note":"Demonstrates an end-to-end low-footprint mmWave FMCW radar human activity recognition pipeline specifically designed and profiled for real-time edge hardware."},"S5":{"id":"S5","title":"Reconstruction of Signals From Level-Crossing Samples Using Implicit Information","authors":"Dominik Rzepka, Mirosław Pawlak, Dariusz Kościelnik, Marek Miśkowicz","venue":"IEEE Access, vol. 6, pp. 35001-35011","year":2018,"doi":"10.1109/ACCESS.2018.2839186","url":"https://doi.org/10.1109/ACCESS.2018.2839186","note":"Provides the foundational signal model and Projection Onto Convex Sets (POCS) reconstruction baseline for event-driven level-crossing sampling with bounded recovery error."},"S6":{"id":"S6","title":"Deep Networks for Direction-of-Arrival Estimation in Low SNR","authors":"Georgios K. Papageorgiou, Mathini Sellathurai, Yonina C. Eldar","venue":"IEEE Transactions on Signal Processing, vol. 69, pp. 3714-3729","year":2021,"doi":"10.1109/TSP.2021.3089927","url":"https://doi.org/10.1109/TSP.2021.3089927","note":"Establishes a flagship IEEE TSP CNN baseline that maps sample covariance estimates to DoAs with strong resilience to low SNR and a small number of snapshots."},"S7":{"id":"S7","title":"BeamSync: Over-The-Air Synchronization for Distributed Massive MIMO Systems","authors":"Unnikrishnan Kunnath Ganesan, Rimalapudi Sarvendranath, Erik G. Larsson","venue":"IEEE Transactions on Wireless Communications, vol. 23, no. 7, pp. 6824-6837","year":2024,"doi":"10.1109/TWC.2023.3335089","url":"https://doi.org/10.1109/TWC.2023.3335089","note":"Defines a rigorous over-the-air synchronization protocol and optimal phase/frequency offset estimators for coherent joint transmission across distributed antenna arrays."},"S8":{"id":"S8","title":"Online Meta-Learning for Hybrid Model-Based Deep Receivers","authors":"Tomer Raviv, Sangwoo Park, Osvaldo Simeone, Yonina C. Eldar, Nir Shlezinger","venue":"IEEE Transactions on Wireless Communications, vol. 22, no. 10","year":2023,"doi":"10.1109/TWC.2023.3241841","url":"https://doi.org/10.1109/TWC.2023.3241841","note":"Serves as a benchmark for continuously adapting neural wireless receivers across rapidly drifting, non-stationary channels without requiring extra pilot overhead."},"S9":{"id":"S9","title":"End-to-End Learning of OFDM Waveforms With PAPR and ACLR Constraints","authors":"Mathieu Goutay, Fayçal Ait Aoudia, Jakob Hoydis, Jean-Marie Gorce","venue":"2021 IEEE Globecom Workshops (GC Wkshps)","year":2021,"doi":"10.1109/GCWkshps52748.2021.9682132","url":"https://doi.org/10.1109/GCWkshps52748.2021.9682132","note":"Introduces an augmented-Lagrangian end-to-end neural transceiver formulation that directly enforces differentiable PAPR and ACLR spectral-mask constraints during waveform learning."},"S10":{"id":"S10","title":"Exposing the Fingerprint: Dissecting the Impact of the Wireless Channel on Radio Fingerprinting","authors":"Amani Al-Shawabka, Francesco Restuccia, Salvatore D'Oro, Tong Jian, Bruno Costa Rendon, Nasim Soltani, Jennifer Dy, Stratis Ioannidis, Kaushik Chowdhury, Tommaso Melodia","venue":"IEEE INFOCOM 2020 - IEEE Conference on Computer Communications","year":2020,"doi":"10.1109/INFOCOM41043.2020.9155259","url":"https://doi.org/10.1109/INFOCOM41043.2020.9155259","note":"Provides the canonical experimental study quantifying how RF fingerprinting accuracy degrades across different days and channels, motivating drift-resilient equalization and adaptation."},"I1":{"id":"I1","title":"Do LoRa Low-Power Wide-Area Networks Scale?","authors":"Martin C. Bor, Utz Roedig, Thiemo Voigt, Juan M. Alonso","venue":"Proceedings of the 19th ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems (MSWiM '16)","year":2016,"doi":"10.1145/2988287.2989163","url":"https://doi.org/10.1145/2988287.2989163","note":"Establishes the foundational LoRaSim scalability model and demonstrates how dynamic spreading-factor and transmission-parameter selection directly governs dense LoRaWAN capacity."},"I2":{"id":"I2","title":"Dissecting Energy Consumption of NB-IoT Devices Empirically","authors":"Foivos Michelinakis, Anas Saeed Al-Selwi, Martina Capuzzo, Andrea Zanella, Kashif Mahmood, Ahmed Elmokashfi","venue":"IEEE Internet of Things Journal, Vol. 8, No. 2, pp. 1224-1242","year":2021,"doi":"10.1109/JIOT.2020.3013949","url":"https://doi.org/10.1109/JIOT.2020.3013949","note":"Provides an empirical, trace-driven breakdown of NB-IoT current consumption across operational states (PSM, eDRX, ECL, and RAI) on commercial networks, making it an ideal baseline for energy-per-report optimization."},"I3":{"id":"I3","title":"Understanding the Performance of Bluetooth Mesh: Reliability, Delay, and Scalability Analysis","authors":"Raúl Rondón, Aamir Mahmood, Simone Grimaldi, Mikael Gidlund","venue":"IEEE Internet of Things Journal, Vol. 7, No. 3, pp. 2089-2101","year":2020,"doi":"10.1109/JIOT.2019.2960248","url":"https://doi.org/10.1109/JIOT.2019.2960248","note":"Rigorous analysis of Bluetooth Mesh flooding, timing parameters, interference, and broadcast-storm scalability limits, providing a strong benchmark when comparing BLE Mesh against Wi-SUN in large-scale deployments."},"I4":{"id":"I4","title":"On-Device Customization of Tiny Deep Learning Models for Keyword Spotting With Few Examples","authors":"M. Rusci, T. Tuytelaars","venue":"IEEE Micro, Vol. 43, No. 6, pp. 50-57","year":2023,"doi":"10.1109/MM.2023.3311826","url":"https://doi.org/10.1109/MM.2023.3311826","note":"Evaluates 8-bit quantized TinyML keyword-spotting architectures (including DS-CNN and ResNet15 backbones on Google Speech Commands) alongside latency, memory, and milliwatt-scale energy costs on an ultra-low-power MCU."},"I5":{"id":"I5","title":"Secure Firmware Updates for Constrained IoT Devices Using Open Standards: A Reality Check","authors":"Koen Zandberg, Kaspar Schleiser, Francisco Acosta, Hannes Tschofenig, Emmanuel Baccelli","venue":"IEEE Access, Vol. 7, pp. 71907-71920","year":2019,"doi":"10.1109/ACCESS.2019.2919760","url":"https://doi.org/10.1109/ACCESS.2019.2919760","note":"Presents the first experimental evaluation of the IETF SUIT manifest architecture, dual-slot flash layouts, and lightweight signature libraries on Cortex-M-class microcontrollers with under 32 kB RAM and 128 kB flash."},"I6":{"id":"I6","title":"Jamming Sensor Networks: Attack and Defense Strategies","authors":"Wenyuan Xu, Ke Ma, Wade Trappe, Yanyong Zhang","venue":"IEEE Network, Vol. 20, No. 3, pp. 41-47","year":2006,"doi":"10.1109/MNET.2006.1637931","url":"https://doi.org/10.1109/MNET.2006.1637931","note":"Seminal IEEE reference defining jamming attack models, multimodal RSSI/carrier-sensing/PDR detection metrics, and spectral-evasion (channel-surfing) countermeasures for low-power wireless sensor meshes."},"I7":{"id":"I7","title":"Hibernus: Sustaining Computation During Intermittent Supply for Energy-Harvesting Systems","authors":"Domenico Balsamo, Alex S. Weddell, Geoff V. Merrett, Bashir M. Al-Hashimi, Davide Brunelli, Luca Benini","venue":"IEEE Embedded Systems Letters, Vol. 7, No. 1, pp. 15-18","year":2015,"doi":"10.1109/LES.2014.2371494","url":"https://doi.org/10.1109/LES.2014.2371494","note":"Introduces reactive on-demand checkpointing to FRAM upon impending power loss, serving as a classic low-overhead baseline for intermittent computing on energy-harvesting microcontrollers."},"I8":{"id":"I8","title":"NLOS Identification and Mitigation for Localization Based on UWB Experimental Data","authors":"S. Maranò, W. M. Gifford, H. Wymeersch, M. Z. Win","venue":"IEEE Journal on Selected Areas in Communications","year":2010,"doi":"10.1109/JSAC.2010.100907","url":"https://doi.org/10.1109/JSAC.2010.100907","note":"Foundational experimental study extracting UWB waveform features for machine-learning-based NLOS identification and ranging-bias mitigation without relying on fragile parametric channel models."},"I9":{"id":"I9","title":"Side-Channel Countermeasures' Dissection and the Limits of Closed Source Security Evaluations","authors":"Olivier Bronchain, François-Xavier Standaert","venue":"IACR Transactions on Cryptographic Hardware and Embedded Systems (TCHES), Vol. 2020, No. 2, pp. 1-25","year":2020,"doi":"10.46586/tches.v2020.i2.1-25","url":"https://tches.iacr.org/index.php/TCHES/article/view/8542","note":"Dissects combined masking (affine secret sharing) and hiding (shuffled execution) countermeasures on an open-source ARM Cortex-M AES implementation, illuminating practical leakage vs. overhead trade-offs on COTS MCUs."},"I10":{"id":"I10","title":"Performance Evaluation of MQTT and CoAP via a Common Middleware","authors":"Dinesh Thangavel, Xiaoping Ma, Alvin Valera, Hwee-Xian Tan, Colin Keng-Yan Tan","venue":"2014 IEEE Ninth International Conference on Intelligent Sensors, Sensor Networks and Information Processing (ISSNIP), pp. 1-6","year":2014,"doi":"10.1109/ISSNIP.2014.6827678","url":"https://doi.org/10.1109/ISSNIP.2014.6827678","note":"Widely cited experimental baseline comparing MQTT QoS levels and CoAP over emulated lossy links across packet-loss rates, showing exact crossover points in end-to-end delay and bandwidth overhead."}};
+var REPORT={"landscapes":{"C":"Active frontier: high-mobility waveforms (OTFS, AFDM), integrated sensing & communication (ISAC), reconfigurable intelligent surfaces (RIS), cell-free massive MIMO, semantic/goal-oriented communication, and ML-based physical-layer processing. Recurring documented gaps: channel estimation overhead/complexity, generalization of learned receivers, imperfect-CSI robustness, and the simulation-to-experiment validation gap.","M":"Dominant threads: power-amplifier efficiency and linearization (DPD, Doherty/LMBA), SIW/planar filters, rectennas and RF energy harvesting, integrated microwave photonics (MWP), additive-manufactured RF, and ML-assisted component design. Recurring gaps: complexity/linearity trade-offs, low-power rectifier efficiency, and integration/validation.","O":"Two regimes: fiber/coherent (capacity, nonlinearity, DSP complexity) and optical-wireless (FSO turbulence, VLC LED nonlinearity, underwater turbidity). Cross-cutting areas: ML equalizers, hollow-core fiber, CV-QKD, photonic computing, and co-packaged optics. Recurring gaps: complexity-vs-performance, realistic-channel robustness, and experimental validation.","E":"Communication-relevant electronics: FEC decoder VLSI/FPGA, high-speed SerDes DSP, sub-THz CMOS transceivers, FPGA neural receivers, hardware security (PUFs), and energy-harvesting rectifiers. Recurring gaps: throughput/latency/area trade-offs, hardware-aware ML, and low-power efficiency. All topics have practical FPGA or behavioral-simulation paths without requiring chip tape-out.","N":"Active threads: O-RAN intelligence (xApps), network digital twins, wireless/5G-TSN, LEO constellation routing, ML congestion control, federated learning over wireless, RAN slicing, and next-gen PON. Recurring gaps: real-time control, generalization, twin fidelity, and experimental validation — framed as system/algorithm theses using simulation and open-source stacks."},"ranking":[{"rank":1,"id":"C1","label":"OTFS channel estimation","block":"Communications","score":"8.10","type":"Balanced, fast, publishable"},{"rank":1,"id":"C3","label":"ISAC waveform trade-off","block":"Communications","score":"8.10","type":"Theory-strong"},{"rank":3,"id":"O2","label":"VLC LED-nonlinearity + PAPR","block":"Optical","score":"8.05","type":"Fastest-to-publish"},{"rank":4,"id":"M1","label":"Low-complexity DPD","block":"Microwaves","score":"7.95","type":"Fast, practical"},{"rank":5,"id":"C9","label":"Robust AN / PLS","block":"Communications","score":"7.90","type":"Theory-strong"},{"rank":6,"id":"O1","label":"NN equalizer complexity","block":"Optical","score":"7.80","type":"Balanced"},{"rank":6,"id":"E1","label":"Polar/LDPC decoder FPGA","block":"Electronics","score":"7.80","type":"Hardware-strong"},{"rank":8,"id":"M6","label":"MWP-ISAC","block":"Microwaves","score":"7.65","type":"Best interdisciplinary"},{"rank":9,"id":"O5","label":"UOWC adaptive modulation","block":"Optical","score":"7.60","type":"Fast, feasible"},{"rank":9,"id":"E5","label":"PUF ML attacks","block":"Electronics","score":"7.60","type":"Fast, feasible"},{"rank":11,"id":"N7","label":"ML congestion control","block":"Networks","score":"7.45","type":"Fast, sim-only"}],"recommendations":[{"label":"Strongest overall research opportunity","text":"C1 (OTFS channel estimation) and C3 (ISAC waveform trade-off) — genuine, survey-documented gaps, high novelty and publication potential, and fully simulation-feasible."},{"label":"Fastest & easiest with solid research value","text":"O2 (VLC LED-nonlinearity + PAPR) — pure simulation, clear metrics (BER/EVM/PAPR), rich literature, optional low-cost LED bench, and publishable incremental deltas. Runner-up: M1 (DPD)."},{"label":"Most feasible with limited lab resources","text":"O2, E5 (PUF), and N7 (ML congestion control) — all simulation-only with no expensive equipment required."},{"label":"Strongest theoretical contribution","text":"C9 (robust PLS) and C3 (ISAC); O8 (CV-QKD) is also strong for students interested in information theory."},{"label":"Best Communication + Optical interdisciplinary topic","text":"M6 (MWP-ISAC); more feasible alternatives include M5 (MWP filter) or N10 (coherent PON)."},{"label":"Best publishable incremental contribution","text":"O2, M1, and O1 — well-defined baselines, measurable deltas, and active peer-reviewed venues."},{"label":"General starting strategy","text":"For a fast, safe, publishable track, start with O2 (VLC) or M1 (DPD); choose C1 (OTFS) as the higher-impact option for a stronger novelty story. All three have clean baselines, standard tools (MATLAB/Python), and measurable contributions."}],"bib":{"1":{"cite":"Aldababsa et al., \"A Survey on OTFS Modulation,\" IEEE OJ-COMS, 2024","tag":"S","url":"https://ieeexplore.ieee.org/document/10584089"},"2":{"cite":"Aslandogan et al., \"Channel Estimation Techniques for OTFS,\" arXiv:2512.13032, 2025","tag":"P","url":"https://arxiv.org/pdf/2512.13032"},"3":{"cite":"Ju et al., \"Multi-Pilot Channel Estimation for OTFS,\" 2024 (open-access)","tag":"J","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11644482/"},"4":{"cite":"Rou et al., \"AFDM for 6G: Properties, Features, and Challenges,\" IEEE Commun. Standards Mag. 10(2):216–225, 2026","tag":"S","url":"https://ieeexplore.ieee.org/document/11322564"},"5":{"cite":"Yin et al., \"Affine Frequency Division Multiplexing: Extending OFDM for Scenario-Flexibility and Resilience,\" IEEE Wireless Communications 36(6):200–208, 2025","tag":"S","url":"https://doi.org/10.1109/MWC.2025.3600081"},"6":{"cite":"Lu et al., \"Augmented AFDM for Low PAPR & Diversity,\" 2026","tag":"J","url":"https://eprints.soton.ac.uk/512485/"},"7":{"cite":"Liu et al., \"Integrated Sensing and Communications: Toward Dual-Functional Wireless Networks for 6G and Beyond,\" IEEE JSAC, 2022","tag":"J","url":"https://discovery.ucl.ac.uk/10147120/"},"8":{"cite":"Wei et al., \"ISAC Channel Modeling,\" 2024","tag":"S","url":"https://ieeexplore.ieee.org/document/10646523","verify":true},"9":{"cite":"Iqbal et al., \"A comprehensive survey on RIS,\" Discover Applied Sciences, 2025","tag":"S","url":"https://doi.org/10.1007/s42452-025-07684-w"},"10":{"cite":"Johari et al., \"Design and SDR Validation of a 5.8 GHz 1-bit RIS,\" IEEE Access, 2025","tag":"J","url":"https://ieeexplore.ieee.org/document/11214371"},"11":{"cite":"Liu et al., \"A survey on semantic communications,\" Digital Commun. Networks, 2024","tag":"S","url":"https://www.sciencedirect.com/science/article/pii/S2352864823000925"},"12":{"cite":"\"Semantic Communication: A Survey on Research Landscape, Challenges, and Future Directions,\" Proc. IEEE 112(11):1649–1685, 2024","tag":"S","url":"https://pure.etsmtl.ca/en/publications/semantic-communication-a-survey-on-research-landscape-challenges-/"},"13":{"cite":"Xie, Qin, Li, Juang, \"Deep Learning Enabled Semantic Communication Systems (DeepSC),\" IEEE Trans. Signal Process. 69:2663–2675, 2021","tag":"J","url":"https://ieeexplore.ieee.org/document/9398576"},"14":{"cite":"Apiyo et al., \"A Survey of NOMA-Aided Cell-Free Massive MIMO,\" Electronics 13(1):231, 2024","tag":"S","url":"https://www.mdpi.com/2079-9292/13/1/231"},"15":{"cite":"Ajmal et al., \"Cell-free massive MIMO challenges and opportunities,\" ICT Express, 2024","tag":"S","url":"https://www.sciencedirect.com/science/article/pii/S2405959523001431"},"16":{"cite":"\"Ultra-Dense Cell-Free Massive MIMO for 6G,\" arXiv:2401.03898, 2024","tag":"P","url":"https://arxiv.org/html/2401.03898v3"},"17":{"cite":"Doha et al., \"Deep Learning in Wireless Communication Receivers: A Survey,\" IEEE Access, 2025","tag":"S","url":"https://ieeexplore.ieee.org/document/11053759"},"18":{"cite":"Jiang et al., \"Terahertz Communications and Sensing for 6G and Beyond,\" IEEE COMST, 2024","tag":"S","url":"https://doi.org/10.1109/COMST.2024.3385908"},"19":{"cite":"Pradhan et al., \"PLS of Ultra/Hyper Reliable Low Latency Communication,\" 2024","tag":"S","url":"https://ieeexplore.ieee.org/document/10599431","verify":true},"20":{"cite":"Kaur et al., \"RIS for physical layer security of next-gen wireless,\" 2024","tag":"S","url":"https://dr.ntu.edu.sg/entities/publication/1cfad6dd-610b-4b8b-a8e7-af46bf7b8986","verify":true},"21":{"cite":"Shah et al., \"A Survey on Fluid Antenna Multiple Access for 6G,\" 2024","tag":"S","url":"https://pure.uj.ac.za/en/publications/a-survey-on-fluid-antenna-multiple-access-for-6g-a-new-multiple-a/"},"22":{"cite":"Tong et al., \"Designs and Challenges in Fluid Antenna System Hardware,\" Electronics 14(7):1458, 2025","tag":"S","url":"https://www.mdpi.com/2079-9292/14/7/1458"},"23":{"cite":"\"A Contemporary Survey on Fluid Antenna Systems,\" arXiv:2506.13317, 2025","tag":"P","url":"https://arxiv.org/html/2506.13317v1"},"24":{"cite":"Li et al., \"GPU versus FPGA implementation of a DPD linearizer,\" AEU Int. J. Electron. Commun., 2024","tag":"J","url":"https://www.sciencedirect.com/science/article/pii/S1434841123005149"},"25":{"cite":"Somasundaram et al., \"Effective DPD on a Broadband mm-Wave PA,\" Electronics 12(13):2869, 2023","tag":"J","url":"https://www.mdpi.com/2079-9292/12/13/2869"},"26":{"cite":"Ahmed et al., \"PA Predistortion Using Reduced Sampling Rates,\" 2024","tag":"J","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11174943/"},"27":{"cite":"Jaraut et al., \"Low Complexity Concurrent Multi-Band Modeling & DPD,\" IEEE Access, 2025","tag":"J","url":"https://ieeexplore.ieee.org/document/11106462"},"28":{"cite":"Makhsuci et al., \"A review of Doherty PA and load modulated balanced amplifier,\" Int. J. Circuit Theory Appl. (Wiley), 2023","tag":"S","url":"https://doi.org/10.1002/cta.3521"},"29":{"cite":"Eid et al., \"Highly Efficient GaN Doherty PA for N78 Sub-6 GHz,\" Electronics, 2023","tag":"J","url":"https://orca.cardiff.ac.uk/id/eprint/163102/"},"30":{"cite":"Jin et al., \"High-Efficiency Sequential Load-Modulated Balanced Amplifier,\" Electronics 13(19):3897, 2024","tag":"J","url":"https://www.mdpi.com/2079-9292/13/19/3897"},"31":{"cite":"Zhou et al., \"SIW multiband bandpass filters and applications: review,\" 2023","tag":"S","url":"https://publications.polymtl.ca/53329/"},"32":{"cite":"Pradhan et al., \"Bandwidth-Controllable Third-Order SIW Band Pass Filter,\" 2023","tag":"J","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC10346926/"},"33":{"cite":"García et al., \"Low-Loss Periodically Air-Filled SIW Filter,\" IEEE Access, 2024","tag":"J","url":"https://ieeexplore.ieee.org/document/10379804"},"34":{"cite":"Khan et al., \"RF energy harvesters for wireless sensors: state of the art,\" 2024","tag":"S","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11166779/"},"35":{"cite":"Halimi et al., \"Multi-band Microwave Rectifiers for RF Energy Harvesting,\" IEEE Access, 2025","tag":"J","url":"https://ieeexplore.ieee.org/document/11121182"},"36":{"cite":"Prashad et al., \"A Compact Circular Rectenna for RF-Energy Harvesting at ISM,\" Micromachines 14(4):825, 2023","tag":"J","url":"https://www.mdpi.com/2072-666x/14/4/825"},"37":{"cite":"Marpaung, Yao, Capmany, \"Integrated microwave photonics,\" Nature Photonics 13:80–90, 2019","tag":"S","url":"https://doi.org/10.1038/s41566-018-0310-5"},"38":{"cite":"Liu et al., \"Integrated microwave photonic filters,\" Adv. Opt. Photonics 12(2):485, 2020","tag":"S","url":"https://opg.optica.org/aop/abstract.cfm?uri=aop-12-2-485"},"39":{"cite":"Garrett et al., \"Integrated microwave photonic notch filter,\" Nature Communications, 2023","tag":"J","url":"https://doi.org/10.1038/s41467-023-43404-x"},"40":{"cite":"Wei et al., \"Programmable multifunctional integrated microwave photonic circuit,\" Nature Communications, 2025","tag":"J","url":"https://doi.org/10.1038/s41467-025-57441-1"},"41":{"cite":"\"Microwave photonics promotes emerging integrated sensing and communication,\" APL Photonics 10(3):031101, 2025","tag":"S","url":"https://pubs.aip.org/aip/app/article/10/3/031101/3338883"},"42":{"cite":"Wang et al., \"Full-Duplex ISAC System Based on Microwave Photonics,\" ACP, 2024","tag":"C","url":"https://ieeexplore.ieee.org/document/10809573"},"43":{"cite":"He et al., \"Fiber-based photonic integrated sensing and communication,\" JOCN 18(4):B33, 2026","tag":"J","url":"https://opg.optica.org/jocn/fulltext.cfm?uri=jocn-18-4-B33"},"44":{"cite":"Piekarz et al., \"Low-cost fully additively manufactured passive microwave components,\" Scientific Reports, 2023","tag":"J","url":"https://doi.org/10.1038/s41598-023-30163-4"},"45":{"cite":"Holkar et al., \"3D printing of microwave materials, components and applications,\" J. Manufacturing Processes, 2025","tag":"S","url":"https://www.sciencedirect.com/science/article/abs/pii/S1526612525001288"},"46":{"cite":"Martín-Iglesias et al., \"Metal 3D printing for RF/microwave high-frequency parts,\" CEAS Space J., 2023","tag":"S","url":"https://ui.adsabs.harvard.edu/abs/2023CEAS...15....7M/abstract"},"47":{"cite":"Xu et al., \"Flexible Inverse Design of Microwave Filter Customized on Demand,\" IEEE, 2024","tag":"J","url":"https://ieeexplore.ieee.org/document/10654392"},"48":{"cite":"Wang et al., \"A Generative Model-Based Method for Inverse Design of Microstrip Filters,\" Electronics 14(10):1989, 2025","tag":"J","url":"https://www.mdpi.com/2079-9292/14/10/1989"},"49":{"cite":"Gomez et al., \"Compact bandpass pixelated microwave filters via inverse design,\" Scientific Reports, 2025","tag":"J","url":"https://doi.org/10.1038/s41598-025-10666-y"},"50":{"cite":"Amirabadi et al., \"A Comprehensive Survey on Machine and Deep Learning for Optical Communications,\" IEEE Access, 2025 (also arXiv:2412.17826)","tag":"S","url":"https://ieeexplore.ieee.org/document/11003870"},"51":{"cite":"Srivallapanondh et al., \"State-of-the-Art Neural Network-Based Equalizers for Coherent Optical Communication Systems: Architectures and Complexity,\" Optica Open, 2024","tag":"P","url":"https://preprints.opticaopen.org/articles/preprint/State-of-the-Art_Neural_Network-Based_Equalizers_for_Coherent_Optical_Communication_Systems_Architectures_and_Complexity/27325632?file=50075775"},"52":{"cite":"Shao et al., \"Machine Learning in Short-Reach Optical Systems,\" Photonics (MDPI), 2024","tag":"S","url":"https://faerber-lab.github.io/assets/pdf/publications/Survey_Photonics2024.pdf"},"53":{"cite":"Abhaynarasimha et al., \"Mitigating nonlinear distortions of high-powered LEDs for VLC using deep learning,\" Optics Communications, 2024","tag":"J","url":"https://www.sciencedirect.com/science/article/abs/pii/S0030401823007459"},"54":{"cite":"\"Nonlinearity mitigation in bandwidth-limited blue LED-based OFDM-VLC (CAPD),\" Applied Optics 63(34):8857, 2024","tag":"J","url":"https://opg.optica.org/ao/abstract.cfm?uri=ao-63-34-8857"},"55":{"cite":"Zenhom et al., \"Optical-OFDM VLC System: PAPR Reduction Techniques,\" 2024","tag":"S","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11125151/"},"56":{"cite":"Chowdhury et al., \"Machine Learning and Deep Learning in VLC Systems,\" IEEE OJ-COMS, 2025","tag":"S","url":"https://ieeexplore.ieee.org/document/11142888"},"57":{"cite":"Alimi et al., \"Revolutionizing Free-Space Optics: A Survey of Enabling Technologies,\" 2024","tag":"S","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11679070/"},"58":{"cite":"Altakhaineh et al., \"Outdoor Free Space Optical Systems: Motivations, Challenges,\" IEEE Access, 2025","tag":"S","url":"https://ieeexplore.ieee.org/document/10918944"},"59":{"cite":"Zhou et al., \"Automatic mitigation of dynamic atmospheric turbulence using optical phase conjugation for coherent FSO,\" Optica 12(2):158, 2025","tag":"J","url":"https://opg.optica.org/optica/fulltext.cfm?uri=optica-12-2-158"},"60":{"cite":"Zeng et al., \"A Survey of Underwater Optical Wireless Communications,\" IEEE COMST 19(1), 2017","tag":"S","url":"https://doi.org/10.1109/COMST.2016.2618841"},"61":{"cite":"Fang et al., \"High-Speed Underwater Optical Wireless Communication with Advanced Signal Processing Methods Survey,\" Photonics 10(7):811, 2023","tag":"S","url":"https://www.mdpi.com/2304-6732/10/7/811"},"62":{"cite":"Salman et al., \"Relay-Based Underwater Optical Wireless Communication for IoUT,\" IEEE OJ-COMS, 2024","tag":"J","url":"https://ieeexplore.ieee.org/document/10440133"},"63":{"cite":"Chen et al., \"Hollow Core DNANF Optical Fiber with <0.11 dB/km Loss,\" OFC, 2024, Th4A.8","tag":"C","url":"https://opg.optica.org/abstract.cfm?uri=OFC-2024-Th4A.8"},"64":{"cite":"Petrovich et al., \"Broadband optical fibre with attenuation lower than 0.1 dB/km,\" Nature Photonics, 2025","tag":"J","url":"https://doi.org/10.1038/s41566-025-01747-5"},"65":{"cite":"Zhang et al., \"Continuous-variable quantum key distribution system: Past, present, and future,\" Applied Physics Reviews 11:011318, 2024","tag":"S","url":"https://pubs.aip.org/aip/apr/article/11/1/011318/3279669"},"66":{"cite":"Bäuml et al., \"Security of discrete-modulated continuous-variable QKD,\" Quantum 8:1418, 2024","tag":"J","url":"https://quantum-journal.org/papers/q-2024-07-18-1418/"},"67":{"cite":"Yang et al., \"Information reconciliation of continuous-variables QKD,\" EPJ Quantum Technology, 2023","tag":"S","url":"https://doi.org/10.1140/epjqt/s40507-023-00197-8"},"68":{"cite":"Shastri et al., \"Photonics for artificial intelligence and neuromorphic computing,\" Nature Photonics 15:102–114, 2021","tag":"S","url":"https://doi.org/10.1038/s41566-020-00754-y"},"69":{"cite":"Zhang et al., \"Integrated platforms and techniques for photonic neural networks,\" npj Nanophotonics 2:40, 2025","tag":"S","url":"https://doi.org/10.1038/s44310-025-00088-z"},"70":{"cite":"Lau, \"Heterogeneous Integration of Chiplets for Co-Packaged Optics,\" IMAPS J. Microelectronics & Electronic Packaging, 2025","tag":"J","url":"https://imapsjmep.org/article/154275"},"71":{"cite":"imec, \"Interfacing silicon photonics for high-density co-packaged optics,\" 2024","tag":"I","url":"https://www.imec-int.com/en/articles/interfacing-silicon-photonics-high-density-co-packaged-optics"},"72":{"cite":"Zhang et al., \"Silicon Photonics for Co-Packaged Optics: A Review of Core PIC Technologies,\" Advanced Materials Technologies (Wiley)","tag":"S","url":"https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/admt.71266","verify":true},"73":{"cite":"Lee et al., \"Hardware implementation of fast polar decoders based on a simplified controller,\" Electronics Letters, 2025","tag":"J","url":"https://doi.org/10.1049/ell2.70132"},"74":{"cite":"Ren et al., \"A Sequence Repetition Node-Based SCL Decoder for 5G Polar Codes,\" 2022","tag":"J","url":"https://pure.tue.nl/ws/files/258086886/"},"75":{"cite":"\"Demystifying 5G Polar and LDPC Codes: A Comprehensive Review,\" arXiv:2502.11053, 2025","tag":"P","url":"https://arxiv.org/html/2502.11053v4"},"76":{"cite":"Pfaff et al., \"A 224Gb/s 3pJ/b 40dB Insertion Loss Transceiver in 3nm FinFET CMOS,\" ISSCC, 2024","tag":"C","url":"https://ieeexplore.ieee.org/document/10454537"},"77":{"cite":"Cusmai et al., \"A 224Gb/s sub-pJ/b PAM-4 and PAM-6 DAC-Based Transmitter,\" ISSCC, 2024","tag":"C","url":"https://www.semanticscholar.org/paper/348fe3a6315a5b66ff4dfc1033401fa6f150708c"},"78":{"cite":"Khairi et al., \"Beyond 200Gb/s PAM4 ADC and DAC-based Transceiver for Wireline and Optical,\" IEEE JSSC, 2024","tag":"J","url":"https://ieeexplore.ieee.org/document/10756610"},"79":{"cite":"\"An End-to-End Neural Network Transceiver Design for OFDM with FPGA Accelerator,\" arXiv:2512.13263, 2025","tag":"P","url":"https://arxiv.org/html/2512.13263v1"},"80":{"cite":"\"An FPGA-Verified End-to-End Deep Learning Receiver for OFDM Systems\"","tag":"J","url":"https://www.researchgate.net/publication/402758310","verify":true},"81":{"cite":"Lam et al., \"Hardware-Based Architecture for DNN Wireless Communication Models,\" 2023","tag":"J","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC9921442/"},"82":{"cite":"\"A Real-Time Deep Learning OFDM Receiver,\" ACM, 2021","tag":"C","url":"https://dl.acm.org/doi/10.1145/3494049"},"83":{"cite":"Gruber et al., \"Sub-THz communication systems: pushing the capabilities of silicon,\" 2025","tag":"J","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC12717078/"},"84":{"cite":"\"A Review of Circuits and Systems for Advanced Sub-THz Transceivers in Wireless Communication,\" 2025","tag":"S","url":"https://www.researchgate.net/publication/389227410"},"85":{"cite":"Ferens et al., \"Modeling of physical unclonable functions (PUF): A systematic survey,\" Computers & Security, 2026","tag":"S","url":"https://www.sciencedirect.com/science/article/pii/S0167404826000611"},"86":{"cite":"Sharma et al., \"A survey on lightweight hardware security using PUFs for IoT devices,\" Peer-to-Peer Netw. Appl. 18:315, 2025","tag":"S","url":"https://doi.org/10.1007/s12083-025-02156-9"},"87":{"cite":"Bray et al., \"Towards Fully DL-Driven RF: A Systematic Survey of Deep Learning for OFDM Receivers,\" Applied Sciences 16(4):1878, 2026","tag":"S","url":"https://www.mdpi.com/2076-3417/16/4/1878"},"88":{"cite":"Azariah et al., \"A Survey on Open Radio Access Networks: Challenges, Research Directions, and Open Source Approaches,\" Sensors 24(3):1038, 2024","tag":"S","url":"https://www.mdpi.com/1424-8220/24/3/1038"},"89":{"cite":"Alam et al., \"A Comprehensive Tutorial and Survey of O-RAN,\" IEEE COMST, 2025","tag":"S","url":"https://ieeexplore.ieee.org/document/11124199"},"90":{"cite":"Elyasi et al., \"O-RAN xApps: Survey and Research Challenges,\" Computer Networks, 2025","tag":"S","url":"https://mentis.info/wp-content/uploads/2025/02/xApps_COMNET_2025.pdf"},"91":{"cite":"Verdecchia et al., \"Network Digital Twins: A Systematic Review,\" IEEE Access, 2024","tag":"S","url":"https://ieeexplore.ieee.org/document/10662957"},"92":{"cite":"Raza et al., \"A comprehensive survey of Network Digital Twin architecture,\" Computer Communications, 2025","tag":"S","url":"https://doi.org/10.1016/j.comcom.2025.108144"},"93":{"cite":"IRTF, \"Network Digital Twin: Concepts and Reference Architecture,\" draft-irtf-nmrg-network-digital-twin-arch","tag":"Std","url":"https://www.ietf.org/archive/id/draft-irtf-nmrg-network-digital-twin-arch-07.html"},"94":{"cite":"Zanbouri et al., \"A Comprehensive Survey of Wireless Time-Sensitive Networking (TSN),\" IEEE COMST, 2024","tag":"S","url":"https://ieeexplore.ieee.org/document/10735349"},"95":{"cite":"Zhang et al., \"TSN for Industrial Automation: Current Advances and Future Directions,\" ACM Computing Surveys, 2024","tag":"S","url":"https://doi.org/10.1145/3695248"},"96":{"cite":"\"Integrated 5G and Time Sensitive Networking for Emerging Applications: A Survey,\" 2025","tag":"S","url":"https://www.researchgate.net/publication/397592763"},"97":{"cite":"Westphal et al., \"LEO Satellite Networking Relaunched: Survey and Current Research Challenges,\" ITU J. Future & Evolving Technologies 4(4), 2023 (also arXiv:2310.07646)","tag":"S","url":"https://www.itu.int/pub/S-JNL-VOL4.ISSUE4-2023-A50"},"98":{"cite":"Zhu et al., \"Intelligent routing methods for low-Earth orbit satellite networks,\" Ad Hoc Networks, 2025","tag":"J","url":"https://www.sciencedirect.com/science/article/abs/pii/S1570870525002434"},"99":{"cite":"Roth et al., \"Path-Based Deep Reinforcement Learning for On-Board Routing in Satellite Constellation Networks,\" Int. J. Satellite Commun. Networking, 2026","tag":"J","url":"https://elib.dlr.de/217059/"},"100":{"cite":"Jiang et al., \"When machine learning meets congestion control: A survey and comparison,\" Computer Networks, 2021","tag":"S","url":"https://www.sciencedirect.com/science/article/abs/pii/S1389128621001407"},"101":{"cite":"Pappone et al., \"Mutant: Learning Congestion Control from Existing Protocols via Online RL,\" NSDI, 2025","tag":"C","url":"https://cs.slu.edu/~esposito/Esposito_NSDI_2025.pdf"},"102":{"cite":"\"Computers Can Learn from the Heuristic Designs and Master Internet Congestion Control,\" SIGCOMM, 2023","tag":"C","url":"https://doi.org/10.1145/3603269.3604838"},"103":{"cite":"Dang et al., \"A Survey on Energy-Efficient Design for Federated Learning over Wireless Networks,\" Energies 17(24):6485, 2024","tag":"S","url":"https://www.mdpi.com/1996-1073/17/24/6485"},"104":{"cite":"Akhtarshenas et al., \"Federated learning: A cutting-edge survey of the latest advancements and applications,\" Computer Communications, 2024","tag":"S","url":"https://www.sciencedirect.com/science/article/abs/pii/S0140366424003116"},"105":{"cite":"Phyu et al., \"Machine Learning in Network Slicing — A Survey,\" IEEE Access, 2023","tag":"S","url":"https://hal.science/hal-04189558/"},"106":{"cite":"Cai et al., \"Deep Reinforcement Learning for Online Resource Allocation in Network Slicing,\" IEEE Trans. Mobile Computing, 2024","tag":"J","url":"https://doi.org/10.1109/TMC.2023.3328950"},"107":{"cite":"Nesset, \"Next Generation PON Technologies: 50G PON and Beyond (Invited)\"","tag":"C","url":"https://www.semanticscholar.org/paper/6fcb4b9a222c82c9a4c9525f13fe56be3907a7a3","verify":true},"108":{"cite":"\"Coherent PON for Optical Access Networks Evolution beyond 50G-PON,\" OFC/Networks, 2024, NeW3C.1","tag":"C","url":"https://opg.optica.org/abstract.cfm?uri=networks-2024-NeW3C.1"},"109":{"cite":"ITU-T G.Suppl.88, \"Point-to-multipoint passive optical access above 50 Gbit/s per wavelength,\" 2025","tag":"Std","url":"https://www.itu.int/epublications/publication/itu-t-g-suppl-88-2025-10"}},"deepDive":{"C1":{"problem":"OTFS suits high-mobility channels, but channel estimation (especially fractional Doppler and pilot overhead) remains the bottleneck; surveys list it as the key open problem.","method":"MATLAB/Python link-level OTFS; delay–Doppler sparse model; compare embedded-pulse vs. proposed CS/OMP estimator. Optional SDR (ADALM-Pluto) over-the-air check.","risk":"Fractional-Doppler leakage breaks sparsity.","refs":[1,2,3],"rank":"#1 · Composite 8.10"},"C2":{"problem":"AFDM is a promising chirp-based waveform, but its advantages over OTFS/OFDM and its PAPR/diversity trade-offs are still being mapped; low-PAPR AFDM variants are emerging.","method":"MATLAB/Python DAFT-based AFDM + OTFS + OFDM testbench; sweep chirp parameters; optional SDR.","risk":"Fair comparison is subtle; novelty must be in the optimization, not just benchmarking.","refs":[4,5,6]},"C3":{"problem":"Dual-functional waveforms must balance data rate and sensing resolution; the performance trade-off and waveform design are core open issues.","method":"MATLAB ISAC simulation; ambiguity function + BER; construct Pareto fronts.","risk":"Modeling the sensing target and communication channel jointly.","refs":[7,8],"rank":"#1 · Composite 8.10"},"C4":{"problem":"RIS gains are well simulated, but experimental validation and realistic CSI are repeatedly flagged as lacking; SDR-validated RIS testbeds are only now appearing.","method":"MATLAB RIS link simulation followed by optional 1-bit RIS panel + SDR testbed.","risk":"Hardware calibration.","refs":[9,10]},"C5":{"problem":"Semantic communication shows gains at low SNR, but robustness, semantic metrics, and generalization are open challenges; DeepSC is the foundational system.","method":"PyTorch DeepSC (open code); vary channel conditions; measure semantic similarity.","risk":"Semantic metrics are noisy; keep scope focused on text.","refs":[11,12,13]},"C6":{"problem":"Cell-free gains are limited by fronthaul, computational complexity, pilot contamination, and synchronization — explicitly listed as open challenges.","method":"MATLAB/Python cell-free simulation; compare centralized vs. distributed/local detectors.","risk":"Scalability of the baseline.","refs":[14,15,16]},"C7":{"problem":"Learned receivers work in-distribution, but generalization, data efficiency, and hardware cost are open research issues.","method":"PyTorch/Sionna; train/test across channel models; optional FPGA profiling.","risk":"Novelty must come from the robustness mechanism, not merely applying a model.","refs":[17,87]},"C8":{"problem":"THz links face severe path loss, blockage, and hardware limits; comprehensive reviews map propagation and system challenges.","method":"MATLAB/Python THz link budget + channel model; adaptive MCS logic.","risk":"No THz hardware available — simulation-only is acceptable.","refs":[18]},"C9":{"problem":"Physical-layer security schemes often assume ideal CSI; robustness for URLLC and RIS-assisted PLS is an open theme.","method":"MATLAB MISO/MIMO + secrecy-rate analysis; Monte-Carlo sweeps over CSI error variance.","risk":"Statistical channel modeling.","refs":[19,20],"rank":"#5 · Composite 7.90"},"C10":{"problem":"Fluid/movable antennas promise spatial diversity without extra RF chains, but hardware and channel-model realism are open challenges.","method":"MATLAB/Python FAS channel model; position/port optimization.","risk":"Channel-model validity; hardware is exotic, so simulation-only is expected.","refs":[21,22,23]},"M1":{"problem":"DPD linearizes PAs, but model complexity and sampling rate are practical barriers; reduced-rate and low-complexity multi-band DPD are active research directions.","method":"MATLAB/Python PA behavioral model + DPD; optional GPU/FPGA realization.","risk":"Model mismatch to a real PA.","refs":[24,25,26,27],"rank":"#4 · Composite 7.95"},"M2":{"problem":"Wideband, high-efficiency PAs at power back-off remain challenging; Doherty PA vs. LMBA trade-offs are actively reviewed.","method":"ADS/Cadence schematic + load-pull simulation; optional PCB fabrication + measurement.","risk":"Requires EM/circuit tools and possibly fabrication.","refs":[28,29,30]},"M3":{"problem":"SIW filters balance size and loss, but miniaturization and multiband control remain ongoing design challenges.","method":"HFSS/CST full-wave modeling; parametric sweep; optional PCB prototype + VNA.","risk":"Fabrication tolerance.","refs":[31,32,33]},"M4":{"problem":"Rectenna power-conversion efficiency collapses at low incident power; multiband and low-power rectifier design remain open.","method":"ADS harmonic-balance simulation; optional PCB + signal-generator measurement.","risk":"Diode model accuracy at low incident power.","refs":[34,35,36]},"M5":{"problem":"MWP offers wideband, tunable RF filtering, but integration, loss, and reconfigurability are challenges; recent integrated notch and programmable filters define the frontier.","method":"VPIphotonics/OptiSystem or MATLAB photonic-link model.","risk":"Photonic simulation tool access.","refs":[37,38,39,40]},"M6":{"problem":"MWP is being pushed into ISAC; full-duplex and fiber-wireless MWP-ISAC are emerging with self-interference and integration challenges.","method":"VPI/OptiSystem + MATLAB co-simulation; ambiguity function + EVM.","risk":"Complex co-simulation setup.","refs":[41,42,43],"rank":"#8 · Composite 7.65"},"M7":{"problem":"3D printing enables low-cost, complex RF parts, but loss, tolerance, and metallization remain open challenges.","method":"HFSS/CST design → 3D print + metallize → VNA measurement.","risk":"Metallization quality.","refs":[44,45,46]},"M8":{"problem":"Photonic THz generation is promising, but phase noise, bandwidth, and photodiode saturation limit achievable links.","method":"VPI/OptiSystem photonic-heterodyne model + MATLAB DSP.","risk":"Tool access; simulation-only is acceptable.","refs":[18,37]},"M9":{"problem":"RIS hardware validation is sparse; SDR-validated 1-bit panels have only recently appeared (hardware complement to C4).","method":"HFSS unit-cell design → panel fabrication → SDR RSSI/SNR mapping.","risk":"Fabrication and over-the-air calibration.","refs":[9,10]},"M10":{"problem":"Inverse/ML design speeds up filter synthesis, but accuracy, generalization, and uncertainty quantification remain open.","method":"Python (GAN/inverse NN) + HFSS/CST dataset generation.","risk":"EM dataset generation cost.","refs":[47,48,49]},"O1":{"problem":"NN equalizers beat linear DSP on fiber nonlinearity, but at high complexity; architecture-versus-complexity trade-offs are the open issue.","method":"Python/MATLAB coherent-link simulation (split-step fiber); prune/quantize NN.","risk":"Fiber-model fidelity.","refs":[50,51],"rank":"#6 · Composite 7.80"},"O2":{"problem":"High PAPR + LED nonlinearity clip OFDM-VLC; pre/post-distortion and PAPR reduction are active but not unified.","method":"MATLAB DCO/ACO-OFDM + LED nonlinear model; optional low-cost LED + photodiode bench.","risk":"LED model accuracy.","refs":[53,54,55,56],"rank":"#3 · Composite 8.05"},"O3":{"problem":"Atmospheric turbulence is the dominant FSO impairment; mitigation via adaptive optics, diversity, ML, or phase conjugation is a broad open area.","method":"MATLAB Gamma-Gamma turbulence simulation; optional optical bench with phase plate/hot air.","risk":"Turbulence-model realism.","refs":[57,58,59]},"O4":{"problem":"Hybrid FSO/RF links need stable handover; switching logic is mostly simulated and experimental validation is lacking.","method":"MATLAB hybrid-link simulation; optional laser + RF testbed with variable attenuator.","risk":"Hardware stability.","refs":[57,58]},"O5":{"problem":"Underwater optical wireless range and data rate collapse with turbidity; adaptive modulation and advanced signal processing are flagged as needed.","method":"MATLAB underwater channel (Beer–Lambert + scattering); optional water tank + turbidity agent.","risk":"Channel-model accuracy.","refs":[60,61,62],"rank":"#9 · Composite 7.60"},"O6":{"problem":"Short-reach IM/DD links are bandwidth- and chirp-limited; ML equalizers help, but complexity and latency constraints matter.","method":"Python/MATLAB IM/DD link; NN vs. Volterra equalizer.","risk":"Device-model fidelity.","refs":[52,78]},"O7":{"problem":"Hollow-core fiber now beats silica loss (0.091 dB/km) and cuts latency and nonlinearity; system-level exploitation is wide open.","method":"MATLAB/Python link-budget + GN-model capacity simulation.","risk":"HCF parameter availability.","refs":[63,64]},"O8":{"problem":"CV-QKD is practical, but reconciliation efficiency and discrete-modulation finite-size security remain open.","method":"Python/MATLAB CV-QKD simulation (GG02/discrete); LDPC/multidimensional reconciliation.","risk":"Security-proof depth.","refs":[65,66,67]},"O9":{"problem":"Photonic NNs promise low-energy DSP, but are limited by noise, distortion, and photonic integration.","method":"Python photonic-MZI-mesh model + communication task; compare against electronic NN.","risk":"Photonic nonidealities.","refs":[68,69]},"O10":{"problem":"Co-packaged optics is scaling for AI/datacenter interconnects, but coupling, energy, and thermal integration remain major challenges.","method":"Python/MATLAB link + energy model; optional OptiSystem.","risk":"Component data availability.","refs":[70,71,72]},"E1":{"problem":"Polar decoders are hardware-hard due to recursion and soft information; fast simplified/SCL architectures are an active frontier.","method":"MATLAB/Python algorithm → HLS/Verilog on FPGA.","risk":"FPGA resource fit.","refs":[73,74,75],"rank":"#6 · Composite 7.80"},"E2":{"problem":"224G PAM-4 transceivers push 40 dB channels; equalization power and complexity represent the key frontier.","method":"Python/MATLAB PAM-4 channel simulation; optional FPGA subset.","risk":"Channel-model realism.","refs":[76,77,78]},"E3":{"problem":"Neural receivers are mostly evaluated in software; real-time FPGA realization and hardware complexity remain open.","method":"PyTorch → fixed-point quantization → HLS/Verilog; optional SDR loopback.","risk":"Fixed-point degradation.","refs":[79,80,81,82]},"E4":{"problem":"Silicon sub-THz is advancing, but phase noise, PA efficiency, and MIMO integration are key challenges.","method":"MATLAB/Python behavioral transceiver model; ADS if available.","risk":"No tape-out — behavioral simulation only.","refs":[83,84,18]},"E5":{"problem":"PUFs enable lightweight authentication but are vulnerable to ML modeling; attacks and defenses form an active arms race.","method":"Python PUF CRP dataset + ML attack (logistic/NN); optional FPGA PUF.","risk":"Dataset realism.","refs":[85,86],"rank":"#9 · Composite 7.60"},"E6":{"problem":"Harvester efficiency at low input power and cold-start voltage remain open (circuit focus complementing M4).","method":"ADS/SPICE simulation; optional PCB measurement.","risk":"Diode/transistor models.","refs":[34,35]},"E7":{"problem":"DPD implementation platform (GPU vs. FPGA) trades latency, power, and throughput (implementation complement to M1).","method":"MATLAB/Python model → GPU (CUDA) and FPGA (HLS) implementations.","risk":"Hardware access.","refs":[24]},"E8":{"problem":"Learned PHY blocks are too heavy for edge hardware; complexity and energy efficiency are documented open issues.","method":"PyTorch compression → FPGA/ASIC cost model.","risk":"Accuracy cliff under aggressive quantization.","refs":[17,51,87]},"N1":{"problem":"O-RAN opens the RAN to xApps, but intelligence, real-time control, and conflicts remain open.","method":"OpenRAN Gym / ns-3 / srsRAN; RL agent.","risk":"Stack complexity.","refs":[88,89,90]},"N2":{"problem":"O-RAN openness introduces security and xApp-conflict risks.","method":"O-RAN simulation + policy-conflict dataset; ML detector.","risk":"Realistic conflict dataset availability.","refs":[88,90]},"N3":{"problem":"Network digital twins are promising, but lack unified architecture and fidelity/validation methods.","method":"ns-3/OMNeT++ + twin sync loop; compare fidelity levels.","risk":"Twin calibration.","refs":[91,92,93]},"N4":{"problem":"Extending TSN determinism to wireless links is an open challenge.","method":"ns-3/OMNeT++ TSN + wireless; optional testbed.","risk":"Wireless variability.","refs":[94,95]},"N5":{"problem":"Integrating 5G with TSN for industrial determinism is actively surveyed with open synchronization and scheduling issues.","method":"5G+TSN co-simulation (ns-3/sim5G).","risk":"Co-simulation complexity.","refs":[96,95]},"N6":{"problem":"LEO routing faces fast topology changes, frequent handovers, and load imbalance.","method":"Python/ns-3 LEO topology generator (Starlink-like); routing agent.","risk":"Topology realism.","refs":[97,98,99]},"N7":{"problem":"Learned congestion control improves throughput, but generalization, fairness, and deployment remain open.","method":"ns-3 / Pantheon / mahimahi; RL congestion control.","risk":"Sim-to-real gap.","refs":[100,101,102],"rank":"#11 · Composite 7.45"},"N8":{"problem":"Federated learning over wireless is limited by energy, communication overhead, and device heterogeneity.","method":"PyTorch FL + wireless channel simulation.","risk":"Convergence stability.","refs":[103,104]},"N9":{"problem":"Dynamic slicing needs online allocation; DRL approaches are active, but generalization and SLA guarantees remain open.","method":"Python/ns-3 slicing simulation; DRL.","risk":"Reward design.","refs":[105,106]},"N10":{"problem":"50G-PON is deploying; beyond-100G/coherent PON is the next step with reach, split-ratio, and cost challenges.","method":"OptiSystem/MATLAB PON link; optional testbed.","risk":"Component models.","refs":[107,108,109]}}};
+var PK=[["C1","Strongest balanced pick · 8.10"],["C3","Theory-strong and publishable · 8.10"],["O2","Fastest to publish · 8.05"],["M1","Fast and practical · 7.95"],["C9","Strong theory contribution · 7.90"],["S1","Dataset ready — ML angle"]];
 var $=function(i){return document.getElementById(i)};
 var st={b:"all",f:false,q:"",s:0,fav:[],open:{}};
 try{var sv=localStorage.getItem("fav");if(sv)st.fav=JSON.parse(sv)||[]}catch(e){}
 function save(){try{localStorage.setItem("fav",JSON.stringify(st.fav))}catch(e){}}
 
+function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+
+/* ---------- toast & clipboard ---------- */
+var toastT;
+function showToast(msg){
+ var el=$("toast");if(!el)return;
+ el.textContent=msg;el.classList.add("show");
+ clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove("show")},2000);
+}
+function copyText(txt,cb){
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+  navigator.clipboard.writeText(txt).then(function(){cb(true)},function(){fallbackCopy(txt,cb)});
+ }else{fallbackCopy(txt,cb)}
+}
+function fallbackCopy(txt,cb){
+ try{
+  var ta=document.createElement("textarea");
+  ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";
+  document.body.appendChild(ta);ta.select();
+  var ok=document.execCommand("copy");
+  document.body.removeChild(ta);cb(!!ok);
+ }catch(e){cb(false)}
+}
+
+/* ---------- citation & BibTeX builders ---------- */
+function firstAuthorShort(authors){
+ var first=String(authors||"").split(",")[0].replace(/\band\b.*/i,"").trim();
+ var parts=first.split(/\s+/);
+ var last=parts[parts.length-1]||first;
+ return authors.indexOf(",")>-1||/\band\b/i.test(authors)?last+" et al.":last;
+}
+function makeCite(id){
+ var r=REFS[id];if(!r)return "";
+ return r.authors+', "'+r.title+'," '+r.venue+", "+r.year+". DOI: "+r.doi+" ("+r.url+")";
+}
+function makeBib(id){
+ var r=REFS[id];if(!r)return "";
+ var first=String(r.authors||"").split(",")[0].trim().split(/\s+/).pop().replace(/[^A-Za-z0-9]/g,"")||"Ref";
+ var key=first+r.year+"_"+id;
+ var isConf=/Proceedings|Conference|Symposium|Workshop|WCNC|ISCAS|INFOCOM|5GWF|ISSNIP|MICRO|SIGCOMM|CoNEXT|HotNets|CF '|MSWiM|Globecom/i.test(r.venue);
+ var typ=isConf?"inproceedings":"article";
+ var vfield=isConf?"booktitle":"journal";
+ var bibAuthors=r.authors.replace(/,\s*et al\.?/i," and others").replace(/,\s+and\s+/g," and ").replace(/,\s*/g," and ");
+ return "@"+typ+"{"+key+",\n"
+  +"  author = {"+bibAuthors+"},\n"
+  +"  title = {{"+r.title+"}},\n"
+  +"  "+vfield+" = {"+r.venue+"},\n"
+  +"  year = {"+r.year+"},\n"
+  +"  doi = {"+r.doi+"},\n"
+  +"  url = {"+r.url+"}\n"
+  +"}";
+}
+
 /* ---------- hero stats ---------- */
 $("stN").textContent=D.length;
 $("stC").textContent=Object.keys(BL).length;
 $("stF").textContent=D.filter(function(d){return d.f}).length;
+$("stR").textContent=Object.keys(REFS).length+Object.keys(REPORT.bib).length;
 
-/* ---------- build chips & picks ---------- */
-$("blocks").innerHTML=["All "+D.length].map(function(t){return '<button class="chip on" data-b="all">'+t+"</button>"}).concat(Object.keys(BL).map(function(k){return '<button class="chip" data-b="'+k+'">'+BL[k][1]+" "+BL[k][0]+"</button>"})).join("");
-$("picks").innerHTML=PK.map(function(p,i){var d=D.filter(function(x){return x.id===p[0]})[0];
- return '<button class="pick" data-p="'+d.id+'" style="--pk:'+CLR[d.k]+';--i:'+i+'"><b>'+d.id+" · "+d.t+"</b><small>"+p[1]+"</small></button>"}).join("");
+/* ---------- build chips, picks & optional guide drawer ---------- */
+$("blocks").innerHTML=['<button class="chip on" data-b="all">All ('+D.length+")</button>"].concat(Object.keys(BL).map(function(k){return '<button class="chip" data-b="'+k+'">'+BL[k]+"</button>"})).join("");
+$("picks").innerHTML=PK.map(function(p){var d=D.filter(function(x){return x.id===p[0]})[0];
+ return '<button class="pick" data-p="'+d.id+'" style="--pk:'+CLR[d.k]+'"><b>'+d.id+" · "+esc(d.t)+"</b><small>"+esc(p[1])+"</small></button>"}).join("");
+
+(function renderGuide(){
+ var rows=REPORT.ranking.map(function(r){
+  return '<tr><td class="num">#'+r.rank+'</td><td><button type="button" data-p="'+r.id+'">'+r.id+" · "+esc(r.label)+'</button></td><td>'+esc(r.block)+'</td><td class="num">'+esc(r.score)+'</td><td>'+esc(r.type)+'</td></tr>';
+ }).join("");
+ var recs=REPORT.recommendations.map(function(x){
+  return '<div class="rec-item"><b>'+esc(x.label)+'</b>'+esc(x.text)+'</div>';
+ }).join("");
+ var lands=Object.keys(REPORT.landscapes).map(function(k){
+  return '<div class="land-item" style="--lk:'+CLR[k]+'"><b>'+BL[k]+':</b> '+esc(REPORT.landscapes[k])+'</div>';
+ }).join("");
+ $("guideBody").innerHTML=
+  '<div><h3 class="guide-subh">Weighted Cross-Block Ranking (Top 11)</h3>'
+  +'<p class="guide-note">Weights: Novelty 20%, Significance 15%, Feasibility 15%, Literature 10%, Tools 10%, Experimental access 10%, Math depth 10%, Publication 10%. Click any topic to open its card.</p>'
+  +'<div class="rtable-wrap"><table class="rtable"><thead><tr><th>Rank</th><th>Topic</th><th>Block</th><th>Composite</th><th>Profile</th></tr></thead><tbody>'+rows+'</tbody></table></div></div>'
+  +'<div><h3 class="guide-subh">General Selection Recommendations</h3><div class="recs-grid">'+recs+'</div></div>'
+  +'<div><h3 class="guide-subh">Five-Pillar Research Landscapes</h3><div class="land-list">'+lands+'</div></div>';
+})();
 
 /* ---------- card template ---------- */
-function mt(l,v){return '<div class="mrow"><span>'+l+" — <b>"+v+"/10</b></span></div><div class=\"meter\"><u style=\"--w:"+(v*10)+'%"></u></div>'}
-function card(d,i){
- var s=st.fav.indexOf(d.id)>-1,o=!!st.open[d.id],ci=Math.min(i,11);
- return '<article class="c'+(o?" open":"")+'" style="--k:'+CLR[d.k]+';--i:'+ci+'" data-id="'+d.id+'">'
- +'<div class="chead" role="button" tabindex="0" aria-expanded="'+o+'" data-t="'+d.id+'"><span class="id">'+d.id+'</span><span class="t">'+d.t+'</span><button class="star'+(s?" on":"")+'" data-s="'+d.id+'" aria-label="'+(s?"Remove from":"Add to")+' shortlist">'+(s?"★":"☆")+"</button></div>"
- +'<div class="meta"><span class="tag cat">'+BL[d.k][1]+" "+BL[d.k][0]+"</span>"+(d.f?'<span class="tag fast">⚡ Fast-track</span>':"")+'<span class="pill">S '+d.S+'</span><span class="pill">N '+d.N+'</span><span class="pill">P '+d.P+"</span></div>"
+function mt(l,v){return '<div><div class="mrow"><span>'+l+"</span><b>"+v+"/10</b></div><div class=\"meter\"><u style=\"--w:"+(v*10)+'%"></u></div></div>'}
+function refBlock(id){
+ var r=REFS[id];if(!r)return "";
+ var doiUrl="https://doi.org/"+encodeURIComponent(r.doi).replace(/%2F/g,"/");
+ return '<div class="refbox">'
+  +'<div class="refhead"><span class="reflbl">Starting Reference Paper</span><span class="refyr">'+r.year+"</span></div>"
+  +'<a class="reftitle" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+"</a>"
+  +'<div class="refmeta">'+esc(r.authors)+" · <em>"+esc(r.venue)+"</em></div>"
+  +'<p class="refnote">'+esc(r.note)+"</p>"
+  +'<div class="refdoi"><span>DOI:</span> <a href="'+esc(doiUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(r.doi)+"</a></div>"
+  +'<div class="refacts">'
+  +'<a class="rbtn primary" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">Open paper ↗</a>'
+  +'<button class="rbtn" type="button" data-copy-doi="'+id+'">Copy DOI</button>'
+  +'<button class="rbtn" type="button" data-copy-cite="'+id+'">Copy citation</button>'
+  +'<button class="rbtn" type="button" data-copy-bib="'+id+'">Copy BibTeX</button>'
+  +"</div></div>";
+}
+function deepDiveBlock(d){
+ var dd=REPORT.deepDive[d.id];
+ if(!dd)return "";
+ var land=REPORT.landscapes[d.k];
+ var items=dd.refs.map(function(num){
+  var b=REPORT.bib[String(num)];
+  if(!b)return "";
+  var tlbl=TAG_LBL[b.tag]||b.tag;
+  var cav="";
+  if(b.tag==="P")cav='<span class="dd-caveat">Preprint — lower evidence weight than peer-reviewed papers; check for a published journal version before citing.</span>';
+  else if(b.verify)cav='<span class="dd-caveat">Confirm full venue/DOI details on the publisher page before final thesis citation.</span>';
+  return '<li><span class="btag '+esc(b.tag)+'">['+num+'] '+esc(tlbl)+'</span> <a href="'+esc(b.url)+'" target="_blank" rel="noopener noreferrer">'+esc(b.cite)+' ↗</a>'+cav+'</li>';
+ }).join("");
+ return '<details class="deepdive">'
+  +'<summary>Expand literature context &amp; '+dd.refs.length+' additional reference'+(dd.refs.length===1?"":"s")+'</summary>'
+  +'<div class="dd-body">'
+  +'<p><b>Extended problem &amp; gap.</b> '+esc(dd.problem)+'</p>'
+  +'<p><b>Detailed method path.</b> '+esc(dd.method)+'</p>'
+  +'<p><b>Key risk note.</b> '+esc(dd.risk)+'</p>'
+  +(land?'<div class="dd-land"><b>'+BL[d.k]+' landscape:</b> '+esc(land)+'</div>':"")
+  +'<b>Additional catalogue references</b>'
+  +'<ul class="dd-refs">'+items+'</ul>'
+  +'</div></details>';
+}
+function card(d){
+ var s=st.fav.indexOf(d.id)>-1,o=!!st.open[d.id],r=REFS[d.id],dd=REPORT.deepDive[d.id];
+ var extraCnt=dd?dd.refs.length:0;
+ var prev=r?'<div class="ref-preview"><span class="ref-preview-txt"><strong>Ref:</strong> '+esc(firstAuthorShort(r.authors))+" ("+r.year+") · "+esc(r.doi)+(extraCnt?' · +'+extraCnt+' more':"")+'</span><span class="expand-hint" data-t="'+d.id+'">Details + DOI ↓</span></div>':"";
+ return '<article class="c'+(o?" open":"")+'" style="--k:'+CLR[d.k]+'" data-id="'+d.id+'">'
+ +'<div class="chead" role="button" tabindex="0" aria-expanded="'+o+'" data-t="'+d.id+'"><span class="id">'+d.id+'</span><span class="t">'+esc(d.t)+'</span><button class="star'+(s?" on":"")+'" type="button" data-s="'+d.id+'" aria-label="'+(s?"Remove from":"Add to")+' shortlist">'+(s?"★":"☆")+"</button></div>"
+ +'<div class="meta"><span class="tag cat">'+BL[d.k]+"</span>"+(d.f?'<span class="tag fast">Fast-track</span>':"")+(dd&&dd.rank?'<span class="tag rk">'+esc(dd.rank)+'</span>':"")+'<span class="pill">S '+d.S+'</span><span class="pill">N '+d.N+'</span><span class="pill">P '+d.P+"</span></div>"
+ +prev
  +'<div class="cbd"><div class="cbi">'
- +'<p><b>The gap.</b> '+d.g+"</p>"
- +"<p><b>Your question.</b> "+d.q+"</p>"
- +"<p><b>Method &amp; tools.</b> "+d.m+"</p>"
- +"<p><b>Metrics.</b> "+d.x+"</p>"
- +"<p><b>Watch out for.</b> "+d.r+"</p>"
+ +'<p><b>The gap.</b> '+esc(d.g)+"</p>"
+ +"<p><b>Your question.</b> "+esc(d.q)+"</p>"
+ +"<p><b>Method &amp; tools.</b> "+esc(d.m)+"</p>"
+ +"<p><b>Metrics.</b> "+esc(d.x)+"</p>"
+ +"<p><b>Watch out for.</b> "+esc(d.r)+"</p>"
+ +refBlock(d.id)
+ +deepDiveBlock(d)
  +'<div class="meters">'+mt("Speed / feasibility",d.S)+mt("Novelty",d.N)+mt("Publishability",d.P)+"</div>"
  +"</div></div></article>";
 }
@@ -381,12 +913,20 @@ function card(d,i){
 /* ---------- render ---------- */
 function render(){
  var q=st.q.trim().toLowerCase();
- var L=D.filter(function(d){return(st.b==="all"||d.k===st.b)&&(!st.f||d.f)&&(!q||(d.id+" "+d.t+" "+d.g+" "+d.q+" "+d.m+" "+d.x+" "+BL[d.k][0]).toLowerCase().indexOf(q)>-1)});
+ var L=D.filter(function(d){
+  if(st.b!=="all"&&d.k!==st.b)return false;
+  if(st.f&&!d.f)return false;
+  if(!q)return true;
+  var r=REFS[d.id],dd=REPORT.deepDive[d.id];
+  var extra=dd?(" "+dd.problem+" "+dd.refs.map(function(n){var b=REPORT.bib[String(n)];return b?b.cite:""}).join(" ")):"";
+  var hay=(d.id+" "+d.t+" "+d.g+" "+d.q+" "+d.m+" "+d.x+" "+BL[d.k]+(r?" "+r.title+" "+r.authors+" "+r.venue+" "+r.year+" "+r.doi:"")+extra).toLowerCase();
+  return hay.indexOf(q)>-1;
+ });
  if(st.s>0){var key=["S","N","P"][st.s-1];L=L.slice().sort(function(a,b){return b[key]-a[key]})}
  $("cnt").textContent=L.length+" of "+D.length+" topics";
- $("grid").innerHTML=L.length?L.map(card).join(""):'<div class="none"><div class="ne">🔍</div><p><b>No topics match your filters.</b></p><p>Try a different keyword, or</p><button class="chip" data-r>Reset filters</button></div>';
+ $("grid").innerHTML=L.length?L.map(card).join(""):'<div class="none"><p><b>No topics match your filters.</b></p><p>Try a different keyword, author, or DOI, or reset filters.</p><button class="chip" data-r>Reset filters</button></div>';
  var sh=$("short");sh.className="short"+(st.fav.length?" show":"");
- $("sl").textContent="⭐ Shortlist: "+(st.fav.length?st.fav.join(", "):"empty");
+ $("sl").textContent="Shortlist ("+st.fav.length+"): "+(st.fav.length?st.fav.join(", "):"empty");
 }
 
 /* ---------- actions ---------- */
@@ -395,14 +935,29 @@ function resetFilters(){st.b="all";st.f=false;st.q="";st.s=0;$("q").value="";$("
 function toggleOpen(id){var el=document.querySelector('[data-id="'+id+'"]');if(!el)return;var o=!el.classList.contains("open");el.classList.toggle("open",o);var h=el.querySelector(".chead");if(h)h.setAttribute("aria-expanded",o);st.open[id]=o}
 function toggleFav(id){var i=st.fav.indexOf(id),on=i<0;if(on)st.fav.push(id);else st.fav.splice(i,1);save();
  var b=document.querySelector('[data-s="'+id+'"]');if(b){b.classList.toggle("on",on);b.textContent=on?"★":"☆";b.setAttribute("aria-label",(on?"Remove from":"Add to")+" shortlist")}
- var sh=$("short");sh.className="short"+(st.fav.length?" show":"");$("sl").textContent="⭐ Shortlist: "+st.fav.join(", ")}
+ var sh=$("short");sh.className="short"+(st.fav.length?" show":"");$("sl").textContent="Shortlist ("+st.fav.length+"): "+st.fav.join(", ")}
 function go(id){resetFilters();st.open[id]=true;render();
- setTimeout(function(){var e=document.querySelector('[data-id="'+id+'"]');if(e){e.scrollIntoView({behavior:"smooth",block:"center"});e.classList.add("flash");setTimeout(function(){e.classList.remove("flash")},1400)}},520)}
+ setTimeout(function(){var e=document.querySelector('[data-id="'+id+'"]');if(e){e.scrollIntoView({behavior:"smooth",block:"center"});e.classList.add("flash");setTimeout(function(){e.classList.remove("flash")},1300)}},120)}
 
 /* ---------- events ---------- */
 document.addEventListener("click",function(e){
  var n;
  if((n=e.target.closest("[data-s]"))){toggleFav(n.getAttribute("data-s"));return}
+ if((n=e.target.closest("[data-copy-doi]"))){
+  var id=n.getAttribute("data-copy-doi"),r=REFS[id];
+  if(r)copyText(r.doi,function(ok){showToast(ok?"Copied DOI: "+r.doi:"Copy failed")});
+  return;
+ }
+ if((n=e.target.closest("[data-copy-cite]"))){
+  var id2=n.getAttribute("data-copy-cite");
+  copyText(makeCite(id2),function(ok){showToast(ok?"Copied formatted citation for "+id2:"Copy failed")});
+  return;
+ }
+ if((n=e.target.closest("[data-copy-bib]"))){
+  var id3=n.getAttribute("data-copy-bib");
+  copyText(makeBib(id3),function(ok){showToast(ok?"Copied BibTeX entry for "+id3:"Copy failed")});
+  return;
+ }
  if((n=e.target.closest("[data-t]"))){toggleOpen(n.getAttribute("data-t"));return}
  if((n=e.target.closest("[data-b]"))){st.b=n.getAttribute("data-b");setB();render();return}
  if((n=e.target.closest("[data-p]"))){go(n.getAttribute("data-p"));return}
@@ -412,24 +967,48 @@ document.addEventListener("keydown",function(e){
  if((e.key==="Enter"||e.key===" ")&&e.target.classList&&e.target.classList.contains("chead")){e.preventDefault();toggleOpen(e.target.getAttribute("data-t"))}
 });
 var deb;
-$("q").oninput=function(){var v=this.value;clearTimeout(deb);deb=setTimeout(function(){st.q=v;render()},180)};
+$("q").oninput=function(){var v=this.value;clearTimeout(deb);deb=setTimeout(function(){st.q=v;render()},160)};
 $("sort").onchange=function(){st.s=+this.value;render()};
 $("fastb").onclick=function(){st.f=!st.f;this.classList.toggle("on",st.f);render()};
 $("rnd").onclick=function(){go(D[Math.floor(Math.random()*D.length)].id)};
 $("clr").onclick=function(){st.fav=[];save();render()};
-$("cp").onclick=function(){var tx="My thesis shortlist:\n"+st.fav.map(function(id){var d=D.filter(function(x){return x.id===id})[0];return "- "+id+": "+d.t}).join("\n"),b=this;
- try{navigator.clipboard.writeText(tx).then(function(){b.textContent="Copied ✓"},function(){b.textContent="Select & copy above"})}catch(err){b.textContent="Select & copy above"}
- setTimeout(function(){b.textContent="Copy shortlist"},1800)};
+$("cp").onclick=function(){
+ var tx="My thesis shortlist:\n\n"+st.fav.map(function(id){
+  var d=D.filter(function(x){return x.id===id})[0];
+  var r=REFS[id];
+  return "- "+id+": "+d.t+(r?"\n  Starting paper: "+r.authors+" ("+r.year+"), \""+r.title+"\", "+r.venue+"\n  DOI: "+r.doi+" | "+r.url:"");
+ }).join("\n\n");
+ copyText(tx,function(ok){showToast(ok?"Copied shortlist with DOIs & links":"Copy failed")});
+};
+$("biball").onclick=function(){
+ if(!st.fav.length)return;
+ var bib=st.fav.map(makeBib).join("\n\n")+"\n";
+ try{
+  var blob=new Blob([bib],{type:"application/x-bibtex;charset=utf-8"});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement("a");
+  a.href=url;a.download="thesis_shortlist.bib";
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  setTimeout(function(){URL.revokeObjectURL(url)},1000);
+  showToast("Downloaded thesis_shortlist.bib ("+st.fav.length+" entries)");
+ }catch(err){
+  copyText(bib,function(ok){showToast(ok?"Copied BibTeX for shortlist":"Export failed")});
+ }
+};
 
 /* ---------- theme toggle ---------- */
 var root=document.documentElement;
-function setTheme(t){root.setAttribute("data-theme",t);try{localStorage.setItem("theme",t)}catch(err){}
- var m=$("mtc");if(m)m.setAttribute("content",t==="dark"?"#0b0e16":"#f4f6fb")}
+function setTheme(t){
+ root.setAttribute("data-theme",t);
+ try{localStorage.setItem("theme",t)}catch(err){}
+ var m=$("mtc");if(m)m.setAttribute("content",t==="dark"?"#141311":"#f6f4ee");
+}
 try{var th=localStorage.getItem("theme")}catch(err){}
 if(th==="dark"||th==="light")setTheme(th);
 $("theme").onclick=function(){
  var cur=root.getAttribute("data-theme")||(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
- setTheme(cur==="dark"?"light":"dark")};
+ setTheme(cur==="dark"?"light":"dark");
+};
 
 /* ---------- back to top ---------- */
 var btt=$("btt");
